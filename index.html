@@ -5,198 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>助贷头部机构2026年半年报深度分析报告（v12版）</title>
 <style>
-  * { box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
-    background: #F7F9FC;
-    color: #1E293B;
-    margin: 0;
-    padding: 0;
-    line-height: 1.7;
-    font-size: 15px;
-  }
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 60px 60px 300px;
-  }
-  .toc {
-    position: fixed;
-    left: 40px;
-    top: 60px;
-    width: 220px;
-    max-height: calc(100vh - 120px);
-    overflow-y: auto;
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px 16px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    font-size: 13px;
-  }
-  .toc h3 {
-    margin: 0 0 12px 0;
-    font-size: 14px;
-    color: #2563EB;
-    border-bottom: 2px solid #2563EB;
-    padding-bottom: 8px;
-  }
-  .toc ul { list-style: none; padding: 0; margin: 0; }
-  .toc li { margin-bottom: 6px; }
-  .toc a {
-    color: #475569;
-    text-decoration: none;
-    display: block;
-    padding: 4px 8px;
-    border-radius: 6px;
-    transition: all 0.2s;
-  }
-  .toc a:hover { background: #EFF6FF; color: #2563EB; }
-  .toc .toc-indent a { padding-left: 20px; font-size: 12px; color: #64748B; }
-
-  h1 {
-    font-size: 28px;
-    color: #0F172A;
-    margin-bottom: 8px;
-    padding-bottom: 16px;
-    border-bottom: 3px solid #2563EB;
-  }
-  h2 {
-    font-size: 22px;
-    color: #1E40AF;
-    margin-top: 40px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #E2E8F0;
-  }
-  h3 {
-    font-size: 17px;
-    color: #334155;
-    margin-top: 28px;
-  }
-  p { margin: 12px 0; color: #334155; }
-  strong { color: #0F172A; }
-
-  /* 表格 */
-  .table-wrapper {
-    position: relative;
-    overflow-x: auto;
-    margin: 16px 0;
-    border-radius: 8px;
-    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 60px), transparent);
-            mask-image: linear-gradient(to right, #000 calc(100% - 60px), transparent);
-  }
-  .table-wrapper.scrolled-to-end {
-    -webkit-mask-image: none;
-            mask-image: none;
-  }
-  .scroll-hint {
-    position: absolute;
-    top: 8px;
-    right: 12px;
-    font-size: 11px;
-    color: #94A3B8;
-    background: rgba(255,255,255,0.9);
-    padding: 2px 8px;
-    border-radius: 4px;
-    pointer-events: none;
-    z-index: 1;
-  }
-  .table-wrapper.scrolled-to-end .scroll-hint { display: none; }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-    min-width: 100%;
-  }
-  th {
-    background: #2563EB;
-    color: #fff;
-    font-weight: 600;
-    padding: 10px 12px;
-    text-align: left;
-    white-space: nowrap;
-  }
-  td {
-    padding: 9px 12px;
-    border-bottom: 1px solid #E2E8F0;
-    color: #334155;
-    white-space: nowrap;
-  }
-  tr:nth-child(even) { background: #F8FAFC; }
-  tr:hover { background: #EFF6FF; }
-
-  a { color: #2563EB; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-  /* KPI卡片 */
-  .kpi-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin: 24px 0;
-  }
-  .kpi-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    border-left: 4px solid #2563EB;
-  }
-  .kpi-label { font-size: 13px; color: #64748B; margin-bottom: 6px; }
-  .kpi-value { font-size: 24px; font-weight: 700; color: #0F172A; margin-bottom: 4px; }
-  .kpi-spark { height: 30px; margin-top: 8px; }
-
-  /* 图表容器 */
-  .chart-container {
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    margin: 20px 0;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  }
-  .chart-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: #1E293B;
-    margin-bottom: 12px;
-  }
-  .chart-container svg { width: 100%; height: auto; }
-
-  blockquote {
-    border-left: 4px solid #93C5FD;
-    background: #EFF6FF;
-    padding: 12px 16px;
-    margin: 16px 0;
-    border-radius: 0 8px 8px 0;
-    color: #1E40AF;
-  }
-
-  ul, ol { padding-left: 24px; }
-  li { margin: 6px 0; }
-
-  .section-divider {
-    height: 1px;
-    background: linear-gradient(to right, transparent, #CBD5E1, transparent);
-    margin: 40px 0;
-  }
-
-  @media (max-width: 900px) {
-    .toc { display: none; }
-    .container { padding: 20px; }
-    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  @media print {
-    .toc { display: none; }
-    .container { padding: 0; max-width: 100%; }
-    body { background: #fff; font-size: 12px; }
-    .kpi-grid { grid-template-columns: repeat(3, 1fr); }
-    .table-wrapper { overflow: visible; mask-image: none; -webkit-mask-image: none; }
-    .scroll-hint { display: none; }
-  }
+*{box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#F7F9FC;color:#1E293B;margin:0;padding:0;line-height:1.7;font-size:15px;}
+.container{max-width:1180px;margin:0 auto;padding:40px 60px 60px 300px;}
+.toc{position:fixed;left:40px;top:60px;width:220px;max-height:calc(100vh - 120px);overflow-y:auto;background:#fff;border-radius:12px;padding:20px 16px;box-shadow:0 2px 12px rgba(0,0,0,.06);font-size:13px;z-index:10;}
+.toc h3{margin:0 0 12px 0;font-size:14px;color:#2563EB;border-bottom:2px solid #2563EB;padding-bottom:8px;}
+.toc ul{list-style:none;padding:0;margin:0;}
+.toc li{margin-bottom:6px;}
+.toc a{color:#475569;text-decoration:none;display:block;padding:4px 8px;border-radius:6px;transition:all .2s;}
+.toc a:hover{background:#EFF6FF;color:#2563EB;}
+.toc .toc-indent a{padding-left:20px;font-size:12px;color:#64748B;}
+h1{font-size:28px;color:#0F172A;margin-bottom:8px;padding-bottom:16px;border-bottom:3px solid #2563EB;}
+h2{font-size:22px;color:#1E40AF;margin-top:40px;padding-bottom:8px;border-bottom:2px solid #E2E8F0;}
+h3{font-size:17px;color:#334155;margin-top:28px;}
+p{margin:12px 0;color:#334155;}
+strong{color:#0F172A;}
+.table-wrapper{position:relative;overflow-x:auto;margin:16px 0;border-radius:8px;-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 60px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 60px),transparent);}
+.table-wrapper.scrolled-to-end{-webkit-mask-image:none;mask-image:none;}
+.scroll-hint{position:absolute;top:8px;right:12px;font-size:11px;color:#94A3B8;background:rgba(255,255,255,.9);padding:2px 8px;border-radius:4px;pointer-events:none;z-index:1;}
+.table-wrapper.scrolled-to-end .scroll-hint{display:none;}
+table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06);min-width:100%;}
+th{background:#2563EB;color:#fff;font-weight:600;padding:10px 12px;text-align:left;white-space:nowrap;}
+td{padding:9px 12px;border-bottom:1px solid #E2E8F0;color:#334155;white-space:nowrap;}
+tr:nth-child(even){background:#F8FAFC;}
+tr:hover{background:#EFF6FF;}
+a{color:#2563EB;text-decoration:none;}
+a:hover{text-decoration:underline;}
+.kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0;}
+.kpi-card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.05);border-left:4px solid #2563EB;min-height:120px;display:flex;flex-direction:column;}
+.kpi-label{font-size:13px;color:#64748B;margin-bottom:6px;}
+.kpi-value{font-size:24px;font-weight:700;color:#0F172A;margin-bottom:4px;}
+.kpi-spark{height:30px;margin-top:auto;width:100%;}
+.chart-container{background:#fff;border-radius:12px;padding:20px;margin:20px 0;box-shadow:0 1px 4px rgba(0,0,0,.05);overflow:visible;}
+.chart-container svg{width:100%;height:auto;}
+blockquote{border-left:4px solid #93C5FD;background:#EFF6FF;padding:12px 16px;margin:16px 0;border-radius:0 8px 8px 0;color:#1E40AF;}
+ul,ol{padding-left:24px;}
+li{margin:6px 0;}
+@media (max-width:900px){.toc{display:none;}.container{padding:20px;}.kpi-grid{grid-template-columns:repeat(2,1fr);}}
+@media print{.toc{display:none;}.container{padding:0;max-width:100%;}body{background:#fff;font-size:12px;}.kpi-grid{grid-template-columns:repeat(3,1fr);}.table-wrapper{overflow:visible;mask-image:none;-webkit-mask-image:none;}.scroll-hint{display:none;}}
 </style>
 </head>
 <body>
@@ -249,7 +95,49 @@
 <li><strong>待更新清单</strong></li>
 <li><strong>七、数据来源汇总</strong></li>
 </ul>
-<h2 id="执行摘要">执行摘要</h2>
+<h2 id="执行摘要">执行摘要</h2><div class="kpi-grid"><div class="kpi-card">
+<div class="kpi-label">9家总营收（H1）</div>
+<div class="kpi-value" style="color:#2563EB">455亿+</div>
+<div style="font-size:12px;color:#64748B">↓15-20%</div>
+<svg class="kpi-spark" preserveaspectratio="none" viewbox="0 0 100 30">
+<path d="M5,27 L25,20 L50,23 L75,15 L95,12" fill="none" stroke="#2563EB" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div><div class="kpi-card">
+<div class="kpi-label">9家净利润（H1）</div>
+<div class="kpi-value" style="color:#DC2626">约25亿</div>
+<div style="font-size:12px;color:#64748B">↓60%+</div>
+<svg class="kpi-spark" preserveaspectratio="none" viewbox="0 0 100 30">
+<path d="M5,26 L25,15 L50,20 L75,12 L95,16" fill="none" stroke="#DC2626" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div><div class="kpi-card">
+<div class="kpi-label">头部在贷规模</div>
+<div class="kpi-value" style="color:#F59E0B">均两位数缩表</div>
+<div style="font-size:12px;color:#64748B">↓5-15%</div>
+<svg class="kpi-spark" preserveaspectratio="none" viewbox="0 0 100 30">
+<path d="M5,22 L25,15 L50,16 L75,14 L95,12" fill="none" stroke="#F59E0B" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div><div class="kpi-card">
+<div class="kpi-label">不良/逾期率</div>
+<div class="kpi-value" style="color:#7C3AED">普遍上行</div>
+<div style="font-size:12px;color:#64748B">中腰部跳升</div>
+<svg class="kpi-spark" preserveaspectratio="none" viewbox="0 0 100 30">
+<path d="M5,21 L25,18 L50,21 L75,13 L95,16" fill="none" stroke="#7C3AED" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div><div class="kpi-card">
+<div class="kpi-label">拨备占营收比</div>
+<div class="kpi-value" style="color:#0891B2">分化极大</div>
+<div style="font-size:12px;color:#64748B">3%~50%+</div>
+<svg class="kpi-spark" preserveaspectratio="none" viewbox="0 0 100 30">
+<path d="M5,24 L25,21 L50,18 L75,10 L95,14" fill="none" stroke="#0891B2" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div><div class="kpi-card">
+<div class="kpi-label">轻资本转型</div>
+<div class="kpi-value" style="color:#059669">全行业推进</div>
+<div style="font-size:12px;color:#64748B">节奏不一</div>
+<svg class="kpi-spark" preserveaspectratio="none" viewbox="0 0 100 30">
+<path d="M5,26 L25,21 L50,18 L75,10 L95,16" fill="none" stroke="#059669" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div></div>
 <p>本文浓缩9家助贷/汽车金融机构2026年半年报核心发现，提炼7条关键结论如下：</p>
 <ol>
 <li>
@@ -292,7 +180,54 @@
 <p><strong>运营商线路管控收紧</strong>：某运营商内部通知要求骚扰投诉量逐季压降（Q2降50%→Q3降40%→Q4降30%），电信反诈与合规线路管控持续加码（来源：行业一线调研，互金鹅整理）。影响覆盖贷前（电销获客受限）、贷中（促活与提醒受限）、贷后（催收外呼线路紧张）全链路，合规线路申请门槛提高、成本上升。对依赖电话触达的中腰部平台冲击更大，进一步加剧催收效率压力和资产质量修复难度。</p>
 </li>
 </ol>
-<h3 id="11核心财务指标横向对比">1.1 核心财务指标横向对比</h3>
+<h3 id="11核心财务指标横向对比">1.1 核心财务指标横向对比</h3><div class="chart-container"><svg viewbox="0 0 880 340" xmlns="http://www.w3.org/2000/svg">
+<text fill="#1E293B" font-size="14" font-weight="600" text-anchor="middle" x="440.0" y="20">2026H1 营收同比 vs 净利润同比</text>
+<rect fill="#2563EB" height="10" rx="2" width="10" x="600" y="32"></rect>
+<text fill="#64748B" font-size="11" x="615" y="41">营收同比</text>
+<rect fill="#DC2626" height="10" rx="2" width="10" x="710" y="32"></rect>
+<text fill="#64748B" font-size="11" x="725" y="41">净利润同比</text>
+<text fill="#334155" font-size="12" x="8" y="66">陆金所控股</text>
+<rect fill="#93C5FD" height="16" rx="3" width="51.657142857142865" x="268.34285714285716" y="50"></rect>
+<text fill="#475569" font-size="11" text-anchor="end" x="263.34285714285716" y="65">-11.3%</text>
+<rect fill="#DC2626" height="16" rx="3" width="154.05714285714288" x="165.94285714285712" y="68"></rect>
+<text fill="#475569" font-size="11" text-anchor="end" x="160.94285714285712" y="83">-33.7%</text>
+<text fill="#334155" font-size="12" x="8" y="114">奇富科技</text>
+<rect fill="#93C5FD" height="16" rx="3" width="112.0" x="208.0" y="98"></rect>
+<text fill="#475569" font-size="11" text-anchor="end" x="203.0" y="113">-24.5%</text>
+<rect fill="#DC2626" height="16" rx="3" width="290.2857142857143" x="29.714285714285722" y="116"></rect>
+<text fill="#475569" font-size="11" text-anchor="end" x="24.714285714285722" y="131">-63.5%</text>
+<text fill="#334155" font-size="12" x="8" y="162">乐信</text>
+<rect fill="#93C5FD" height="16" rx="3" width="13.257142857142856" x="306.74285714285713" y="146"></rect>
+<text fill="#475569" font-size="11" text-anchor="end" x="301.74285714285713" y="161">-2.9%</text>
+<rect fill="#DC2626" height="16" rx="3" width="310.40000000000003" x="9.599999999999966" y="164"></rect>
+<text fill="#475569" font-size="11" text-anchor="end" x="4.599999999999966" y="179">-67.9%</text>
+<text fill="#334155" font-size="12" x="8" y="210">信也科技</text>
+<rect fill="#93C5FD" height="16" rx="3" width="36.57142857142857" x="283.42857142857144" y="194"></rect>
+<text fill="#475569" font-size="11" text-anchor="end" x="278.42857142857144" y="209">-8.0%</text>
+<rect fill="#DC2626" height="16" rx="3" width="196.57142857142858" x="123.42857142857142" y="212"></rect>
+<text fill="#475569" font-size="11" text-anchor="end" x="118.42857142857142" y="227">-43.0%</text>
+<text fill="#334155" font-size="12" x="8" y="258">维信金科</text>
+<rect fill="#93C5FD" height="16" rx="3" width="279.7714285714286" x="40.2285714285714" y="242"></rect>
+<text fill="#475569" font-size="11" text-anchor="end" x="35.2285714285714" y="257">-61.2%</text>
+<rect fill="#DC2626" height="16" rx="3" width="320" x="0" y="260"></rect>
+<text fill="#475569" font-size="11" text-anchor="end" x="-5" y="275">-94.5%</text>
+<text fill="#334155" font-size="12" x="8" y="306">小赢科技</text>
+<rect fill="#93C5FD" height="16" rx="3" width="221.71428571428572" x="98.28571428571428" y="290"></rect>
+<text fill="#475569" font-size="11" text-anchor="end" x="93.28571428571428" y="305">-48.5%</text>
+<rect fill="#DC2626" height="16" rx="3" width="320" x="0" y="308"></rect>
+<text fill="#475569" font-size="11" text-anchor="end" x="-5" y="323">-91.0%</text>
+<text fill="#334155" font-size="12" x="8" y="354">嘉银金科</text>
+<rect fill="#93C5FD" height="16" rx="3" width="270.62857142857143" x="49.37142857142857" y="338"></rect>
+<text fill="#475569" font-size="11" text-anchor="end" x="44.37142857142857" y="353">-59.2%</text>
+<rect fill="#DC2626" height="16" rx="3" width="320" x="0" y="356"></rect>
+<text fill="#475569" font-size="11" text-anchor="end" x="-5" y="371">-120.0%</text>
+<text fill="#334155" font-size="12" x="8" y="402">易鑫集团</text>
+<rect fill="#2563EB" height="16" rx="3" width="60.8" x="320" y="386"></rect>
+<text fill="#475569" font-size="11" text-anchor="start" x="385.8" y="401">+13.3%</text>
+<rect fill="#10B981" height="16" rx="3" width="128.9142857142857" x="320" y="404"></rect>
+<text fill="#475569" font-size="11" text-anchor="start" x="453.9142857142857" y="419">+28.2%</text>
+<line stroke="#CBD5E1" stroke-width="1" x1="320" x2="320" y1="42" y2="434"></line>
+</svg></div>
 <div class="table-wrapper"><div class="scroll-hint">→ 滑动查看更多</div><table>
 <thead>
 <tr>
@@ -573,7 +508,34 @@
 <p>小赢、嘉银、维信、宜人四家中小机构普遍仍以重资本/担保模式为主。在利率压缩+风险上行的双重挤压下被动缩表，转型窗口期已非常有限。</p>
 <p><strong>独立赛道（易鑫）：汽车金融独苗</strong></p>
 <p>易鑫集团作为汽车金融独苗，以车辆抵押品的天然风控优势+SaaS平台化转型走出了独立行情。逆势增长验证了垂直赛道的优越性。</p>
-<h3 id="13拨备对利润影响概览">1.3 拨备对利润影响概览</h3>
+<h3 id="13拨备对利润影响概览">1.3 拨备对利润影响概览</h3><div class="chart-container"><svg viewbox="0 0 720 340" xmlns="http://www.w3.org/2000/svg">
+<text fill="#1E293B" font-size="15" font-weight="600" x="120" y="25">拨备/信用减值占营收比（2026H1）</text>
+<text fill="#64748B" font-size="11" x="120" y="43">从高到低排序 · 单位：%（部分为估算值）</text>
+<text fill="#334155" font-size="12" text-anchor="end" x="112" y="74">维信金科</text>
+<rect fill="#7C3AED" height="22" opacity="0.85" rx="4" width="476.66666666666663" x="120" y="55"></rect>
+<text fill="#475569" font-size="11" x="602.6666666666666" y="75">55%</text>
+<text fill="#334155" font-size="12" text-anchor="end" x="112" y="106">嘉银金科</text>
+<rect fill="#0891B2" height="22" opacity="0.85" rx="4" width="390.0" x="120" y="87"></rect>
+<text fill="#475569" font-size="11" x="516.0" y="107">45%</text>
+<text fill="#334155" font-size="12" text-anchor="end" x="112" y="138">小赢科技</text>
+<rect fill="#EC4899" height="22" opacity="0.85" rx="4" width="329.3333333333333" x="120" y="119"></rect>
+<text fill="#475569" font-size="11" x="455.3333333333333" y="139">38%</text>
+<text fill="#334155" font-size="12" text-anchor="end" x="112" y="170">陆金所控股</text>
+<rect fill="#DC2626" height="22" opacity="0.85" rx="4" width="303.33333333333337" x="120" y="151"></rect>
+<text fill="#475569" font-size="11" x="429.33333333333337" y="171">35%</text>
+<text fill="#334155" font-size="12" text-anchor="end" x="112" y="202">乐信</text>
+<rect fill="#F59E0B" height="22" opacity="0.85" rx="4" width="156.0" x="120" y="183"></rect>
+<text fill="#475569" font-size="11" x="282.0" y="203">18%</text>
+<text fill="#334155" font-size="12" text-anchor="end" x="112" y="234">奇富科技</text>
+<rect fill="#2563EB" height="22" opacity="0.85" rx="4" width="121.33333333333333" x="120" y="215"></rect>
+<text fill="#475569" font-size="11" x="247.33333333333331" y="235">14%</text>
+<text fill="#334155" font-size="12" text-anchor="end" x="112" y="266">信也科技</text>
+<rect fill="#059669" height="22" opacity="0.85" rx="4" width="104.0" x="120" y="247"></rect>
+<text fill="#475569" font-size="11" x="230.0" y="267">12%</text>
+<text fill="#334155" font-size="12" text-anchor="end" x="112" y="298">易鑫集团</text>
+<rect fill="#10B981" height="22" opacity="0.85" rx="4" width="34.666666666666664" x="120" y="279"></rect>
+<text fill="#475569" font-size="11" x="160.66666666666666" y="299">4%</text>
+</svg></div>
 <div class="table-wrapper"><div class="scroll-hint">→ 滑动查看更多</div><table>
 <thead>
 <tr>
@@ -621,73 +583,75 @@
 </tbody>
 </table></div>
 <p>拨备是利润分化的核心变量，横向对比与深度分析见第四章。</p>
-<h3 id="14不良率逾期率横向对比">1.4 不良率/逾期率横向对比</h3>
-<div class="table-wrapper"><div class="scroll-hint">→ 滑动查看更多</div><table>
-<thead>
-<tr>
-<th>机构</th>
-<th>指标口径</th>
-<th>2026H1末</th>
-<th>较2025年末</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>奇富科技</td>
-<td>90天+逾期率</td>
-<td>2.83%</td>
-<td>+0.12pct</td>
-</tr>
-<tr>
-<td>信也科技</td>
-<td>90天+逾期率</td>
-<td>2.10%</td>
-<td>下降</td>
-</tr>
-<tr>
-<td>乐信</td>
-<td>90天+逾期率</td>
-<td>3.6%</td>
-<td>+0.5pct</td>
-</tr>
-<tr>
-<td>嘉银金科</td>
-<td>90天+逾期率</td>
-<td>2.21%</td>
-<td>持平</td>
-</tr>
-<tr>
-<td>易鑫集团</td>
-<td>90天+逾期率</td>
-<td>1.92%</td>
-<td>+0.03pct</td>
-</tr>
-<tr>
-<td>维信金科</td>
-<td>M3+逾期率</td>
-<td>8.64%</td>
-<td>+2.65pct</td>
-</tr>
-<tr>
-<td>小赢科技</td>
-<td>91-180天逾期率</td>
-<td>9.09%</td>
-<td>大幅上升</td>
-</tr>
-<tr>
-<td>陆金所控股</td>
-<td>C-M3迁徙率</td>
-<td>1.0%</td>
-<td>改善</td>
-</tr>
-<tr>
-<td>宜人智科（Q1）</td>
-<td>61-90天逾期率</td>
-<td>3.2%（Q1）</td>
-<td>+0.4pct</td>
-</tr>
-</tbody>
-</table></div>
+<h3 id="14不良率逾期率横向对比">1.4 不良率/逾期率横向对比</h3><div class="chart-container"><svg viewbox="0 0 900 460" xmlns="http://www.w3.org/2000/svg">
+<text fill="#1E293B" font-size="16" font-weight="600" x="60" y="30">7家机构逾期率趋势对比（2023-2026H1）</text>
+<text fill="#64748B" font-size="12" x="60" y="52">各家口径不同，详见下方口径说明 · 单位：%</text>
+<line stroke="#E2E8F0" stroke-dasharray="3,3" stroke-width="1" x1="60" x2="720" y1="420.0" y2="420.0"></line>
+<text fill="#94A3B8" font-size="11" text-anchor="end" x="52" y="424.0">0%</text>
+<line stroke="#E2E8F0" stroke-dasharray="3,3" stroke-width="1" x1="60" x2="720" y1="350.0" y2="350.0"></line>
+<text fill="#94A3B8" font-size="11" text-anchor="end" x="52" y="354.0">2%</text>
+<line stroke="#E2E8F0" stroke-dasharray="3,3" stroke-width="1" x1="60" x2="720" y1="280.0" y2="280.0"></line>
+<text fill="#94A3B8" font-size="11" text-anchor="end" x="52" y="284.0">4%</text>
+<line stroke="#E2E8F0" stroke-dasharray="3,3" stroke-width="1" x1="60" x2="720" y1="210.0" y2="210.0"></line>
+<text fill="#94A3B8" font-size="11" text-anchor="end" x="52" y="214.0">6%</text>
+<line stroke="#E2E8F0" stroke-dasharray="3,3" stroke-width="1" x1="60" x2="720" y1="140.0" y2="140.0"></line>
+<text fill="#94A3B8" font-size="11" text-anchor="end" x="52" y="144.0">8%</text>
+<line stroke="#E2E8F0" stroke-dasharray="3,3" stroke-width="1" x1="60" x2="720" y1="70.0" y2="70.0"></line>
+<text fill="#94A3B8" font-size="11" text-anchor="end" x="52" y="74.0">10%</text>
+<text fill="#64748B" font-size="12" text-anchor="middle" x="60.0" y="442">2023年末</text>
+<text fill="#64748B" font-size="12" text-anchor="middle" x="280.0" y="442">2024年末</text>
+<text fill="#64748B" font-size="12" text-anchor="middle" x="500.0" y="442">2025年末</text>
+<text fill="#64748B" font-size="12" text-anchor="middle" x="720.0" y="442">2026H1末</text>
+<polyline fill="none" points="60.0,332.5 280.0,325.5 500.0,210.0 720.0,101.84999999999997" stroke="#DC2626" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<circle cx="60.0" cy="332.5" fill="white" r="4.5" stroke="#DC2626" stroke-width="2.5"></circle>
+<circle cx="280.0" cy="325.5" fill="white" r="4.5" stroke="#DC2626" stroke-width="2.5"></circle>
+<circle cx="500.0" cy="210.0" fill="white" r="4.5" stroke="#DC2626" stroke-width="2.5"></circle>
+<circle cx="720.0" cy="101.84999999999997" fill="white" r="4.5" stroke="#DC2626" stroke-width="2.5"></circle>
+<polyline fill="none" points="60.0,332.5 280.0,311.5 500.0,210.0 720.0,117.59999999999997" stroke="#F43F5E" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<circle cx="60.0" cy="332.5" fill="white" r="4.5" stroke="#F43F5E" stroke-width="2.5"></circle>
+<circle cx="280.0" cy="311.5" fill="white" r="4.5" stroke="#F43F5E" stroke-width="2.5"></circle>
+<circle cx="500.0" cy="210.0" fill="white" r="4.5" stroke="#F43F5E" stroke-width="2.5"></circle>
+<circle cx="720.0" cy="117.59999999999997" fill="white" r="4.5" stroke="#F43F5E" stroke-width="2.5"></circle>
+<polyline fill="none" points="60.0,325.5 280.0,294.0 500.0,308.0 720.0,294.0" stroke="#F59E0B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<circle cx="60.0" cy="325.5" fill="white" r="4.5" stroke="#F59E0B" stroke-width="2.5"></circle>
+<circle cx="280.0" cy="294.0" fill="white" r="4.5" stroke="#F59E0B" stroke-width="2.5"></circle>
+<circle cx="500.0" cy="308.0" fill="white" r="4.5" stroke="#F59E0B" stroke-width="2.5"></circle>
+<circle cx="720.0" cy="294.0" fill="white" r="4.5" stroke="#F59E0B" stroke-width="2.5"></circle>
+<polyline fill="none" points="60.0,336.0 280.0,343.0 500.0,322.0 720.0,320.95" stroke="#2563EB" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<circle cx="60.0" cy="336.0" fill="white" r="4.5" stroke="#2563EB" stroke-width="2.5"></circle>
+<circle cx="280.0" cy="343.0" fill="white" r="4.5" stroke="#2563EB" stroke-width="2.5"></circle>
+<circle cx="500.0" cy="322.0" fill="white" r="4.5" stroke="#2563EB" stroke-width="2.5"></circle>
+<circle cx="720.0" cy="320.95" fill="white" r="4.5" stroke="#2563EB" stroke-width="2.5"></circle>
+<polyline fill="none" points="60.0,346.5 280.0,343.0 500.0,339.5 720.0,339.15" stroke="#7C3AED" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<circle cx="60.0" cy="346.5" fill="white" r="4.5" stroke="#7C3AED" stroke-width="2.5"></circle>
+<circle cx="280.0" cy="343.0" fill="white" r="4.5" stroke="#7C3AED" stroke-width="2.5"></circle>
+<circle cx="500.0" cy="339.5" fill="white" r="4.5" stroke="#7C3AED" stroke-width="2.5"></circle>
+<circle cx="720.0" cy="339.15" fill="white" r="4.5" stroke="#7C3AED" stroke-width="2.5"></circle>
+<polyline fill="none" points="60.0,353.5 280.0,353.5 500.0,353.5 720.0,351.75" stroke="#0891B2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<circle cx="60.0" cy="353.5" fill="white" r="4.5" stroke="#0891B2" stroke-width="2.5"></circle>
+<circle cx="280.0" cy="353.5" fill="white" r="4.5" stroke="#0891B2" stroke-width="2.5"></circle>
+<circle cx="500.0" cy="353.5" fill="white" r="4.5" stroke="#0891B2" stroke-width="2.5"></circle>
+<circle cx="720.0" cy="351.75" fill="white" r="4.5" stroke="#0891B2" stroke-width="2.5"></circle>
+<polyline fill="none" points="60.0,360.5 280.0,357.0 500.0,353.5 720.0,352.8" stroke="#10B981" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<circle cx="60.0" cy="360.5" fill="white" r="4.5" stroke="#10B981" stroke-width="2.5"></circle>
+<circle cx="280.0" cy="357.0" fill="white" r="4.5" stroke="#10B981" stroke-width="2.5"></circle>
+<circle cx="500.0" cy="353.5" fill="white" r="4.5" stroke="#10B981" stroke-width="2.5"></circle>
+<circle cx="720.0" cy="352.8" fill="white" r="4.5" stroke="#10B981" stroke-width="2.5"></circle>
+<circle cx="738" cy="75" fill="white" r="5" stroke="#DC2626" stroke-width="2.5"></circle>
+<text fill="#DC2626" font-size="12" font-weight="500" x="750" y="79">小赢科技<tspan fill="#94A3B8" font-size="10" font-weight="400">（91-180天）</tspan> <tspan font-weight="600">9.09%</tspan></text>
+<circle cx="738" cy="105" fill="white" r="5" stroke="#F43F5E" stroke-width="2.5"></circle>
+<text fill="#F43F5E" font-size="12" font-weight="500" x="750" y="109">维信金科<tspan fill="#94A3B8" font-size="10" font-weight="400">（M3+）</tspan> <tspan font-weight="600">8.64%</tspan></text>
+<circle cx="738" cy="135" fill="white" r="5" stroke="#F59E0B" stroke-width="2.5"></circle>
+<text fill="#F59E0B" font-size="12" font-weight="500" x="750" y="139">乐信<tspan fill="#94A3B8" font-size="10" font-weight="400">（90天+）</tspan> <tspan font-weight="600">3.60%</tspan></text>
+<circle cx="738" cy="165" fill="white" r="5" stroke="#2563EB" stroke-width="2.5"></circle>
+<text fill="#2563EB" font-size="12" font-weight="500" x="750" y="169">奇富科技<tspan fill="#94A3B8" font-size="10" font-weight="400">（90天+）</tspan> <tspan font-weight="600">2.83%</tspan></text>
+<circle cx="738" cy="195" fill="white" r="5" stroke="#7C3AED" stroke-width="2.5"></circle>
+<text fill="#7C3AED" font-size="12" font-weight="500" x="750" y="199">嘉银金科<tspan fill="#94A3B8" font-size="10" font-weight="400">（90天+）</tspan> <tspan font-weight="600">2.31%</tspan></text>
+<circle cx="738" cy="225" fill="white" r="5" stroke="#0891B2" stroke-width="2.5"></circle>
+<text fill="#0891B2" font-size="12" font-weight="500" x="750" y="229">信也科技<tspan fill="#94A3B8" font-size="10" font-weight="400">（90天+）</tspan> <tspan font-weight="600">1.95%</tspan></text>
+<circle cx="738" cy="255" fill="white" r="5" stroke="#10B981" stroke-width="2.5"></circle>
+<text fill="#10B981" font-size="12" font-weight="500" x="750" y="259">易鑫集团<tspan fill="#94A3B8" font-size="10" font-weight="400">（90天+）</tspan> <tspan font-weight="600">1.92%</tspan></text>
+</svg></div>
 <p><em>数据来源：各公司年报/中报。注意：各机构逾期口径不完全一致，横向对比需谨慎；宜人智科仅披露至Q1；三年趋势数据详见第三章 <a href="https://caifuhao.eastmoney.com/news/20260827111247614572400">(奇富)</a> <a href="http://m.toutiao.com/group/7678895492201267753/">(信也)</a> <a href="http://m.toutiao.com/group/7680354661844533798/">(乐信)</a> <a href="https://caifuhao.eastmoney.com/news/20260727172559907713800">(陆金所)</a> <a href="http://m.toutiao.com/group/7678225093797691947/">(维信)</a> <a href="https://caifuhao.eastmoney.com/news/20260827193506868080910">(小赢)</a> <a href="https://finance.sina.com.cn/stock/hkstock/hkstocknews/2026-08-28/doc-inipwnxr5720981.shtml">(嘉银)</a></em></p>
 <p><strong>口径差异说明</strong>：
 1. <strong>90天+逾期率</strong>：奇富、乐信、嘉银、易鑫使用此口径，但统计基础不同（奇富为全平台金融机构发起贷款，乐信为未偿本金余额，易鑫为汽车金融资产）
@@ -695,7 +659,7 @@
 3. <strong>小赢科技</strong>：披露91-180天分段数据，未披露90天+整体数据，绝对值偏高（仅含中段逾期，不含M3+以后）
 4. <strong>陆金所控股</strong>：披露C-M3迁徙率，与逾期率指标含义不同（反映新恶化速度而非存量水平）
 5. <strong>宜人智科</strong>：仅披露61-90天逾期率（Q1），未披露90天+数据
-6. <strong>较上年末</strong>：主比较口径统一为"较2025年末"</p>
+6. <strong>较上年末</strong>：时点指标主比较口径统一为"较2025年末"</p>
 <h3 id="15行业全景关键发现">1.5 行业全景关键发现</h3>
 <p><strong>关键发现</strong>：
 1. <strong>2025Q4是行业分水岭，新规冲击的时滞效应完整显现</strong>。助贷新规2025年10月落地，三重冲击（利率红线压缩Take Rate、断直连冲击流量、担保监管抬升合规成本）集中在Q4释放——逾期跳升、拨备加码、放款收缩。2025年全年头部机构仍微增是上半年高速增长的滞后结果，2026H1断崖式下滑才是新规影响的完全体现。
@@ -3322,11 +3286,8 @@
 <script>
 document.querySelectorAll('.table-wrapper').forEach(w => {
   const check = () => {
-    if (w.scrollLeft + w.clientWidth >= w.scrollWidth - 5) {
-      w.classList.add('scrolled-to-end');
-    } else {
-      w.classList.remove('scrolled-to-end');
-    }
+    if (w.scrollLeft + w.clientWidth >= w.scrollWidth - 5) w.classList.add('scrolled-to-end');
+    else w.classList.remove('scrolled-to-end');
   };
   w.addEventListener('scroll', check);
   check();
