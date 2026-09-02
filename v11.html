@@ -1,0 +1,2030 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>助贷头部机构2026年半年报深度分析报告（v11版）</title>
+<style>
+
+/* ============ CSS Reset & Base ============ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* 颜色系统 - 科技蓝+浅色系 */
+  --color-bg: #F7F9FC;
+  --color-bg-elevated: #FFFFFF;
+  --color-bg-subtle: #EFF2F7;
+  --color-bg-hover: #EEF2F8;
+  
+  --color-primary: #2563EB;
+  --color-primary-light: #3B82F6;
+  --color-primary-dark: #1D4ED8;
+  --color-primary-bg: #EFF6FF;
+  --color-primary-border: #BFDBFE;
+  
+  --color-text: #1E293B;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #64748B;
+  --color-text-muted: #94A3B8;
+  
+  --color-border: #E2E8F0;
+  --color-border-light: #F1F5F9;
+  --color-border-strong: #CBD5E1;
+  
+  /* 风险分层颜色 */
+  --color-risk-high: #DC2626;
+  --color-risk-high-bg: #FEF2F2;
+  --color-risk-mid-high: #EA580C;
+  --color-risk-mid-high-bg: #FFF7ED;
+  --color-risk-mid: #D97706;
+  --color-risk-mid-bg: #FFFBEB;
+  --color-risk-stable: #059669;
+  --color-risk-stable-bg: #ECFDF5;
+  --color-risk-unique: #7C3AED;
+  --color-risk-unique-bg: #F5F3FF;
+  --color-risk-giant: #0891B2;
+  --color-risk-giant-bg: #ECFEFF;
+  
+  /* 字体 */
+  --font-sans: "Noto Sans CJK SC", "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+               "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Microsoft JhengHei",
+               "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  
+  /* 间距 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  
+  /* 圆角 */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  
+  /* 阴影 */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  
+  /* 布局 */
+  --sidebar-width: 260px;
+  --content-max-width: 1100px;
+  --body-text-width: 740px;
+  
+  /* 过渡 */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============ 顶部信息条 ============ */
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-bg-elevated);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.top-bar-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.top-bar-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+.top-bar-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  font-size: 13px;
+  color: var(--color-text-tertiary);
+  flex-shrink: 0;
+}
+
+.top-bar-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.top-bar-meta-label {
+  color: var(--color-text-muted);
+}
+
+.top-bar-meta-value {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.mobile-menu-btn {
+  display: none;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-elevated);
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.mobile-menu-btn:hover {
+  background: var(--color-bg-subtle);
+}
+
+/* ============ 主布局 ============ */
+.layout {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ============ 侧边目录 ============ */
+.sidebar {
+  position: sticky;
+  top: 65px;
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  height: calc(100vh - 65px);
+  overflow-y: auto;
+  padding: var(--space-6) var(--space-4);
+  border-right: 1px solid var(--color-border-light);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-strong) transparent;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 2px;
+}
+
+.sidebar-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0 var(--space-3) var(--space-3);
+  border-bottom: 1px solid var(--color-border-light);
+  margin-bottom: var(--space-3);
+}
+
+.toc-list {
+  list-style: none;
+}
+
+.toc-item {
+  margin-bottom: 2px;
+}
+
+.toc-link {
+  display: block;
+  padding: 6px var(--space-3);
+  font-size: 13px;
+  color: var(--color-text-tertiary);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  line-height: 1.5;
+}
+
+.toc-link:hover {
+  color: var(--color-primary);
+  background: var(--color-primary-bg);
+}
+
+.toc-link.active {
+  color: var(--color-primary);
+  background: var(--color-primary-bg);
+  font-weight: 500;
+  border-left: 3px solid var(--color-primary);
+  padding-left: calc(var(--space-3) - 3px);
+}
+
+.toc-sublist {
+  list-style: none;
+  margin-left: var(--space-4);
+  margin-top: 2px;
+  margin-bottom: 4px;
+  border-left: 1px solid var(--color-border-light);
+}
+
+.toc-sublist .toc-link {
+  font-size: 12.5px;
+  padding: 4px var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.toc-sublist .toc-link.active {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+/* ============ 主内容区 ============ */
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-10) var(--space-12) var(--space-16);
+}
+
+.content-wrapper {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+/* ============ 标题样式 ============ */
+.report-header {
+  margin-bottom: var(--space-12);
+  padding-bottom: var(--space-8);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.report-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.3;
+  margin-bottom: var(--space-4);
+}
+
+.report-subtitle {
+  font-size: 14px;
+  color: var(--color-text-tertiary);
+  line-height: 1.8;
+}
+
+.report-subtitle strong {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+h2.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  scroll-margin-top: 80px;
+}
+
+h2.section-title:first-of-type {
+  margin-top: 0;
+}
+
+h2.section-subtitle {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-4);
+  scroll-margin-top: 80px;
+}
+
+h3.section-subsubtitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+  scroll-margin-top: 80px;
+}
+
+/* ============ 执行摘要卡片 ============ */
+.exec-summary-section {
+  margin-bottom: var(--space-12);
+  scroll-margin-top: 80px;
+}
+
+.exec-summary-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.exec-summary-intro {
+  font-size: 14px;
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-6);
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-4);
+}
+
+.summary-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-5);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.summary-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--color-primary);
+}
+
+.summary-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-border);
+  transform: translateY(-1px);
+}
+
+.summary-card-num {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-primary-bg);
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-bottom: var(--space-3);
+}
+
+.summary-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+  line-height: 1.5;
+}
+
+.summary-card-text {
+  font-size: 13.5px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* ============ 正文段落 ============ */
+.prose {
+  max-width: var(--body-text-width);
+}
+
+.prose p {
+  margin-bottom: var(--space-4);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.prose strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.prose em {
+  color: var(--color-text-tertiary);
+  font-style: normal;
+  font-size: 13px;
+}
+
+/* ============ 引用块 ============ */
+.blockquote {
+  background: var(--color-bg-subtle);
+  border-left: 4px solid var(--color-primary);
+  padding: var(--space-4) var(--space-5);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin: var(--space-5) 0;
+  max-width: var(--body-text-width);
+}
+
+.blockquote p {
+  margin-bottom: var(--space-2);
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+.blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.blockquote strong {
+  color: var(--color-text);
+}
+
+/* ============ 列表 ============ */
+.prose ul, .prose ol {
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-6);
+  color: var(--color-text-secondary);
+}
+
+.prose li {
+  margin-bottom: var(--space-2);
+  line-height: 1.8;
+}
+
+.prose li strong {
+  color: var(--color-text);
+}
+
+/* ============ 表格 ============ */
+.table-wrapper {
+  margin: var(--space-6) 0;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  position: relative;
+  background: var(--color-bg-elevated);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-strong) var(--color-bg-subtle);
+}
+.table-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(to right, transparent, var(--color-bg-elevated));
+  pointer-events: none;
+  border-top-right-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+  transition: opacity 0.3s ease;
+}
+.table-wrapper.scrolled-to-end::after {
+  opacity: 0;
+}
+.table-hint {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  font-size: 11px;
+  color: var(--color-text-muted);
+  background: var(--color-bg-elevated);
+  padding: 2px 8px;
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+
+.table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: var(--color-bg-subtle);
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 3px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13.5px;
+  min-width: 100%;
+}
+
+.data-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.data-table th {
+  background: var(--color-bg-subtle);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  font-size: 12.5px;
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.data-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--color-border-light);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  vertical-align: top;
+}
+
+.data-table tbody tr:hover {
+  background: var(--color-bg-hover);
+}
+
+.data-table tbody tr:nth-child(even) {
+  background: var(--color-bg-elevated);
+}
+
+.data-table tbody tr:nth-child(even):hover {
+  background: var(--color-bg-hover);
+}
+
+.data-table td:first-child,
+.data-table th:first-child {
+  position: sticky;
+  left: 0;
+  background: inherit;
+  font-weight: 500;
+  color: var(--color-text);
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.data-table thead th:first-child {
+  z-index: 3;
+}
+
+.data-table td.num-cell,
+.data-table th.num-cell {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  white-space: nowrap;
+}
+
+.data-table td.text-center,
+.data-table th.text-center {
+  text-align: center;
+}
+
+.table-caption {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  padding: var(--space-2) var(--space-4) var(--space-3);
+  border-top: 1px solid var(--color-border-light);
+  background: var(--color-bg-elevated);
+  line-height: 1.6;
+}
+
+.table-caption a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.table-caption a:hover {
+  text-decoration: underline;
+}
+
+/* ============ 链接 ============ */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+.prose a {
+  color: var(--color-primary);
+}
+
+/* ============ 机构卡片（第二章） ============ */
+.institution-section {
+  margin-top: var(--space-10);
+  padding-top: var(--space-6);
+  border-top: 1px dashed var(--color-border);
+  scroll-margin-top: 80px;
+}
+
+.institution-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.institution-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.institution-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* ============ 要点总结 ============ */
+.key-points-section {
+  margin-top: var(--space-6);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+}
+
+.key-points-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.key-points-title::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 16px;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+
+.key-points-list {
+  list-style: none;
+  padding: 0;
+  counter-reset: key-point;
+}
+
+.key-points-list li {
+  counter-increment: key-point;
+  position: relative;
+  padding-left: var(--space-8);
+  margin-bottom: var(--space-4);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.key-points-list li::before {
+  content: counter(key-point);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 22px;
+  height: 22px;
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.key-points-list li strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* ============ 风险分层标签 ============ */
+.risk-tags {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin: var(--space-6) 0;
+}
+
+.risk-tag-group {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.risk-tag-header {
+  padding: var(--space-3) var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.risk-tag-header.risk-high { background: var(--color-risk-high-bg); color: var(--color-risk-high); border-bottom: 1px solid #FECACA; }
+.risk-tag-header.risk-mid-high { background: var(--color-risk-mid-high-bg); color: var(--color-risk-mid-high); border-bottom: 1px solid #FED7AA; }
+.risk-tag-header.risk-stable { background: var(--color-risk-stable-bg); color: var(--color-risk-stable); border-bottom: 1px solid #A7F3D0; }
+.risk-tag-header.risk-unique { background: var(--color-risk-unique-bg); color: var(--color-risk-unique); border-bottom: 1px solid #DDD6FE; }
+.risk-tag-header.risk-giant { background: var(--color-risk-giant-bg); color: var(--color-risk-giant); border-bottom: 1px solid #A5F3FC; }
+
+.risk-tag-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.risk-high .risk-tag-dot { background: var(--color-risk-high); }
+.risk-mid-high .risk-tag-dot { background: var(--color-risk-mid-high); }
+.risk-stable .risk-tag-dot { background: var(--color-risk-stable); }
+.risk-unique .risk-tag-dot { background: var(--color-risk-unique); }
+.risk-giant .risk-tag-dot { background: var(--color-risk-giant); }
+
+.risk-tag-content {
+  padding: var(--space-4) var(--space-5);
+  font-size: 13.5px;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.risk-tag-content strong {
+  color: var(--color-text);
+}
+
+.risk-tag-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.risk-tag-content li {
+  padding: var(--space-2) 0;
+  border-bottom: 1px dashed var(--color-border-light);
+}
+
+.risk-tag-content li:last-child {
+  border-bottom: none;
+}
+
+/* ============ 待更新清单 ============ */
+.pending-section {
+  background: var(--color-risk-mid-bg);
+  border: 1px solid #FDE68A;
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  margin: var(--space-6) 0;
+  scroll-margin-top: 80px;
+}
+
+.pending-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #92400E;
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.pending-list {
+  list-style: none;
+  padding: 0;
+}
+
+.pending-list li {
+  padding: var(--space-2) 0;
+  padding-left: var(--space-6);
+  position: relative;
+  color: #78350F;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.pending-list li::before {
+  content: '📋';
+  position: absolute;
+  left: 0;
+  font-size: 13px;
+}
+
+/* ============ 数据来源表 ============ */
+.sources-section {
+  scroll-margin-top: 80px;
+}
+
+.sources-table {
+  font-size: 13px;
+}
+
+.sources-table td {
+  vertical-align: middle;
+}
+
+.sources-table a {
+  font-size: 12px;
+  color: var(--color-primary);
+  word-break: break-all;
+}
+
+/* ============ 免责声明 ============ */
+.disclaimer {
+  margin-top: var(--space-10);
+  padding: var(--space-5);
+  background: var(--color-bg-subtle);
+  border-radius: var(--radius-md);
+  font-size: 12.5px;
+  color: var(--color-text-tertiary);
+  line-height: 1.7;
+}
+
+/* ============ 章节间分隔 ============ */
+.section-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--space-12) 0;
+  border: none;
+}
+
+/* ============ 响应式 ============ */
+@media (max-width: 1200px) {
+  .main-content {
+    padding: var(--space-8) var(--space-8) var(--space-12);
+  }
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
+  
+  .sidebar.mobile-open {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background: var(--color-bg-elevated);
+    z-index: 200;
+    box-shadow: var(--shadow-lg);
+    border-right: 1px solid var(--color-border);
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+  }
+  
+  .top-bar-meta {
+    display: none;
+  }
+  
+  .main-content {
+    padding: var(--space-6) var(--space-5) var(--space-10);
+  }
+  
+  .report-title {
+    font-size: 22px;
+  }
+  
+  h2.section-title {
+    font-size: 20px;
+  }
+  
+  h2.section-subtitle {
+    font-size: 17px;
+  }
+  
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .top-bar-inner {
+    padding: var(--space-2) var(--space-3);
+    gap: var(--space-3);
+  }
+  
+  .top-bar-title {
+    font-size: 14px;
+  }
+  
+  .main-content {
+    padding: var(--space-5) var(--space-4) var(--space-8);
+  }
+  
+  .report-header {
+    margin-bottom: var(--space-8);
+    padding-bottom: var(--space-5);
+  }
+  
+  .report-title {
+    font-size: 20px;
+  }
+  
+  .key-points-section {
+    padding: var(--space-4);
+  }
+  
+  .risk-tags {
+    gap: var(--space-4);
+  }
+
+  .kpi-panel {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+  }
+  
+  .kpi-value {
+    font-size: 18px;
+  }
+  
+  .chart-section {
+    padding: var(--space-4) var(--space-3) var(--space-3);
+  }
+  
+  .chart-container svg {
+    min-width: 480px;
+  }
+
+}
+
+
+/* ============ 可访问性 ============ */
+a:focus-visible,
+button:focus-visible,
+.toc-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* 减少动效偏好 */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============ 打印样式 ============ */
+@media print {
+  * {
+    box-shadow: none !important;
+    background: white !important;
+  }
+  
+  body {
+    background: white;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: black;
+  }
+  
+  .top-bar,
+  .sidebar,
+  .mobile-menu-btn {
+    display: none !important;
+  }
+  
+  .layout {
+    display: block;
+    max-width: 100%;
+  }
+  
+  .main-content {
+    padding: 0;
+  }
+  
+  .content-wrapper {
+    max-width: 100%;
+  }
+  
+  .report-title {
+    font-size: 20pt;
+  }
+  
+  h2.section-title {
+    font-size: 16pt;
+    page-break-before: always;
+    border-bottom: 2px solid #333;
+  }
+  
+  h2.section-title:first-of-type {
+    page-break-before: auto;
+  }
+  
+  h2.section-subtitle {
+    font-size: 14pt;
+    page-break-after: avoid;
+  }
+  
+  .summary-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  
+  .summary-card {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  
+  .summary-card::before {
+    display: none;
+  }
+  
+  .table-wrapper {
+    overflow: visible;
+    border: 1px solid #ccc;
+  }
+  
+  .data-table {
+    font-size: 10pt;
+    width: 100%;
+  }
+  
+  .data-table th,
+  .data-table td {
+    border: 1px solid #ddd;
+    padding: 4px 6px;
+  }
+  
+  .data-table thead {
+    position: static;
+  }
+  
+  .data-table td:first-child,
+  .data-table th:first-child {
+    position: static;
+  }
+  
+  .key-points-section {
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+  
+  .risk-tag-group {
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+  
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 10px;
+    color: #666;
+    word-break: break-all;
+  }
+  
+  .table-caption a::after,
+  .sources-table a::after {
+    content: " (" attr(href) ")";
+  }
+  
+  .prose {
+    max-width: 100%;
+  }
+  
+  .disclaimer {
+    border: 1px solid #ccc;
+    font-size: 10pt;
+  }
+  
+  /* 打印时隐藏滑动提示和遮罩 */
+  .table-hint,
+  .table-scroll-hint,
+  .scroll-hint {
+    display: none !important;
+  }
+  
+  /* KPI卡片打印优化：3列布局，去除装饰 */
+  .kpi-cards,
+  .kpi-grid,
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+  }
+  
+  .kpi-card,
+  .metric-card {
+    page-break-inside: avoid;
+    border: 1px solid #999 !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+  
+  /* 图表打印：确保完整显示 */
+  .chart-container,
+  .chart-wrapper,
+  svg {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* 表格打印字号调小以适配宽度 */
+  .data-table {
+    font-size: 9pt !important;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 3px 5px !important;
+  }
+  
+  /* 避免标题孤行 */
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  
+  /* 图片和图表不分页截断 */
+  img, svg, .chart {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* 隐藏右侧渐隐遮罩 */
+  .table-wrapper::after,
+  .scroll-mask {
+    display: none !important;
+  }
+  
+  @page {
+    size: A3 landscape;
+    margin: 15mm;
+  }
+}
+
+/* ============ 遮罩层（移动端目录） ============ */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 150;
+}
+
+.sidebar-overlay.active {
+  display: block;
+}
+
+
+
+/* ============ 图表样式 ============ */
+.chart-section {
+  margin: var(--space-6) 0 var(--space-5);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6) var(--space-4);
+}
+
+.chart-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.chart-title::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 16px;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+
+.chart-subtitle {
+  font-size: 12.5px;
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-4);
+  padding-left: calc(var(--space-2) + 3px);
+}
+
+.chart-container {
+  width: 100%;
+}
+
+.chart-container svg {
+  display: block;
+  min-width: 500px;
+  max-width: 100%;
+  height: auto;
+}
+
+.chart-note {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--color-border-light);
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  line-height: 1.7;
+}
+
+/* ============ KPI指标卡 ============ */
+.kpi-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.kpi-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-4) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  min-height: 120px;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+}
+
+.kpi-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-border);
+  transform: translateY(-1px);
+}
+
+.kpi-label {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-2);
+  line-height: 1.4;
+  min-height: 17px;
+  font-weight: 500;
+}
+
+.kpi-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: var(--space-1);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+.kpi-sub {
+  font-size: 11.5px;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+  line-height: 1.4;
+  min-height: 32px;
+}
+
+.kpi-spark {
+  height: 30px;
+  margin-top: auto;
+  width: 100%;
+  opacity: 0.7;
+}
+
+.kpi-spark svg {
+  display: block;
+  width: 100%;
+  height: 30px;
+}
+
+</style>
+</head>
+<body>
+
+
+<header class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-bar-title">助贷头部机构2026年半年报深度分析报告</div>
+    <div class="top-bar-meta">
+      <div class="top-bar-meta-item">
+        <span class="top-bar-meta-label">完成日期</span>
+        <span class="top-bar-meta-value">2026年09月01日</span>
+      </div>
+      <div class="top-bar-meta-item">
+        <span class="top-bar-meta-label">覆盖机构</span>
+        <span class="top-bar-meta-value">9家</span>
+      </div>
+      <div class="top-bar-meta-item">
+        <span class="top-bar-meta-label">数据周期</span>
+        <span class="top-bar-meta-value">2023-2025全年 + 2026H1</span>
+      </div>
+    </div>
+    <button class="mobile-menu-btn" aria-label="打开目录">☰ 目录</button>
+  </div>
+</header>
+
+<div class="layout">
+
+<div class="sidebar-overlay"></div>
+<aside class="sidebar" aria-label="目录导航">
+  <div class="sidebar-title">目录导航</div>
+  <nav>
+    <ul class="toc-list">
+      <li class="toc-item"><a href="#exec-summary" class="toc-link">执行摘要</a></li>
+      <li class="toc-item"><a href="#section-1" class="toc-link">一、行业全景</a>
+        <ul class="toc-sublist">
+          <li class="toc-item"><a href="#section-1-0" class="toc-link">1.0 政策背景</a></li>
+          <li class="toc-item"><a href="#section-1-1" class="toc-link">1.1 核心财务对比</a></li>
+          <li class="toc-item"><a href="#section-1-2" class="toc-link">1.2 业务结构对比</a></li>
+          <li class="toc-item"><a href="#section-1-3" class="toc-link">1.3 拨备影响概览</a></li>
+          <li class="toc-item"><a href="#section-1-4" class="toc-link">1.4 不良率对比</a></li>
+          <li class="toc-item"><a href="#section-1-5" class="toc-link">1.5 关键发现</a></li>
+        </ul>
+      </li>
+      <li class="toc-item"><a href="#section-2" class="toc-link">二、各机构经营数据</a>
+        <ul class="toc-sublist">
+          <li class="toc-item"><a href="#inst-qifu" class="toc-link">奇富科技</a></li>
+          <li class="toc-item"><a href="#inst-xinye" class="toc-link">信也科技</a></li>
+          <li class="toc-item"><a href="#inst-lexin" class="toc-link">乐信</a></li>
+          <li class="toc-item"><a href="#inst-lujinsuo" class="toc-link">陆金所控股</a></li>
+          <li class="toc-item"><a href="#inst-xiaoying" class="toc-link">小赢科技</a></li>
+          <li class="toc-item"><a href="#inst-jiayin" class="toc-link">嘉银金科</a></li>
+          <li class="toc-item"><a href="#inst-weixin" class="toc-link">维信金科</a></li>
+          <li class="toc-item"><a href="#inst-yiren" class="toc-link">宜人智科</a></li>
+          <li class="toc-item"><a href="#inst-yixin" class="toc-link">易鑫集团</a></li>
+        </ul>
+      </li>
+      <li class="toc-item"><a href="#section-3" class="toc-link">三、资产质量三年趋势</a>
+        <ul class="toc-sublist">
+          <li class="toc-item"><a href="#section-3-1" class="toc-link">3.1 逾期率趋势</a></li>
+          <li class="toc-item"><a href="#section-3-2" class="toc-link">3.2 核心结论</a></li>
+        </ul>
+      </li>
+      <li class="toc-item"><a href="#section-4" class="toc-link">四、拨备横向对比</a>
+        <ul class="toc-sublist">
+          <li class="toc-item"><a href="#section-4-1" class="toc-link">4.1 拨备力度对比</a></li>
+          <li class="toc-item"><a href="#section-4-2" class="toc-link">4.2 口径对照表</a></li>
+          <li class="toc-item"><a href="#section-4-3" class="toc-link">4.3 PPOP与剪刀差</a></li>
+          <li class="toc-item"><a href="#section-4-4" class="toc-link">4.4 蓄水池与弹性</a></li>
+        </ul>
+      </li>
+      <li class="toc-item"><a href="#section-5" class="toc-link">五、业务结构变化</a>
+        <ul class="toc-sublist">
+          <li class="toc-item"><a href="#section-5-1" class="toc-link">5.1 轻资本占比</a></li>
+          <li class="toc-item"><a href="#section-5-2" class="toc-link">5.2 资金来源</a></li>
+          <li class="toc-item"><a href="#section-5-3" class="toc-link">5.3 海外业务</a></li>
+        </ul>
+      </li>
+      <li class="toc-item"><a href="#section-6" class="toc-link">六、风险分层与核心结论</a>
+        <ul class="toc-sublist">
+          <li class="toc-item"><a href="#section-6-1" class="toc-link">6.1 风险分层</a></li>
+          <li class="toc-item"><a href="#section-6-2" class="toc-link">6.2 核心结论</a></li>
+        </ul>
+      </li>
+      <li class="toc-item"><a href="#pending-list" class="toc-link">待更新清单</a></li>
+      <li class="toc-item"><a href="#section-7" class="toc-link">七、数据来源汇总</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main class="main-content"><div class="content-wrapper">
+<div class="exec-summary-section" id="exec-summary"><div class="report-header"><h1 class="report-title">助贷头部机构2026年半年报深度分析报告（v11版）</h1><div class="report-subtitle"><strong>完成日期：</strong>2026年09月01日　|　<strong>覆盖机构：</strong>奇富科技、信也科技、乐信、嘉银金科、小赢科技、陆金所控股、维信金科、宜人智科（8家助贷机构）+ 易鑫集团（汽车金融助贷代表）<br><strong>数据周期：</strong>2023-2025全年 + 2026H1　|　<strong>数据来源：</strong>各公司2026年中期报告/季度报告、投资者关系公告、港交所披露易、SEC filings<br><strong>口径说明：</strong>各机构财务与资产质量披露口径存在差异，横向对比需注意口径边界，详见各表注释。时点类指标主比较口径统一为"较上年末（2025年末）"。数据前标注"~"表示为估算值或推算值，非精确披露数</div></div><h2 class="exec-summary-title">执行摘要</h2>
+<p class="exec-summary-intro">本文浓缩9家助贷/汽车金融机构2026年半年报核心发现，提炼关键指标与核心结论如下：</p>
+
+<!-- 核心指标概览面板 -->
+<div class="kpi-panel">
+  <div class="kpi-card">
+    <div class="kpi-label">营收同比降幅</div>
+    <div class="kpi-value">-8% ~ -61%</div>
+    <div class="kpi-sub">全行业区间 · 易鑫逆势+13.3%</div>
+    <div class="kpi-spark">
+      <svg role="presentation" aria-hidden="true" focusable="false" viewBox="0 0 120 30" preserveAspectRatio="none" width="100%" height="30">
+        <polyline points="0,8 20,7 40,9 60,15 80,22 100,26 120,28" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">净利润同比降幅</div>
+    <div class="kpi-value">-43% ~ -94%</div>
+    <div class="kpi-sub">部分机构由盈转亏 · 易鑫+28.2%</div>
+    <div class="kpi-spark">
+      <svg role="presentation" aria-hidden="true" focusable="false" viewBox="0 0 120 30" preserveAspectRatio="none" width="100%" height="30">
+        <polyline points="0,5 20,6 40,8 60,14 80,22 100,27 120,29" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">头部90天+逾期率</div>
+    <div class="kpi-value">1.92% ~ 3.6%</div>
+    <div class="kpi-sub">奇富2.83% · 易鑫最优1.92%</div>
+    <div class="kpi-spark">
+      <svg role="presentation" aria-hidden="true" focusable="false" viewBox="0 0 120 30" preserveAspectRatio="none" width="100%" height="30">
+        <polyline points="0,18 20,16 40,18 60,12 80,10 100,14 120,13" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">拨备占营收比</div>
+    <div class="kpi-value">6.7% ~ 88.3%</div>
+    <div class="kpi-sub">头部20%-35% · 亏损机构60%+</div>
+    <div class="kpi-spark">
+      <svg role="presentation" aria-hidden="true" focusable="false" viewBox="0 0 120 30" preserveAspectRatio="none" width="100%" height="30">
+        <polyline points="0,25 20,22 40,18 60,14 80,10 100,6 120,3" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">轻资本占比（头部）</div>
+    <div class="kpi-value">50%+</div>
+    <div class="kpi-sub">奇富50.2% · 信也51.1%</div>
+    <div class="kpi-spark">
+      <svg role="presentation" aria-hidden="true" focusable="false" viewBox="0 0 120 30" preserveAspectRatio="none" width="100%" height="30">
+        <polyline points="0,25 20,22 40,18 60,15 80,10 100,6 120,4" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">拨备覆盖率（奇富）</div>
+    <div class="kpi-value">472%</div>
+    <div class="kpi-sub">行业最高 · 利润蓄水池最厚</div>
+    <div class="kpi-spark">
+      <svg role="presentation" aria-hidden="true" focusable="false" viewBox="0 0 120 30" preserveAspectRatio="none" width="100%" height="30">
+        <polyline points="0,20 20,17 40,14 60,10 80,7 100,5 120,4" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="summary-cards"><div class="summary-card"><span class="summary-card-num">01</span><div class="summary-card-title">行业断崖式下滑，2025Q4是分水岭</div><div class="summary-card-text">助贷新规2025年10月落地后，全行业2026H1营收同比下滑8%-61%，净利润下滑43%-94%（部分由盈转亏）。2025年全年微增主要靠上半年惯性，Q4新规落地后逾期跳升、拨备加码、放款收缩是真正拐点，2026年上半年进入深度调整期。</div></div><div class="summary-card"><span class="summary-card-num">02</span><div class="summary-card-title">三梯队分化明确，头部与中腰部差距持续拉大</div><div class="summary-card-text">第一梯队（易鑫+13.3%逆势增长 / 奇富/信也/乐信-3%~-25%小幅下滑）；第二梯队（维信/小赢/嘉银/宜人-50%~-80%暴跌）；第三梯队（尾部出清）。头部凭轻资本转型+规模效应维持相对稳定，中腰部重资本模式承压明显。</div></div><div class="summary-card"><span class="summary-card-num">03</span><div class="summary-card-title">利润跌幅远超营收跌幅，经营杠杆反向放大</div><div class="summary-card-text">奇富利润跌幅是营收的2.6倍，小赢近2倍，维信1.5倍。利率压缩+拨备增加双重挤压下，固定成本刚性使得利润端跌幅被放大，利润率越薄的机构放大效应越显著。</div></div><div class="summary-card"><span class="summary-card-num">04</span><div class="summary-card-title">拨备是利润腰斩的头号杀手</div><div class="summary-card-text">头部机构拨备占营收20%-35%，亏损/微利机构高达60%-90%。拨备对利润跌幅的贡献分三档：头部机构30%-60%，中腰部机构50%-80%+，亏损机构主因是收入暴跌+风险释放，拨备是叠加项。拨备蓄水池越厚的机构，后续利润弹性越大。</div></div><div class="summary-card"><span class="summary-card-num">05</span><div class="summary-card-title">轻重资本模式分化加剧，重资本阵营被动缩表</div><div class="summary-card-text">奇富、信也轻资本余额占比均突破50%，已从风险兜底转向科技服务，受新规冲击较小；小赢、嘉银、维信、宜人仍以重资本/担保模式为主，在利率压缩+风险上行的双重挤压下被动缩表，转型窗口期已非常有限。</div></div><div class="summary-card"><span class="summary-card-num">06</span><div class="summary-card-title">资产质量Q1冲高Q2修复，但中长期逾期仍在恶化</div><div class="summary-card-text">M1/M2禁委外导致Q1短期逾期集体抬升，Q2自建内催到位后改善200-300bp。但中长期逾期仍在上行——维信M3+ 8.64%、小赢91-180天 9.09%、乐信90天+ 3.6%均创近年新高，存量不良尚未出清。</div></div><div class="summary-card"><span class="summary-card-num">07</span><div class="summary-card-title">风险分层清晰：头部稳健、中腰部承压、尾部出清</div><div class="summary-card-text">奇富/信也拨备充足、轻资本过半，可穿越周期；乐信/小赢/嘉银/维信/宜人规模收缩+拨备压力大，经营可持续性承压；非上市尾部平台加速出清。</div></div></div></div>
+<h2 class="section-title" id="section-1">一、行业全景</h2><h2 class="section-subtitle" id="section-1-0">1.0 政策背景锚定</h2><div class="blockquote"><p><strong>全文涉及的政策背景统一以此处为准，后续章节不再重复说明。</strong></p></div><div class="prose"><ol><li><strong>助贷新规</strong>（2025年10月左右落地）：设定24%综合融资成本利率红线，规范担保/增信业务，彻底重塑行业盈利模式。</li><li><strong>催收监管</strong>：2026年春节前后，金融监管总局以"一司一策"方式向持牌消费金融公司下发窗口指导，要求M1/M2逾期阶段不得委外催收，仅M3及以上可适度委外（来源：21世纪经济报道、证券时报，2026年2月前后报道）；每日催收≤6次、22:00-8:00禁催（窗口指导性质），直接影响短期催收效率和逾期率表现。</li><li><strong>扫黑除恶与催收监管升级</strong>：2026年8月31日，河南省扫黑除恶斗争领导小组召开第一次调度视频会议，明确将"涉网黑恶犯罪"作为重点打击领域，特别点名"软暴力"催收、非法讨债等新型黑恶犯罪形态（来源：河南省扫黑除恶专班官方通报）。叠加M1/M2禁委外的窗口指导，催收行业正面临"合规监管+扫黑打击"双重挤压。对助贷行业的直接影响：一是委外催收渠道进一步收窄，可合作的合规催收服务商供给减少；二是自建内催的合规成本和人员培训要求上升；三是催收效率短期承压，可能延缓资产质量修复节奏，尤其对依赖委外回收的中腰部平台影响更大。</li></ol></div><h2 class="section-subtitle" id="section-1-1">1.1 核心财务指标横向对比</h2>
+<div class="chart-section">
+  <div class="chart-title">2026H1 营收 &amp; 净利润同比对比</div>
+  <div class="chart-subtitle">9家机构同比增速对比 · 绿色=正增长 · 红色=下滑/亏损 · 单位：%</div>
+  <div class="chart-container">
+    <svg role="img" aria-label="2026年上半年9家助贷机构营收和净利润同比增速对比条形图" <svg viewBox="0 0 820 380" preserveAspectRatio="xMidYMid meet" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="revPos" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#10B981" stop-opacity="0.8"/><stop offset="100%" stop-color="#34D399" stop-opacity="0.95"/></linearGradient>
+<linearGradient id="revNeg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#F87171" stop-opacity="0.95"/><stop offset="100%" stop-color="#EF4444" stop-opacity="0.8"/></linearGradient>
+<linearGradient id="profitPos" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669" stop-opacity="0.85"/><stop offset="100%" stop-color="#10B981" stop-opacity="0.95"/></linearGradient>
+<linearGradient id="profitNeg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#DC2626" stop-opacity="0.9"/><stop offset="100%" stop-color="#B91C1C" stop-opacity="0.8"/></linearGradient>
+</defs>
+<line x1="120.0" y1="15" x2="120.0" y2="350" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="120.0" y="368" text-anchor="middle" font-size="11" fill="#94A3B8">-80%</text>
+<line x1="162.5" y1="15" x2="162.5" y2="350" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="162.5" y="368" text-anchor="middle" font-size="11" fill="#94A3B8">-60%</text>
+<line x1="205.0" y1="15" x2="205.0" y2="350" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="205.0" y="368" text-anchor="middle" font-size="11" fill="#94A3B8">-40%</text>
+<line x1="247.5" y1="15" x2="247.5" y2="350" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="247.5" y="368" text-anchor="middle" font-size="11" fill="#94A3B8">-20%</text>
+<line x1="290.0" y1="15" x2="290.0" y2="350" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="290.0" y="368" text-anchor="middle" font-size="11" fill="#94A3B8">0</text>
+<line x1="332.5" y1="15" x2="332.5" y2="350" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="332.5" y="368" text-anchor="middle" font-size="11" fill="#94A3B8">+20%</text>
+<line x1="375.0" y1="15" x2="375.0" y2="350" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="375.0" y="368" text-anchor="middle" font-size="11" fill="#94A3B8">+40%</text>
+<line x1="290" y1="15" x2="290" y2="350" stroke="#94A3B8" stroke-width="1.5"/>
+<rect x="120" y="6" width="12" height="10" rx="2" fill="url(#revNeg)"/>
+<text x="138" y="15" font-size="11" fill="#64748B">营收同比</text>
+<rect x="210" y="6" width="12" height="10" rx="2" fill="url(#profitNeg)"/>
+<text x="228" y="15" font-size="11" fill="#64748B">净利润同比</text>
+<text x="110" y="41" text-anchor="end" font-size="12" fill="#475569" font-weight="500">易鑫集团</text>
+<rect x="290" y="25" width="28.262500000000003" height="13" rx="3" fill="url(#revPos)"/>
+<text x="322.2625" y="36" text-anchor="start" font-size="10.5" fill="#64748B" font-weight="600">+13.3%</text>
+<rect x="290" y="41" width="59.925" height="13" rx="3" fill="url(#profitPos)" opacity="0.85"/>
+<text x="353.925" y="52" text-anchor="start" font-size="10.5" fill="#64748B" font-weight="600">+28.2%</text>
+<text x="110" y="77" text-anchor="end" font-size="12" fill="#475569" font-weight="500">乐信</text>
+<rect x="283.8375" y="61" width="6.1625" height="13" rx="3" fill="url(#revNeg)"/>
+<text x="279.8375" y="72" text-anchor="end" font-size="10.5" fill="#64748B" font-weight="600">-2.9%</text>
+<rect x="145.71249999999998" y="77" width="144.28750000000002" height="13" rx="3" fill="url(#profitNeg)" opacity="0.85"/>
+<text x="141.71249999999998" y="88" text-anchor="end" font-size="10.5" fill="#64748B" font-weight="600">-67.9%</text>
+<text x="110" y="113" text-anchor="end" font-size="12" fill="#475569" font-weight="500">信也科技</text>
+<rect x="273.0" y="97" width="17.0" height="13" rx="3" fill="url(#revNeg)"/>
+<text x="269.0" y="108" text-anchor="end" font-size="10.5" fill="#64748B" font-weight="600">-8.0%</text>
+<rect x="198.625" y="113" width="91.375" height="13" rx="3" fill="url(#profitNeg)" opacity="0.85"/>
+<text x="194.625" y="124" text-anchor="end" font-size="10.5" fill="#64748B" font-weight="600">-43%</text>
+<text x="110" y="149" text-anchor="end" font-size="12" fill="#475569" font-weight="500">陆金所控股</text>
+<rect x="265.9875" y="133" width="24.012500000000003" height="13" rx="3" fill="url(#revNeg)"/>
+<text x="261.9875" y="144" text-anchor="end" font-size="10.5" fill="#64748B" font-weight="600">-11.3%</text>
+<text x="294" y="160" font-size="10.5" fill="#DC2626" font-weight="600">亏损扩大</text>
+<text x="110" y="185" text-anchor="end" font-size="12" fill="#475569" font-weight="500">奇富科技</text>
+<rect x="237.9375" y="169" width="52.0625" height="13" rx="3" fill="url(#revNeg)"/>
+<text x="233.9375" y="180" text-anchor="end" font-size="10.5" fill="#64748B" font-weight="600">-24.5%</text>
+<rect x="155.0625" y="185" width="134.9375" height="13" rx="3" fill="url(#profitNeg)" opacity="0.85"/>
+<text x="151.0625" y="196" text-anchor="end" font-size="10.5" fill="#64748B" font-weight="600">-63.5%</text>
+<text x="110" y="221" text-anchor="end" font-size="12" fill="#475569" font-weight="500">宜人智科</text>
+<rect x="202.875" y="205" width="87.125" height="13" rx="3" fill="url(#revNeg)"/>
+<text x="198.875" y="216" text-anchor="end" font-size="10.5" fill="#64748B" font-weight="600">-41.0%</text>
+<text x="294" y="232" font-size="10.5" fill="#DC2626" font-weight="600">由盈转亏(Q1)</text>
+<text x="110" y="257" text-anchor="end" font-size="12" fill="#475569" font-weight="500">小赢科技</text>
+<rect x="186.9375" y="241" width="103.0625" height="13" rx="3" fill="url(#revNeg)"/>
+<text x="182.9375" y="252" text-anchor="end" font-size="10.5" fill="#64748B" font-weight="600">-48.5%</text>
+<rect x="120" y="257" width="170" height="13" rx="3" fill="url(#profitNeg)" opacity="0.85"/>
+<text x="116" y="268" text-anchor="end" font-size="10.5" fill="#64748B" font-weight="600">-~91%</text>
+<text x="110" y="293" text-anchor="end" font-size="12" fill="#475569" font-weight="500">嘉银金科</text>
+<rect x="164.2" y="277" width="125.80000000000001" height="13" rx="3" fill="url(#revNeg)"/>
+<text x="160.2" y="288" text-anchor="end" font-size="10.5" fill="#64748B" font-weight="600">-59.2%</text>
+<text x="294" y="304" font-size="10.5" fill="#DC2626" font-weight="600">由盈转亏</text>
+<text x="110" y="329" text-anchor="end" font-size="12" fill="#475569" font-weight="500">维信金科</text>
+<rect x="159.95" y="313" width="130.05" height="13" rx="3" fill="url(#revNeg)"/>
+<text x="155.95" y="324" text-anchor="end" font-size="10.5" fill="#64748B" font-weight="600">-61.2%</text>
+<rect x="120" y="329" width="170" height="13" rx="3" fill="url(#profitNeg)" opacity="0.85"/>
+<text x="116" y="340" text-anchor="end" font-size="10.5" fill="#64748B" font-weight="600">-94.5%</text>
+</svg>
+  </div>
+  <div class="chart-note">注：陆金所控股、嘉银金科、宜人智科净利润为亏损/由盈转亏状态，条形无法定量对比；宜人智科为Q1数据；按营收降幅从小到大排序</div>
+</div>
+<div class="table-wrapper"><table class="data-table"><thead><tr><th>机构</th><th class="num-cell">2023营收（亿元）</th><th class="num-cell">2024营收（亿元）</th><th class="num-cell">2025营收（亿元）</th><th class="num-cell">2026H1营收（亿元）</th><th class="num-cell">H1同比</th><th class="num-cell">2023净利润（亿元）</th><th class="num-cell">2024净利润（亿元）</th><th class="num-cell">2025净利润（亿元）</th><th class="num-cell">2026H1净利润（亿元）</th><th class="num-cell">H1同比</th><th class="num-cell">2026H1末在贷余额（亿元）</th><th>较上年末</th></tr></thead><tbody><tr><td>陆金所控股</td><td class="num-cell">417.26</td><td class="num-cell">290.77</td><td class="num-cell">271.28</td><td class="num-cell">124.89</td><td class="num-cell">-11.3%</td><td class="num-cell">-82.10</td><td class="num-cell">-36.00</td><td class="num-cell">-17.00</td><td class="num-cell">-6.94</td><td>亏损扩大33.7%</td><td class="num-cell">1,673</td><td class="num-cell">-9.0%</td></tr><tr><td>奇富科技</td><td class="num-cell">162.90</td><td class="num-cell">171.66</td><td class="num-cell">192.05</td><td class="num-cell">74.76</td><td class="num-cell">-24.5%</td><td class="num-cell">42.68</td><td class="num-cell">62.45</td><td class="num-cell">59.76</td><td class="num-cell">12.89</td><td class="num-cell">-63.5%</td><td class="num-cell">1,076</td><td class="num-cell">-14.6%</td></tr><tr><td>乐信</td><td class="num-cell">130.57</td><td class="num-cell">142.04</td><td class="num-cell">131.52</td><td class="num-cell">64.96</td><td class="num-cell">-2.9%</td><td class="num-cell">10.66</td><td class="num-cell">11.00</td><td class="num-cell">16.77</td><td class="num-cell">3.03</td><td class="num-cell">-67.9%</td><td class="num-cell">937</td><td class="num-cell">-5.9%</td></tr><tr><td>信也科技</td><td class="num-cell">125.47</td><td class="num-cell">130.66</td><td class="num-cell">135.70</td><td class="num-cell">66.13</td><td class="num-cell">-~8%</td><td class="num-cell">23.41</td><td class="num-cell">23.88</td><td class="num-cell">25.45</td><td class="num-cell">8.48</td><td class="num-cell">-43%</td><td class="num-cell">679</td><td class="num-cell">-3.3%</td></tr><tr><td>维信金科</td><td class="num-cell">35.70</td><td class="num-cell">39.30</td><td class="num-cell">38.71</td><td class="num-cell">9.69</td><td class="num-cell">-61.2%</td><td class="num-cell">4.54</td><td class="num-cell">4.78</td><td class="num-cell">-5.60</td><td class="num-cell">0.12</td><td class="num-cell">-94.5%</td><td class="num-cell">未披露</td><td class="num-cell">—</td></tr><tr><td>小赢科技</td><td class="num-cell">45.72</td><td class="num-cell">58.72</td><td class="num-cell">76.39</td><td class="num-cell">21.7</td><td class="num-cell">-~48.5%</td><td class="num-cell">8.33</td><td class="num-cell">15.40</td><td class="num-cell">14.65</td><td class="num-cell">0.85</td><td class="num-cell">-~91%</td><td class="num-cell">~249.69</td><td class="num-cell">-50.5%</td></tr><tr><td>嘉银金科</td><td class="num-cell">31.04</td><td class="num-cell">58.00</td><td class="num-cell">62.22</td><td class="num-cell">14.94</td><td class="num-cell">-59.2%</td><td class="num-cell">5.56</td><td class="num-cell">10.57</td><td class="num-cell">15.36</td><td class="num-cell">-2.46</td><td>由盈转亏</td><td class="num-cell">未披露</td><td class="num-cell">—</td></tr><tr><td>宜人智科</td><td class="num-cell">57.08</td><td class="num-cell">53.84</td><td class="num-cell">47.97</td><td class="num-cell">9.15（Q1）</td><td class="num-cell">-41%（Q1）</td><td class="num-cell">12.45</td><td class="num-cell">7.28</td><td class="num-cell">5.12</td><td>亏损（Q1）</td><td>由盈转亏</td><td class="num-cell">216（Q1末）</td><td class="num-cell">-23.9%</td></tr><tr><td>易鑫集团</td><td class="num-cell">66.86</td><td class="num-cell">98.88</td><td class="num-cell">115.60</td><td class="num-cell">61.77</td><td class="num-cell">+13.3%</td><td class="num-cell">5.55</td><td class="num-cell">8.10</td><td class="num-cell">11.99</td><td class="num-cell">7.04</td><td class="num-cell">+28.2%</td><td class="num-cell">1,258（2025年末）</td><td class="num-cell">—</td></tr></tbody></table></div><div class="table-caption">数据来源：各公司2026年中期报告/季度业绩公告 <a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0819/2026081900016_c.pdf" target="_blank" rel="noopener noreferrer">陆金所</a> <a href="https://pdf.dfcfw.com/pdf/H2_AN202608261828446177_1.pdf" target="_blank" rel="noopener noreferrer">奇富</a> <a href="http://m.toutiao.com/group/7680354661844533798/" target="_blank" rel="noopener noreferrer">乐信</a> <a href="https://finance.sina.com.cn/jjxw/2026-08-28/doc-inipvrtx9027713.shtml" target="_blank" rel="noopener noreferrer">信也</a> <a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0819/2026081900452.pdf" target="_blank" rel="noopener noreferrer">易鑫</a> <a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401722_c.pdf" target="_blank" rel="noopener noreferrer">维信</a> <a href="http://www.100ec.cn/detail--6663300.html" target="_blank" rel="noopener noreferrer">小赢</a> <a href="https://stock.stockstar.com/IG2026082800046121.shtml" target="_blank" rel="noopener noreferrer">嘉银</a> <a href="https://www.stockwatch.com/News/Item/U-CN92046-U!YRD-20260625/U/YRD" target="_blank" rel="noopener noreferrer">宜人</a>；三年历史数据来源：各公司年报/中报</div><div class="prose" style="margin-top: var(--space-3); font-size: 13px;"><p><strong>注</strong>：<br>- 嘉银金科H1数据为Q1+Q2财报加总（营收14.94亿、净亏损2.46亿、撮合量约290亿）<br>- 宜人智科未披露2026H1正式中报，采用Q1数据参考（2026年6月25日披露Q1业绩）<br>- 小赢科技H1数据为Q1+Q2财报加总（营收21.7亿、净利润0.85亿、撮合量约262.6亿）；H1末在贷余额为推算值，官方未直接披露<br>- 易鑫集团在贷余额为管理汽车金融资产，统计口径与纯信贷助贷平台不同<br>- 在贷余额变化主口径为"较2025年末"，部分机构括号标注同比供参考</p></div><h2 class="section-subtitle" id="section-1-2">1.2 业务结构横向对比</h2><div class="table-wrapper"><table class="data-table"><thead><tr><th>机构</th><th>核心业务类型</th><th>各业务占比</th><th>轻资本vs重资本</th><th>资金来源结构</th><th>海外业务</th><th>核心特色</th><th class="num-cell">2026H1趋势</th></tr></thead><tbody><tr><td>奇富科技</td><td>信贷助贷+科技服务</td><td>信贷驱动服务为主，平台服务约27%（Q2）</td><td>轻资本余额占50.2%，过半</td><td>银行+信托+ABS，H1发ABS约84亿</td><td>英国、墨西哥、东南亚，早期阶段</td><td>行业龙头，拨备覆盖率最高</td><td>轻资本占比持续提升，规模收缩中转型</td></tr><tr><td>信也科技</td><td>信贷助贷+海外业务</td><td>国内助贷约73%，海外约27%</td><td>轻资本余额占51.1%，过半</td><td>银行+信托+机构资金，资金成本3.7%</td><td>印尼、菲律宾、澳大利亚，收入9.3亿+18%</td><td>出海最成熟，海外贡献最大</td><td>国内收缩海外对冲，整体降幅最小</td></tr><tr><td>乐信</td><td>信贷助贷+分期电商（实为无实物现金分期）+科技赋能</td><td>非助贷交易量超50%（分期电商实质为信贷）</td><td>轻资本模式提升中</td><td>银行+信托+机构资金</td><td>墨西哥等，早期阶段</td><td>分期电商成色不足，转型压力大</td><td>Q3明确预亏，担保敞口大</td></tr><tr><td>陆金所控股</td><td>零售信贷+消金+担保</td><td>消金表内贷款占比近四成</td><td>自担风险93.2%（重资本为主）</td><td class="num-cell">平安体系+银行+消金子公司</td><td>无</td><td class="num-cell">平安背景，资金端最强</td><td>存量小微风险释放，Q2接近盈亏平衡</td></tr><tr><td>小赢科技</td><td>信贷助贷（偏次级客群）</td><td>助贷为主</td><td>重资本/担保模式为主</td><td>银行+信托</td><td>无规模化出海</td><td>客群偏下沉，件均低</td><td>规模腰斩，客群24%红线下难盈利</td></tr><tr><td>嘉银金科</td><td>信贷助贷+海外（叙事）</td><td>助贷为主</td><td>重资本/担保模式为主</td><td>信托+机构资金</td><td>印尼、墨西哥、非洲，数据未披露</td><td>现金储备大增，过冬模式</td><td>撮合量H1降约60%（Q2单季降74%），由盈转亏</td></tr><tr><td>维信金科</td><td>信贷助贷+信用增级</td><td>信用增级贷款占66.7%（2025）</td><td>重资本/担保模式为主</td><td>银行+信托，6家消金清退</td><td>印尼、香港，葡萄牙收购终止</td><td>信用增级模式，担保兜底</td><td>放款量降84%，M3+逾期8.64%</td></tr><tr><td>宜人智科</td><td>信贷助贷+AI转型（叙事）</td><td>信贷业务占87%，AI可忽略</td><td>重资本/或有负债担保模式</td><td>机构资金为主</td><td>无规模化出海</td><td>关联方应收款高企，转型存疑</td><td>连续亏损，拨备占营收88%，关联风险敞口大</td></tr><tr><td>易鑫集团</td><td>汽车金融助贷+SaaS</td><td>交易平台占80%+，SaaS+59.5%</td><td class="num-cell">平台化转型，SaaS输出</td><td>银行+OEM金融+ABS，融资成本下行</td><td>无</td><td>腾讯背景，汽车抵押品赛道</td><td>逆势增长+13.3%，资产质量最优</td></tr></tbody></table></div><div class="table-caption">数据来源：各公司2026H1财报及各机构章节业务结构描述整理</div><div class="prose" style="margin-top: var(--space-5);"><h3 class="section-subsubtitle">业务结构总览分析</h3><p><strong>第一层（头部平台：奇富+信也）：轻资本过半+出海对冲</strong></p><p>奇富、信也两大头部平台轻资本模式占比均已突破50%，从"赚利差/担保费"转向"赚技术服务费"，抗周期能力显著更强。信也科技凭借27%的海外收入占比形成独特的双轮驱动，是行业内唯一具备有效海外对冲的平台。</p><p><strong>第二层（中间梯队：乐信+陆金所）：信贷为主+重资本自营</strong></p><p>乐信所谓"分期电商"实质为无实物现金分期，多元对冲成色有限。陆金所则背靠平安体系走重资本自营路线，消金表内贷款占比持续提升至近四成。</p><p><strong>第三层（中小机构：小赢+嘉银+维信+宜人）：重资本被动缩表</strong></p><p>小赢、嘉银、维信、宜人四家中小机构普遍仍以重资本/担保模式为主。在利率压缩+风险上行的双重挤压下被动缩表，转型窗口期已非常有限。</p><p><strong>独立赛道（易鑫）：汽车金融独苗</strong></p><p>易鑫集团作为汽车金融独苗，以车辆抵押品的天然风控优势+SaaS平台化转型走出了独立行情。逆势增长验证了垂直赛道的优越性。</p><p><strong>行业趋势总结</strong></p><p>助贷行业的商业模式正从"流量驱动的规模套利"加速转向"资产经营能力+模式创新能力"的比拼。轻资本、出海、垂直赛道是三大分化方向。</p></div><h2 class="section-subtitle" id="section-1-3">1.3 拨备对利润影响概览</h2><div class="table-wrapper"><table class="data-table"><thead><tr><th>机构</th><th>拨备占营收比</th></tr></thead><tbody><tr><td>陆金所控股</td><td class="num-cell">69.3%</td></tr><tr><td>奇富科技</td><td class="num-cell">34.5%</td></tr><tr><td>乐信</td><td class="num-cell">~26%</td></tr><tr><td>信也科技</td><td class="num-cell">~21.3%</td></tr><tr><td>小赢科技</td><td class="num-cell">21.5%</td></tr><tr><td>维信金科</td><td class="num-cell">—（H1未披露）</td><td class="num-cell">2025年由盈转亏核心因素</td></tr><tr><td>嘉银金科</td><td class="num-cell">~6.7%（估算）</td></tr><tr><td>宜人智科（Q1）</td><td class="num-cell">~88.3%（Q1）</td></tr><tr><td>易鑫集团</td><td class="num-cell">27.2%</td></tr></tbody></table></div><div class="prose" style="margin-top: var(--space-3); font-size: 13px;"><p>拨备是利润分化的核心变量，横向对比与深度分析见第四章。</p><p></div><h2 class="section-subtitle" id="section-1-4">1.4 不良率/逾期率三年横向对比</h2>
+<div class="chart-section">
+  <div class="chart-title">90天+逾期率三年趋势对比</div>
+  <div class="chart-subtitle">7家机构逾期率走势 · 单位：%</div>
+  <div class="chart-container">
+    <svg role="img" aria-label="2023至2026上半年7家助贷机构90天以上逾期率趋势对比折线图" <svg viewBox="0 0 820 400" preserveAspectRatio="xMidYMid meet" width="100%" xmlns="http://www.w3.org/2000/svg">
+<line x1="55" y1="294.0" x2="700" y2="294.0" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="47" y="298.0" text-anchor="end" font-size="11" fill="#94A3B8">2%</text>
+<line x1="55" y1="228.0" x2="700" y2="228.0" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="47" y="232.0" text-anchor="end" font-size="11" fill="#94A3B8">4%</text>
+<line x1="55" y1="162.0" x2="700" y2="162.0" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="47" y="166.0" text-anchor="end" font-size="11" fill="#94A3B8">6%</text>
+<line x1="55" y1="96.0" x2="700" y2="96.0" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="47" y="100.0" text-anchor="end" font-size="11" fill="#94A3B8">8%</text>
+<line x1="55" y1="30.0" x2="700" y2="30.0" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="47" y="34.0" text-anchor="end" font-size="11" fill="#94A3B8">10%</text>
+<line x1="55" y1="360" x2="700" y2="360" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="55.0" y="382" text-anchor="middle" font-size="11" fill="#64748B">2023年末</text>
+<line x1="55.0" y1="360" x2="55.0" y2="365" stroke="#94A3B8" stroke-width="1"/>
+<text x="270.0" y="382" text-anchor="middle" font-size="11" fill="#64748B">2024年末</text>
+<line x1="270.0" y1="360" x2="270.0" y2="365" stroke="#94A3B8" stroke-width="1"/>
+<text x="485.0" y="382" text-anchor="middle" font-size="11" fill="#64748B">2025年末</text>
+<line x1="485.0" y1="360" x2="485.0" y2="365" stroke="#94A3B8" stroke-width="1"/>
+<text x="700.0" y="382" text-anchor="middle" font-size="11" fill="#64748B">2026H1末</text>
+<line x1="700.0" y1="360" x2="700.0" y2="365" stroke="#94A3B8" stroke-width="1"/>
+<polyline points="55.0,282.45 270.0,291.03 485.0,270.57 700.0,266.61" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="55.0" cy="282.45" r="3.5" fill="white" stroke="#2563EB" stroke-width="2"/>
+<circle cx="270.0" cy="291.03" r="3.5" fill="white" stroke="#2563EB" stroke-width="2"/>
+<circle cx="485.0" cy="270.57" r="3.5" fill="white" stroke="#2563EB" stroke-width="2"/>
+<circle cx="700.0" cy="266.61" r="3.5" fill="white" stroke="#2563EB" stroke-width="2"/>
+<polyline points="55.0,296.31 270.0,289.71000000000004 485.0,265.95 700.0,290.7" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="55.0" cy="296.31" r="3.5" fill="white" stroke="#10B981" stroke-width="2"/>
+<circle cx="270.0" cy="289.71000000000004" r="3.5" fill="white" stroke="#10B981" stroke-width="2"/>
+<circle cx="485.0" cy="265.95" r="3.5" fill="white" stroke="#10B981" stroke-width="2"/>
+<circle cx="700.0" cy="290.7" r="3.5" fill="white" stroke="#10B981" stroke-width="2"/>
+<polyline points="55.0,276.51 270.0,241.2 485.0,257.7 700.0,241.2" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="55.0" cy="276.51" r="3.5" fill="white" stroke="#F59E0B" stroke-width="2"/>
+<circle cx="270.0" cy="241.2" r="3.5" fill="white" stroke="#F59E0B" stroke-width="2"/>
+<circle cx="485.0" cy="257.7" r="3.5" fill="white" stroke="#F59E0B" stroke-width="2"/>
+<circle cx="700.0" cy="241.2" r="3.5" fill="white" stroke="#F59E0B" stroke-width="2"/>
+<polyline points="55.0,291.69 270.0,321.72 485.0,287.07 700.0,287.07" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="55.0" cy="291.69" r="3.5" fill="white" stroke="#8B5CF6" stroke-width="2"/>
+<circle cx="270.0" cy="321.72" r="3.5" fill="white" stroke="#8B5CF6" stroke-width="2"/>
+<circle cx="485.0" cy="287.07" r="3.5" fill="white" stroke="#8B5CF6" stroke-width="2"/>
+<circle cx="700.0" cy="287.07" r="3.5" fill="white" stroke="#8B5CF6" stroke-width="2"/>
+<polyline points="55.0,297.63 270.0,298.62 485.0,297.63 700.0,296.64" fill="none" stroke="#0891B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="55.0" cy="297.63" r="3.5" fill="white" stroke="#0891B2" stroke-width="2"/>
+<circle cx="270.0" cy="298.62" r="3.5" fill="white" stroke="#0891B2" stroke-width="2"/>
+<circle cx="485.0" cy="297.63" r="3.5" fill="white" stroke="#0891B2" stroke-width="2"/>
+<circle cx="700.0" cy="296.64" r="3.5" fill="white" stroke="#0891B2" stroke-width="2"/>
+<polyline points="55.0,277.83 270.0,260.34000000000003 485.0,162.33 700.0,74.87999999999994" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="55.0" cy="277.83" r="3.5" fill="white" stroke="#EF4444" stroke-width="2"/>
+<circle cx="270.0" cy="260.34000000000003" r="3.5" fill="white" stroke="#EF4444" stroke-width="2"/>
+<circle cx="485.0" cy="162.33" r="3.5" fill="white" stroke="#EF4444" stroke-width="2"/>
+<circle cx="700.0" cy="74.87999999999994" r="3.5" fill="white" stroke="#EF4444" stroke-width="2"/>
+<polyline points="55.0,294.0 270.0,278.15999999999997 485.0,151.77 700.0,60.02999999999997" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="55.0" cy="294.0" r="3.5" fill="white" stroke="#DC2626" stroke-width="2"/>
+<circle cx="270.0" cy="278.15999999999997" r="3.5" fill="white" stroke="#DC2626" stroke-width="2"/>
+<circle cx="485.0" cy="151.77" r="3.5" fill="white" stroke="#DC2626" stroke-width="2"/>
+<circle cx="700.0" cy="60.02999999999997" r="3.5" fill="white" stroke="#DC2626" stroke-width="2"/>
+<text x="710.0" y="270.61" font-size="11" fill="#2563EB" font-weight="600">奇富科技 2.83%</text>
+<text x="710.0" y="294.7" font-size="11" fill="#10B981" font-weight="600">信也科技 2.1%</text>
+<text x="710.0" y="245.2" font-size="11" fill="#F59E0B" font-weight="600">乐信 3.6%</text>
+<text x="710.0" y="291.07" font-size="11" fill="#8B5CF6" font-weight="600">嘉银金科 2.21%</text>
+<text x="710.0" y="300.64" font-size="11" fill="#0891B2" font-weight="600">易鑫集团 1.92%</text>
+<text x="710.0" y="78.87999999999994" font-size="11" fill="#EF4444" font-weight="600">维信金科 8.64%</text>
+<text x="710.0" y="64.02999999999997" font-size="11" fill="#DC2626" font-weight="600">小赢科技 9.09%</text>
+<text x="55" y="18" font-size="13" font-weight="600" fill="#1E293B">90天+逾期率趋势对比（2023-2026H1）</text>
+</svg>
+  </div>
+  <div class="chart-note">
+    口径差异说明：维信金科为M3+逾期率口径，小赢科技为91-180天逾期率口径（仅含中段逾期），与标准90天+口径不完全等同，趋势对比参考；其他机构为90天+逾期率口径
+  </div>
+</div>
+<div class="table-wrapper"><table class="data-table"><tr><th>机构</th><th>指标口径</th><th class="num-cell">2026H1末</th><th class="num-cell">较2025年末</th></tr><tr><td>奇富科技</td><td class="num-cell">90天+逾期率</td><td class="num-cell">2.83%</td><td class="num-cell">+0.12pct</td></tr><tr><td>信也科技</td><td class="num-cell">90天+逾期率</td><td class="num-cell">2.10%</td><td class="num-cell">下降</td></tr><tr><td>乐信</td><td class="num-cell">90天+逾期率</td><td class="num-cell">3.6%</td><td class="num-cell">+0.5pct</td></tr><tr><td>嘉银金科</td><td class="num-cell">90天+逾期率</td><td class="num-cell">2.21%</td><td class="num-cell">持平</td></tr><tr><td>易鑫集团</td><td class="num-cell">90天+逾期率</td><td class="num-cell">1.92%</td><td class="num-cell">+0.03pct</td></tr><tr><td>维信金科</td><td>M3+逾期率</td><td class="num-cell">8.64%</td><td class="num-cell">+2.65pct</td></tr><tr><td>小赢科技</td><td class="num-cell">91-180天逾期率</td><td class="num-cell">9.09%</td><td>大幅上升</td></tr><tr><td>陆金所控股</td><td>C-M3迁徙率</td><td class="num-cell">1.0%</td><td class="num-cell">改善</td></tr><tr><td>宜人智科（Q1）</td><td class="num-cell">61-90天逾期率</td><td class="num-cell">3.2%（Q1）</td><td class="num-cell">+0.4pct</td></tr></table></div><div class="table-caption">数据来源：各公司年报/中报。注意：各机构逾期口径不完全一致，横向对比需谨慎；2023-2024年部分数据为估算值；宜人智科仅披露至Q1 <a href="https://caifuhao.eastmoney.com/news/20260827111247614572400" target="_blank" rel="noopener noreferrer">奇富</a> <a href="http://m.toutiao.com/group/7678895492201267753/" target="_blank" rel="noopener noreferrer">信也</a> <a href="http://m.toutiao.com/group/7680354661844533798/" target="_blank" rel="noopener noreferrer">乐信</a> <a href="https://caifuhao.eastmoney.com/news/20260727172559907713800" target="_blank" rel="noopener noreferrer">陆金所</a> <a href="http://m.toutiao.com/group/7678225093797691947/" target="_blank" rel="noopener noreferrer">维信</a> <a href="https://caifuhao.eastmoney.com/news/20260827193506868080910" target="_blank" rel="noopener noreferrer">小赢</a> <a href="https://finance.sina.com.cn/stock/hkstock/hkstocknews/2026-08-28/doc-inipwnxr5720981.shtml" target="_blank" rel="noopener noreferrer">嘉银</a></div><div class="prose" style="margin-top: var(--space-3); font-size: 13px;"><p><strong>口径差异说明</strong>：<br>1. <strong>90天+逾期率</strong>：奇富、乐信、嘉银、易鑫使用此口径，但统计基础不同（奇富为全平台金融机构发起贷款，乐信为未偿本金余额，易鑫为汽车金融资产）<br>2. <strong>维信金科</strong>：按1-3个月、3个月以上划分，M3+与90天+口径最接近但不完全等同<br>3. <strong>小赢科技</strong>：披露91-180天分段数据，未披露90天+整体数据，绝对值偏高（仅含中段逾期，不含M3+以后）<br>4. <strong>陆金所控股</strong>：披露C-M3迁徙率，与逾期率指标含义不同（反映新恶化速度而非存量水平）<br>5. <strong>宜人智科</strong>：仅披露61-90天逾期率（Q1），未披露90天+数据<br>6. <strong>较上年末</strong>：主比较口径统一为"较2025年末"
+
+<h2 class="section-subtitle" id="section-1-5">1.5 行业全景关键发现</h2>
+<div class="key-points-section">
+<div class="key-points-title">关键发现</div>
+<ol class="key-points-list">
+<li><strong>2025Q4是行业分水岭，新规冲击的时滞效应完整显现</strong>。助贷新规2025年10月落地，三重冲击（利率红线压缩Take Rate、断直连冲击流量、担保监管抬升合规成本）集中在Q4释放——逾期跳升、拨备加码、放款收缩。2025年全年头部机构仍微增是上半年高速增长的滞后结果，2026H1断崖式下滑才是新规影响的完全体现。</li>
+<li><strong>三梯队分化的根本驱动力是模式差异</strong>。第一梯队（易鑫逆势增长 / 奇富/信也/乐信小幅下滑）的共同特征是轻资本过半或有垂直赛道护城河；第二梯队（维信/小赢/嘉银/宜人暴跌）均以重资本/担保模式为主，在利率压缩+风险上行双重挤压下被动缩表。模式差异而非规模差异才是分化的核心解释变量。</li>
+<li><strong>经营杠杆反向放大是利润暴跌的关键机制</strong>。营收下滑8%-61%的同时，利润下滑43%-94%，跌幅普遍放大1.5-23倍。核心机制：利率压缩→Take Rate下降→营收收缩→固定成本刚性→经营杠杆反向→利润端跌幅被放大，利润率越薄的机构放大效应越显著。</li>
+</ol>
+</div>
+
+
+<h2 class="section-title" id="section-2">二、各机构经营数据分析</h2>
+<p style="color: var(--color-text-tertiary); margin-bottom: var(--space-6);">以下按机构逐一展开经营数据分析，每家包含核心财务、业务结构、资产质量、拨备计提四张表及要点总结。</p>
+<div class="institution-section" id="inst-qifu"><div class="institution-header"><h2 class="institution-name">2.1 奇富科技</h2><span class="institution-badge" style="background: var(--color-risk-stable-bg); color: var(--color-risk-stable);">相对稳健</span></div><h3 class="section-subsubtitle">核心财务三年对比</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2023全年</th><th class="num-cell">2024全年</th><th class="num-cell">2025全年</th><th class="num-cell">2026H1</th><th class="num-cell">H1同比</th></tr></thead><tbody><tr><td>营收（亿元）</td><td class="num-cell">162.90</td><td class="num-cell">171.66</td><td class="num-cell">192.05</td><td class="num-cell">74.76</td><td class="num-cell">-24.5%</td></tr><tr><td>净利润（亿元）</td><td class="num-cell">42.68</td><td class="num-cell">62.45</td><td class="num-cell">59.76</td><td class="num-cell">12.89</td><td class="num-cell">-63.5%</td></tr><tr><td>净利率</td><td class="num-cell">26.2%</td><td class="num-cell">36.4%</td><td class="num-cell">31.1%</td><td class="num-cell">17.2%</td><td class="num-cell">—</td></tr><tr><td>全年促成放款（亿元）</td><td class="num-cell">~3,000</td><td class="num-cell">~3,220</td><td class="num-cell">3,270.7</td><td class="num-cell">~1,297（H1）</td><td class="num-cell">-25%</td></tr><tr><td>年末在贷余额（亿元）</td><td class="num-cell">1,391</td><td class="num-cell">1,462</td><td class="num-cell">1,260</td><td class="num-cell">1,076</td><td>较上年末-14.6%</td></tr></tbody></table></div><div class="table-caption">数据来源：奇富科技2023-2025年报、2026中期报告 <a href="http://finance.ce.cn/stock/gsgdbd/202603/t20260319_2840577.shtml" target="_blank" rel="noopener noreferrer">2025年报</a> <a href="https://pdf.dfcfw.com/pdf/H2_AN202608261828446177_1.pdf" target="_blank" rel="noopener noreferrer">2026中报</a></div><h3 class="section-subsubtitle">业务结构与类型</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>维度</th><th class="num-cell">2026Q2数据</th><th>说明</th></tr></thead><tbody><tr><td>轻资本模式余额</td><td class="num-cell">539.83亿元</td><td>占在贷余额50.2%</td></tr><tr><td>轻资本模式放款</td><td class="num-cell">313.43亿元</td><td>占总放款49.5%</td></tr><tr><td>信贷驱动服务收入（Q2）</td><td class="num-cell">25.97亿元</td><td>同比-27.2%</td></tr><tr><td>平台服务收入（Q2）</td><td class="num-cell">9.70亿元</td><td>同比-41.2%</td></tr><tr><td>海外业务</td><td>早期阶段</td><td>英国、拉美（墨西哥）、东南亚</td></tr><tr><td>ABS发行（H1）</td><td class="num-cell">~84亿元</td><td>Q1 29亿+Q2 55亿</td></tr></tbody></table></div><div class="table-caption">数据来源：奇富科技2026Q2财报、华泰证券研报 <a href="https://pdf.dfcfw.com/pdf/H2_AN202608261828446177_1.pdf" target="_blank" rel="noopener noreferrer">E068</a></div><h3 class="section-subsubtitle">资产质量与风险</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2025年末</th><th class="num-cell">2026Q1</th><th class="num-cell">2026Q2</th><th>较上年末</th></tr></thead><tbody><tr><td>90天+逾期率</td><td class="num-cell">~2.71%</td><td class="num-cell">3.50%</td><td class="num-cell">2.83%</td><td class="num-cell">+0.12pct</td></tr><tr><td>30天回收率</td><td class="num-cell">~84.1%</td><td class="num-cell">85.8%</td><td class="num-cell">88.1%</td><td class="num-cell">+4.0pct</td></tr><tr><td>C-M2迁徙率</td><td class="num-cell">0.97%</td><td class="num-cell">0.80%</td><td class="num-cell">0.66%</td><td class="num-cell">-0.31pct</td></tr><tr><td>首日逾期率（D1）</td><td class="num-cell">6.1%</td><td class="num-cell">5.7%</td><td class="num-cell">5.6%</td><td class="num-cell">-0.5pct</td></tr></tbody></table></div><div class="table-caption">数据来源：奇富科技2026中期报告 <a href="https://caifuhao.eastmoney.com/news/20260827111247614572400" target="_blank" rel="noopener noreferrer">E004</a></div><h3 class="section-subsubtitle">拨备与计提（与利润联动分析）</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2023全年</th><th class="num-cell">2024全年</th><th class="num-cell">2025全年</th><th class="num-cell">2026Q1</th><th class="num-cell">2026Q2</th><th class="num-cell">H1合计</th></tr></thead><tbody><tr><td>贷款应收拨备（亿元）</td><td class="num-cell">—</td><td class="num-cell">~8.23（估算）</td><td class="num-cell">—</td><td class="num-cell">12.347</td><td class="num-cell">~9.32</td><td class="num-cell">~21.67</td></tr><tr><td>或有负债拨备（亿元）</td><td class="num-cell">~25+</td><td class="num-cell">~10.95（Q4单季3.11）</td><td class="num-cell">—</td><td class="num-cell">0.944</td><td class="num-cell">-0.027</td><td class="num-cell">~0.92</td></tr><tr><td>应收及合同资产拨备（亿元）</td><td class="num-cell">—</td><td class="num-cell">—</td><td class="num-cell">—</td><td class="num-cell">0.204</td><td class="num-cell">1.20</td><td class="num-cell">~1.40</td></tr><tr><td>各项拨备合计（亿元）</td><td class="num-cell">~30+</td><td class="num-cell">~35+</td><td class="num-cell">~50+</td><td class="num-cell">~13.71</td><td class="num-cell">~12.06</td><td class="num-cell">25.77</td></tr><tr><td>拨备覆盖率</td><td class="num-cell">~300%+</td><td class="num-cell">~350%+</td><td class="num-cell">481%（年末）</td><td class="num-cell">391%</td><td class="num-cell">472%</td><td class="num-cell">—</td></tr><tr><td>新增拨备计提率</td><td class="num-cell">—</td><td class="num-cell">—</td><td class="num-cell">~4.5%</td><td class="num-cell">5.0%</td><td class="num-cell">5.36%</td><td class="num-cell">上升</td></tr></tbody></table></div><div class="table-caption">数据来源：奇富科技2023-2025年报、2026Q1/Q2财报、华泰证券研报。注：2023-2024年拨备分项披露口径与2026年不完全一致，分项数据为基于公开披露的估算值 <a href="http://m.toutiao.com/group/7679014883853124159/" target="_blank" rel="noopener noreferrer">E061</a> <a href="http://m.hibor.com.cn/wap_detail.aspx?id=78cf99dd82d6f05c8a6b85cf9f7f6461" target="_blank" rel="noopener noreferrer">华泰研报</a></div><div class="key-points-section"><div class="key-points-title">要点总结</div><ol class="key-points-list"><li><strong>利润跌幅是营收的2.6倍，拨备+一次性税项是核心放大器</strong>。2026H1净利润12.89亿，同比-63.5%，远大于营收-24.5%的降幅。利润腰斩拆分：拨备加码贡献约40-50pct，5亿一次性所得税费用贡献约20pct，营收下滑贡献约10-15pct。剔除一次性税项后经营利润同比降幅约40%。</li><li><strong>拨备覆盖率472%行业最高，利润蓄水池效应显著</strong>。虽较上年末微降9pct但仍为行业最高，拨备余额约是不良贷款的4.7倍。Q2随资产质量改善拨备重新累积（覆盖率从Q1的391%回升至472%），未来风险下行时拨备转回可推动利润反弹。</li><li><strong>轻资本模式占比过半，转型走在行业前列</strong>。轻资本余额539.83亿，占在贷余额50.2%。从重资本兜底向科技服务转型方向明确，但轻资本单位收入贡献较低也是营收下滑原因之一——模式切换期的"阵痛"。</li><li><strong>Q2表观利润腰斩，剔除一次性因素后经营利润环比基本持平</strong>。Q2归母净利润4.01亿，同比-76.6%、环比-54.0%。但含约5亿元一次性所得税费用，剔除后Q2净利润约9亿，与Q1基本持平。缩表节奏环比放缓（Q2环比降6.0%），主动缩表进入平台期。</li><li><strong>资产质量Q2修复明确，但修复基础尚不稳固</strong>。90天+逾期率从Q1的3.50%降至Q2的2.83%，30天回收率从85.8%升至88.1%。但Q2应收款坏账激增（拨备环比暴增489.7%）反映应收款可回收性恶化，6月末行业流动性冲击的影响尚未完全体现。</li><li><strong>风险与展望：短期承压，周期底部弹性最大</strong>。短期利润仍承压、规模继续收缩，6月末事件后融资成本已上升约25bp，Q3利润指引同比下降67%-73%。中期若行业出清完成、风险企稳，拨备转回+轻资本成熟有望推动利润修复，是行业内利润反弹弹性最大的机构。长期海外业务和科技输出是增量方向。</li></ol></div></div>
+<div class="institution-section" id="inst-xinye"><div class="institution-header"><h2 class="institution-name">2.2 信也科技</h2><span class="institution-badge" style="background: var(--color-risk-stable-bg); color: var(--color-risk-stable);">相对稳健</span></div><h3 class="section-subsubtitle">核心财务三年对比</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2023全年</th><th class="num-cell">2024全年</th><th class="num-cell">2025全年</th><th class="num-cell">2026H1</th><th class="num-cell">H1同比</th></tr></thead><tbody><tr><td>营收（亿元）</td><td class="num-cell">125.47</td><td class="num-cell">130.66</td><td class="num-cell">135.70</td><td class="num-cell">66.13</td><td class="num-cell">-~8%</td></tr><tr><td>净利润（亿元）</td><td class="num-cell">23.41</td><td class="num-cell">23.88</td><td class="num-cell">25.45</td><td class="num-cell">8.48</td><td class="num-cell">-43%</td></tr><tr><td>净利率</td><td class="num-cell">18.7%</td><td class="num-cell">18.3%</td><td class="num-cell">18.8%</td><td class="num-cell">12.8%</td><td class="num-cell">—</td></tr><tr><td>全年促成交易额（亿元）</td><td class="num-cell">~1,800</td><td class="num-cell">~1,900</td><td class="num-cell">2,003</td><td class="num-cell">~970（H1）</td><td class="num-cell">-~16%</td></tr><tr><td>年末在贷余额（亿元）</td><td class="num-cell">685</td><td class="num-cell">775</td><td class="num-cell">702</td><td class="num-cell">679</td><td>较上年末-3.3%</td></tr></tbody></table></div><div class="table-caption">数据来源：信也科技2023-2025年报、2026Q2财报 <a href="http://m.zqrb.cn/gscy/gongsi/2026-03-17/A1773711310420.html" target="_blank" rel="noopener noreferrer">2025年报</a> <a href="https://finance.sina.com.cn/jjxw/2026-08-28/doc-inipvrtx9027713.shtml" target="_blank" rel="noopener noreferrer">Q2财报</a></div><h3 class="section-subsubtitle">业务结构与类型</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>维度</th><th class="num-cell">2026Q2数据</th><th>说明</th></tr></thead><tbody><tr><td>轻资本模式余额</td><td class="num-cell">334亿元</td><td>占在贷余额51.1%</td></tr><tr><td>海外业务收入</td><td class="num-cell">9.3亿元</td><td>同比+18%，占集团总收入27%</td></tr><tr><td>海外交易额</td><td class="num-cell">38亿元</td><td>同比+18.8%</td></tr><tr><td>海外营业利润（Q2）</td><td class="num-cell">0.536亿元</td><td>同比+109.4%</td></tr><tr><td>海外独立借款用户（Q1）</td><td class="num-cell">450万人</td><td>同比翻倍</td></tr></tbody></table></div><div class="table-caption">数据来源：信也科技2026Q2财报 <a href="https://finance.sina.com.cn/jjxw/2026-08-28/doc-inipvrtx9027713.shtml" target="_blank" rel="noopener noreferrer">E013</a> <a href="https://segg.sh.gov.cn/zxfw/xwzx/20260707/ac3ec56d3dbe4d0da4113bc796af5052.html" target="_blank" rel="noopener noreferrer">E047</a></div><h3 class="section-subsubtitle">资产质量与风险</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2025年末（估算）</th><th class="num-cell">2026Q1</th><th class="num-cell">2026Q2</th><th>较上年末</th></tr></thead><tbody><tr><td>30天回收率</td><td class="num-cell">~85%</td><td class="num-cell">87%</td><td class="num-cell">89%</td><td class="num-cell">+4pct</td></tr><tr><td>C-M2迁徙率</td><td class="num-cell">~0.9%</td><td class="num-cell">0.68%</td><td class="num-cell">0.56%</td><td class="num-cell">-0.34pct</td></tr><tr><td>90天+逾期率</td><td class="num-cell">~2.0%</td><td class="num-cell">3.11%</td><td class="num-cell">2.10%</td><td class="num-cell">+0.1pct（估算）</td></tr><tr><td>首日逾期率</td><td class="num-cell">—</td><td class="num-cell">5.2%</td><td class="num-cell">5.3%</td><td class="num-cell">—</td></tr></tbody></table></div><div class="table-caption">数据来源：信也科技2026Q2财报分析 <a href="https://m.sohu.com/a/1069867011_121888001/" target="_blank" rel="noopener noreferrer">E012</a></div><h3 class="section-subsubtitle">拨备与计提（与利润联动分析）</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2025Q2</th><th class="num-cell">2026Q1</th><th class="num-cell">2026Q2</th><th class="num-cell">2026H1（推算）</th></tr></thead><tbody><tr><td>应收账款及合同资产拨备</td><td class="num-cell">1.063亿</td><td class="num-cell">—</td><td class="num-cell">0.979亿</td><td class="num-cell">~1.9亿</td></tr><tr><td>应收贷款拨备</td><td class="num-cell">0.984亿</td><td class="num-cell">—</td><td class="num-cell">1.644亿</td><td class="num-cell">~2.8亿</td></tr><tr><td>质量保证承诺信用损失</td><td class="num-cell">9.871亿</td><td class="num-cell">~8.4亿（推算）</td><td class="num-cell">11.088亿</td><td class="num-cell">~19.49亿</td></tr><tr><td>Q2拨备合计</td><td class="num-cell">~11.92亿</td><td class="num-cell">—</td><td class="num-cell">~13.71亿</td><td class="num-cell">~24.19亿</td></tr></tbody></table></div><div class="table-caption">数据来源：信也科技2026Q2财报 <a href="http://m.toutiao.com/group/7679070131577700874/" target="_blank" rel="noopener noreferrer">E010</a></div><div class="key-points-section"><div class="key-points-title">要点总结</div><ol class="key-points-list"><li><strong>营收降幅行业最小（~8%），海外业务是核心对冲项</strong>。Q2海外收入9.3亿、同比+18%、占比27.3%，海外经营利润5360万、同比+109.4%。是行业内唯一形成有效海外对冲的平台，但海外扩张也带来质量保证承诺拨备同步上升。</li><li><strong>利润同比-43%，拨备加码贡献约40-50pct</strong>。2026H1净利润8.48亿，跌幅远大于营收跌幅（8%）。利润下滑拆分：国内业务收缩贡献约15-20pct，质量保证承诺拨备与信用减值合计加码贡献约40-50pct，海外扩张成本等贡献约5-10pct。前三年净利率稳定在18%-19%，经营杠杆反向作用明显。</li><li><strong>在贷余额仅缩3.3%，抗周期能力最强</strong>。Q2末在贷余额679亿，是头部机构中收缩幅度最小的，Q2环比微增0.3%。底部初现但是否企稳还需1-2个季度确认，得益于客群偏优质、轻资本占比高、海外业务补充三重支撑。</li><li><strong>轻资本过半+出海成熟，双轮驱动格局形成</strong>。轻资本余额334亿，占在贷余额51.1%，过半存量不承担本金风险；海外收入占比27%且保持双位数增长。两条转型路径均走在行业前列，抗风险能力显著强于纯国内重资本平台。</li><li><strong>资产质量Q2大幅修复，但"分母效应"可能放大改善幅度</strong>。90天+逾期率从Q1的3.11%降至Q2的2.10%，降幅达1个百分点。市场对修复可持续性存疑——主动收缩高风险客群带来的"分母效应"可能贡献了部分降幅，真实修复成色需后续验证。</li><li><strong>风险与展望：海外是最大变量，国内等待出清</strong>。短期国内业务仍处调整期，但海外增长可部分对冲；中期国内行业出清后集中度提升有望受益。最大不确定性来自东南亚监管政策动态调整，若海外政策收紧，对冲效果将大打折扣。长期海外业务目标2030年占比50%，若达成将彻底改变增长逻辑。</li></ol></div></div>
+<div class="institution-section" id="inst-lexin"><div class="institution-header"><h2 class="institution-name">2.3 乐信</h2><span class="institution-badge" style="background: var(--color-risk-mid-high-bg); color: var(--color-risk-mid-high);">中高风险</span></div><h3 class="section-subsubtitle">核心财务三年对比</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2023全年</th><th class="num-cell">2024全年</th><th class="num-cell">2025全年</th><th class="num-cell">2026H1</th><th class="num-cell">H1同比</th></tr></thead><tbody><tr><td>营收（亿元）</td><td class="num-cell">130.57</td><td class="num-cell">142.04</td><td class="num-cell">131.52</td><td class="num-cell">64.96</td><td class="num-cell">-2.9%</td></tr><tr><td>归母净利润（亿元）</td><td class="num-cell">10.66</td><td class="num-cell">11.00</td><td class="num-cell">16.77</td><td class="num-cell">3.03</td><td class="num-cell">-67.9%</td></tr><tr><td>全年促成贷款（亿元）</td><td class="num-cell">2,500</td><td class="num-cell">2,120</td><td class="num-cell">2,050</td><td class="num-cell">~1,133（H1）</td><td class="num-cell">—</td></tr><tr><td>年末在贷余额（亿元）</td><td class="num-cell">~1,135</td><td class="num-cell">1,057</td><td class="num-cell">966</td><td class="num-cell">937</td><td>较上年末-3.0%</td></tr></tbody></table></div><div class="table-caption">数据来源：乐信2023-2025年报、2026Q2财报 <a href="https://finance.sina.com.cn/jinrong/yh/2026-04-09/doc-inhtxcut8719776.shtml" target="_blank" rel="noopener noreferrer">E034</a> <a href="http://m.toutiao.com/group/7680354661844533798/" target="_blank" rel="noopener noreferrer">E054</a></div><h3 class="section-subsubtitle">业务结构与类型</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>维度</th><th class="num-cell">2026Q2数据</th><th>说明</th></tr></thead><tbody><tr><td>信贷促成服务收入</td><td class="num-cell">19.30亿元</td><td>其中担保收入7.59亿元</td></tr><tr><td>科技赋能服务收入</td><td class="num-cell">4.73亿元</td><td>同比增长</td></tr><tr><td>分期电商平台服务收入</td><td class="num-cell">7.84亿元</td><td>同比+61%</td></tr><tr><td>分期电商GMV</td><td class="num-cell">23.42亿元</td><td>服务用户超70万户</td></tr><tr><td>非助贷业务交易量占比</td><td>超50%</td><td>分期零售+TO B数智科技</td></tr><tr><td>TO B数智科技</td><td>规模化盈利</td><td>云犀科技PRO载体</td></tr></tbody></table></div><div class="table-caption">数据来源：乐信2026Q2财报 <a href="http://m.toutiao.com/group/7680354661844533798/" target="_blank" rel="noopener noreferrer">E055</a></div><h3 class="section-subsubtitle">资产质量与风险</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2025年末</th><th class="num-cell">2026Q1末</th><th class="num-cell">2026Q2末</th><th>较上年末</th></tr></thead><tbody><tr><td>90天+逾期率</td><td class="num-cell">3.1%</td><td class="num-cell">3.5%</td><td class="num-cell">3.6%</td><td class="num-cell">+0.5pct</td></tr><tr><td>新增贷款FPD30</td><td><1%</td><td><1%</td><td><1%</td><td class="num-cell">持平</td></tr><tr><td>新增贷款加权平均期限</td><td class="num-cell">约12个月</td><td class="num-cell">11.4个月</td><td class="num-cell">10.7个月</td><td>缩短</td></tr><tr><td>复借借款人贡献</td><td class="num-cell">—</td><td class="num-cell">—</td><td class="num-cell">85.7%</td><td class="num-cell">—</td></tr></tbody></table></div><div class="table-caption">数据来源：乐信2026Q1/Q2财报 <a href="https://caifuhao.eastmoney.com/news/1714945345" target="_blank" rel="noopener noreferrer">E033</a> <a href="http://m.toutiao.com/group/7680354661844533798/" target="_blank" rel="noopener noreferrer">E054</a></div><h3 class="section-subsubtitle">拨备与计提（与利润联动分析）</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2025年（全年）</th><th class="num-cell">2026Q1</th><th class="num-cell">2026Q2</th><th class="num-cell">2026H1（推算）</th></tr></thead><tbody><tr><td>或有担保负债拨备（财报口径：表外担保组合计提）</td><td class="num-cell">~25+亿（推算）</td><td class="num-cell">~7+亿（推算）</td><td class="num-cell">10.52亿</td><td class="num-cell">~17+亿</td></tr><tr><td>拨备占营收比</td><td class="num-cell">~19%</td><td class="num-cell">~22%</td><td class="num-cell">~32%</td><td class="num-cell">~26%</td></tr></tbody></table></div><div class="table-caption">数据来源：乐信2026Q2财报 <a href="http://m.toutiao.com/group/7680354661844533798/" target="_blank" rel="noopener noreferrer">E055</a></div><div class="key-points-section"><div class="key-points-title">要点总结</div><ol class="key-points-list"><li><strong>营收降幅行业最小（-2.9%），但"多元经营"成色不足</strong>。分期电商（+61%）、TO B数智科技等非助贷业务增长是主要缓冲，非助贷交易量占比超50%。但分期电商实质为无实物现金分期，TO B科技收入占比仅约15%，两大新业务合计营收占比不到30%，核心仍依赖信贷撮合+担保模式。</li><li><strong>利润同比-67.9%，拨备侵蚀倍数5.6倍为盈利机构最高</strong>。营收仅降2.9%但利润跌67.9%，跌幅是营收的23倍。利润下滑拆分：或有担保负债拨备加码贡献约50-60pct，营收下滑贡献约10-15pct，其他因素贡献约5-10pct。2025年利润大增含会计水分（金融担保衍生工具公允价值变动+准备金释放），核心经营利润实际早已下行。</li><li><strong>资产质量持续恶化，90天+逾期率3.6%仍在上升</strong>。是头部机构中逾期率仍在上升的少数几家，较上年末+0.5pct，存量风险尚未出清。在贷余额较上年末-3.0%至937亿，缩表幅度看似不大但资产质量恶化掩盖了真实风险。</li><li><strong>Q3明确预亏，经营底部尚未确认</strong>。公司已公开预警Q3放款规模将环比大幅下滑，叠加资金端收紧、催收效率下降，预计Q3净亏。6月下旬同业风险事件导致资金供给收紧是直接导火索，Q2末现金及等价物+受限现金合计约24亿，短期流动性尚可但融资能力存疑。</li><li><strong>合规风险突出，3月被监管总局约谈点名</strong>。2026年3月被金融监管总局集中约谈，涉及营销误导、息费不透明、催收不合规等问题，为5家被约谈平台中投诉量最高的一家，合规整改压力持续。</li><li><strong>风险与展望：转型方向模糊，底部未现</strong>。市值已跌至3-4亿美元、PB低于1倍，反映市场对其盈利可持续性和转型前景的担忧。分期电商和TO B科技尚不足以支撑大盘，核心信贷业务持续承压。短期Q3亏损几成定局，中期能否企稳取决于新业务扩张速度和资产质量拐点。</li></ol></div></div>
+<div class="institution-section" id="inst-lujinsuo"><div class="institution-header"><h2 class="institution-name">2.4 陆金所控股</h2><span class="institution-badge" style="background: var(--color-risk-giant-bg); color: var(--color-risk-giant);">巨无霸转型</span></div><h3 class="section-subsubtitle">核心财务三年对比</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2023全年</th><th class="num-cell">2024全年</th><th class="num-cell">2025全年</th><th class="num-cell">2026H1</th><th class="num-cell">H1同比</th></tr></thead><tbody><tr><td>总收入（亿元）</td><td class="num-cell">417.26</td><td class="num-cell">290.77</td><td class="num-cell">271.28</td><td class="num-cell">124.89</td><td class="num-cell">-11.3%</td></tr><tr><td>净利润（亿元）</td><td class="num-cell">-82.10</td><td class="num-cell">-36.00</td><td class="num-cell">-17.00</td><td class="num-cell">-6.94</td><td>亏损扩大</td></tr><tr><td>总贷款余额（亿元）</td><td class="num-cell">3,154</td><td class="num-cell">2,169</td><td class="num-cell">1,838</td><td class="num-cell">1,673</td><td>较上年末-9.0%</td></tr><tr><td>消费金融贷款（亿元）</td><td class="num-cell">371</td><td class="num-cell">~480</td><td class="num-cell">~580</td><td class="num-cell">654</td><td class="num-cell">+12.8%（较年末）</td></tr><tr><td>消金贷款占比</td><td class="num-cell">11.8%</td><td class="num-cell">~22%</td><td class="num-cell">~31.6%</td><td class="num-cell">39.1%</td><td class="num-cell">+7.5pct</td></tr></tbody></table></div><div class="table-caption">数据来源：陆金所控股2023-2025年报、2026中期报告 <a href="https://caifuhao.eastmoney.com/news/20260822170855198124810" target="_blank" rel="noopener noreferrer">E025</a> <a href="https://stcn.com/article/detail/3893420.html" target="_blank" rel="noopener noreferrer">E026</a></div><h3 class="section-subsubtitle">业务结构与类型</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>维度</th><th class="num-cell">2026Q2数据</th><th>说明</th></tr></thead><tbody><tr><td>自担风险比例</td><td class="num-cell">93.2%</td><td>较上年末+9.5pct，重资本模式为主</td></tr><tr><td>不含消金自担风险</td><td class="num-cell">95.7%</td><td>较上年末+11.7pct</td></tr><tr><td>科技平台收入（Q2）</td><td class="num-cell">11.03亿元</td><td>同比-21.2%</td></tr><tr><td>净利息收入（Q2）</td><td class="num-cell">34.67亿元</td><td>同比+8.4%</td></tr><tr><td>担保收入（Q2）</td><td class="num-cell">11.05亿元</td><td>同比-20.4%</td></tr><tr><td>新增贷款（Q2）</td><td class="num-cell">511亿元</td><td>同比+4.6%</td></tr><tr><td>消金新增贷款占比</td><td class="num-cell">72.2%</td><td class="num-cell">369亿/511亿</td></tr></tbody></table></div><div class="table-caption">数据来源：陆金所控股2026Q2IR公告 <a href="https://ir-tc.lufaxholding.com/2026-08-18-Lufax-Reports-Second-Quarter-2026-Financial-Results?asPDF=1" target="_blank" rel="noopener noreferrer">E065</a></div><h3 class="section-subsubtitle">资产质量与风险</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2025年末</th><th class="num-cell">2026Q1末</th><th class="num-cell">2026Q2末</th><th>较上年末</th></tr></thead><tbody><tr><td>C-M3迁徙率</td><td class="num-cell">~1.5%</td><td class="num-cell">1.2%</td><td class="num-cell">1.0%</td><td class="num-cell">改善</td></tr><tr><td>30天+逾期率</td><td class="num-cell">~6.0%</td><td class="num-cell">6.1%</td><td class="num-cell">5.8%</td><td class="num-cell">-0.2pct</td></tr><tr><td>消费金融不良率</td><td class="num-cell">~1.5%</td><td class="num-cell">1.4%</td><td class="num-cell">1.3%</td><td class="num-cell">-0.2pct</td></tr><tr><td>无抵押贷款30+逾期</td><td class="num-cell">~6.2%</td><td class="num-cell">6.4%</td><td class="num-cell">6.1%</td><td class="num-cell">-0.1pct</td></tr><tr><td>有抵押贷款30+逾期</td><td class="num-cell">~5.2%</td><td class="num-cell">5.4%</td><td class="num-cell">5.0%</td><td class="num-cell">-0.2pct</td></tr><tr><td>90天+逾期率（非消金）</td><td class="num-cell">~3.0%</td><td class="num-cell">3.4%</td><td class="num-cell">3.7%</td><td class="num-cell">+0.7pct</td></tr></tbody></table></div><div class="table-caption">数据来源：陆金所控股Q2业绩解读 <a href="https://caifuhao.eastmoney.com/news/20260727172559907713800" target="_blank" rel="noopener noreferrer">E064</a></div><h3 class="section-subsubtitle">拨备与计提（与利润联动分析）</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2025H1</th><th class="num-cell">2025全年</th><th class="num-cell">2026H1</th><th>同比</th></tr></thead><tbody><tr><td>信用减值损失（亿元）</td><td class="num-cell">78.58</td><td class="num-cell">~150+</td><td class="num-cell">86.54</td><td class="num-cell">+10.1%</td></tr><tr><td>占总收入比</td><td class="num-cell">55.8%</td><td class="num-cell">~55%</td><td class="num-cell">69.3%</td><td class="num-cell">+13.5pct</td></tr><tr><td>Q2单季信用减值损失（亿元）</td><td class="num-cell">~42.79</td><td class="num-cell">—</td><td class="num-cell">41.41</td><td class="num-cell">-3.2%</td></tr></tbody></table></div><div class="table-caption">数据来源：陆金所控股2026中期报告 <a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0819/2026081900016_c.pdf" target="_blank" rel="noopener noreferrer">E063</a></div><div class="key-points-section"><div class="key-points-title">要点总结</div><ol class="key-points-list"><li><strong>亏损逐期收窄，Q2接近盈亏平衡</strong>。2023年亏82.10亿→2024年亏36.00亿→2025年亏17.00亿→2026H1亏6.94亿。Q2单季仅亏0.82亿，接近盈亏平衡线，但上半年亏损同比扩大（主因Q1亏损集中释放）。</li><li><strong>消金贷款占比三年从12%升至39%，转型方向清晰</strong>。消金贷从2023年末371亿（11.8%）增至2026Q2末654亿（39.1%），三年增长76%。Q2新增贷款中消金占72.2%，已成为绝对主力。消金不良率仅1.3%，资产质量显著优于小微贷，是扭亏的核心希望。</li><li><strong>信用减值86.54亿占营收69.3%，是亏损核心根源</strong>。H1信用减值同比+10.1%，亏损扩大拆分：小微贷存量风险持续释放导致减值增加贡献约60-70pct，营收下滑贡献约20-30pct。Q2单季减值41.41亿同比降3.2%，减值节奏边际改善。</li><li><strong>与行业反向：自担风险比例升至93.2%，走重资本自营路线</strong>。自担风险比例从2024年约74%升至93.2%，三年提升近20pct。与行业向轻资本转型方向相反，陆金所选择"自营+重资本"路径——收入更可控但信用风险全部自担，背后是平安体系强大的资金和资本支撑。</li><li><strong>平安背景托底，资金和资本实力行业最强</strong>。192亿现金、814亿净资产、14.1%资本充足率，财务安全垫厚实。消金子公司盈利良好，平安体系内部资金协同能力强，是持续亏损仍稳健的根本原因。</li><li><strong>风险与展望：中长期风险仍在暴露，扭亏在望但需时间</strong>。短期Q3-Q4有望单季盈亏平衡或微利，全年亏损控制在10亿以内。但非消金90天+逾期率仍在上升（3.4%→3.7%），小微贷存量风险消化还需时间。中期若消金贷增长持续、小微存量风险出清，有望整体扭亏，长期定位转向"消费金融+科技服务"综合金融科技公司。</li></ol></div></div>
+<div class="institution-section" id="inst-xiaoying"><div class="institution-header"><h2 class="institution-name">2.5 小赢科技</h2><span class="institution-badge" style="background: var(--color-risk-high-bg); color: var(--color-risk-high);">高风险</span></div><h3 class="section-subsubtitle">核心财务三年对比</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2023全年</th><th class="num-cell">2024全年</th><th class="num-cell">2025全年</th><th class="num-cell">2026H1</th><th class="num-cell">H1同比</th></tr></thead><tbody><tr><td>营收（亿元）</td><td class="num-cell">45.72</td><td class="num-cell">58.72</td><td class="num-cell">76.39</td><td class="num-cell">21.71</td><td class="num-cell">-~48.5%</td></tr><tr><td>净利润（亿元）</td><td class="num-cell">8.33</td><td class="num-cell">15.40</td><td class="num-cell">14.65</td><td class="num-cell">0.85</td><td class="num-cell">-~91%</td></tr><tr><td>全年放款（亿元）</td><td class="num-cell">~1,080</td><td class="num-cell">1,175</td><td class="num-cell">1,305.52</td><td class="num-cell">~262.6</td><td class="num-cell">-~65%</td></tr><tr><td>年末在贷余额（亿元）</td><td class="num-cell">427</td><td class="num-cell">583</td><td class="num-cell">505</td><td class="num-cell">249.69</td><td>较上年末-50.5%</td></tr></tbody></table></div><div class="table-caption">数据来源：小赢科技2023-2025年报、2026Q1+Q2财报 <a href="http://m.toutiao.com/group/7621859814498517510/" target="_blank" rel="noopener noreferrer">E019</a> <a href="http://www.100ec.cn/detail--6663300.html" target="_blank" rel="noopener noreferrer">E016</a></div><h3 class="section-subsubtitle">业务结构与类型</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>维度</th><th class="num-cell">2026Q1</th><th class="num-cell">2026Q2</th><th class="num-cell">2026H1汇总</th><th>说明</th></tr></thead><tbody><tr><td>活跃借款人</td><td class="num-cell">未单独披露</td><td class="num-cell">72.03万人</td><td class="num-cell">—</td><td>同比-74.8%（Q2）</td></tr><tr><td>撮合贷款</td><td class="num-cell">146.3亿元</td><td class="num-cell">116.3亿元</td><td class="num-cell">~262.6亿元</td><td>同比-~65%（H1）</td></tr><tr><td>件均/客群</td><td class="num-cell">—</td><td>偏次级</td><td class="num-cell">—</td><td class="num-cell">24%红线下风险收益不匹配</td></tr></tbody></table></div><div class="table-caption">数据来源：小赢科技2026Q1+Q2财报 <a href="https://caifuhao.eastmoney.com/news/20260827193506868080910" target="_blank" rel="noopener noreferrer">E017</a></div><h3 class="section-subsubtitle">资产质量与风险</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2025年末</th><th class="num-cell">2026Q1</th><th class="num-cell">2026Q2</th><th>较上年末</th></tr></thead><tbody><tr><td>31-60天逾期率</td><td class="num-cell">2.53%</td><td class="num-cell">2.61%</td><td class="num-cell">1.73%</td><td>大幅改善</td></tr><tr><td>91-180天逾期率</td><td class="num-cell">6.31%</td><td class="num-cell">9.95%</td><td class="num-cell">9.09%</td><td>大幅上升</td></tr></tbody></table></div><div class="table-caption">数据来源：小赢科技2026Q1+Q2财报分析 <a href="https://caifuhao.eastmoney.com/news/20260827193506868080910" target="_blank" rel="noopener noreferrer">E018</a></div><h3 class="section-subsubtitle">拨备与计提（与利润联动分析）</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2025全年</th><th class="num-cell">2026Q1</th><th class="num-cell">2026Q2</th><th class="num-cell">2026H1合计</th></tr></thead><tbody><tr><td>应收账款拨备</td><td class="num-cell">—</td><td class="num-cell">0.308亿</td><td class="num-cell">0.201亿</td><td class="num-cell">0.509亿</td></tr><tr><td>贷款拨备</td><td class="num-cell">—</td><td class="num-cell">0.523亿</td><td class="num-cell">0.101亿</td><td class="num-cell">0.624亿</td></tr><tr><td>或有担保负债拨备</td><td class="num-cell">~10+亿</td><td>~20.00亿（推算）</td><td class="num-cell">0.576亿</td><td class="num-cell">2.576亿</td></tr><tr><td>存款及其他金融资产信用损失</td><td class="num-cell">—</td><td>未单独披露</td><td class="num-cell">0.953亿</td><td class="num-cell">0.951亿</td></tr><tr><td>H1信用相关拨备合计</td><td class="num-cell">—</td><td class="num-cell">—</td><td class="num-cell">—</td><td class="num-cell">4.66亿元</td></tr><tr><td>拨备占营收比</td><td class="num-cell">~13%</td><td class="num-cell">—</td><td class="num-cell">—</td><td class="num-cell">21.5%</td></tr></tbody></table></div><div class="table-caption">数据来源：小赢科技2026Q1+Q2财报 <a href="https://m.sohu.com/a/1068265112_121888001/" target="_blank" rel="noopener noreferrer">搜狐财经</a></div><div class="key-points-section"><div class="key-points-title">要点总结</div><ol class="key-points-list"><li><strong>规模腰斩最剧烈，收缩幅度行业第一</strong>。在贷余额较上年末-50.5%至249.69亿（推算值），活跃借款人同比-74.8%至72.03万，放款量同比-70.2%。剧烈收缩反映客群偏次级、24%红线下风险收益严重不匹配，被迫主动缩表保生存。</li><li><strong>利润同比-~91%近乎归零，规模收缩是主因、拨备是叠加项</strong>。2026H1净利润0.85亿，同比-~91%，跌幅是营收的近2倍。利润归零拆分：放款规模腰斩导致营收大幅下滑贡献约40-50pct，拨备侵蚀贡献约20-30pct，其他因素贡献约10-20pct。H1拨备合计4.66亿、占营收21.5%，体现高杠杆模式在下行周期的放大效应。</li><li><strong>短期逾期改善但中长期逾期高企，存量不良压力巨大</strong>。31-60天逾期率从2.61%降至1.73%，短期改善明显；但91-180天逾期率仍高达9.09%，绝对水平仅次于维信金科。"弃旧保新"特征明显，新发放贷款质量改善但存量老账远未出清。</li><li><strong>Q2担保拨备大幅回拨，但管理层明确警示非新常态</strong>。Q2或有担保负债拨备仅5760万元，同比大降72.3%。管理层明确提醒，这是估计平均贷款损失率改善导致的前期拨备回拨，"不应视为新常态的低计提水平"。Q2存款及其他金融资产信用损失0.953亿，系单一机构资金方未按计划返还担保资金的一次性核销。</li><li><strong>客群偏次级是根本困境，24%红线下难以盈利</strong>。客群定位偏下沉，件均借款和借款人资质在同业中偏弱。24%红线下风险收益比严重失衡——违约率高但定价上限被卡死，边际收益可能低于边际风险成本，这是规模腰斩的根本原因。</li><li><strong>风险与展望：客群迁移是唯一出路，但难度极大</strong>。短期规模可能继续收缩但缩表速度放缓；中期若能向优质客群迁移有望企稳，但客群迁移涉及获客渠道、风控模型、资金合作等全方位调整，难度极大；长期若无法找到新盈利模式，可能持续萎缩或寻求出售/转型。</li></ol></div></div>
+<div class="institution-section" id="inst-jiayin"><div class="institution-header"><h2 class="institution-name">2.6 嘉银金科</h2><span class="institution-badge" style="background: var(--color-risk-high-bg); color: var(--color-risk-high);">高风险</span></div><h3 class="section-subsubtitle">核心财务三年对比</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2023全年</th><th class="num-cell">2024全年</th><th class="num-cell">2025全年</th><th class="num-cell">2026Q1</th><th class="num-cell">2026Q2</th><th class="num-cell">2026H1汇总</th><th class="num-cell">H1同比</th></tr></thead><tbody><tr><td>营收（亿元）</td><td class="num-cell">31.04</td><td class="num-cell">58.00</td><td class="num-cell">62.22</td><td class="num-cell">7.57</td><td class="num-cell">7.37</td><td class="num-cell">14.94</td><td class="num-cell">-59.2%</td></tr><tr><td>净利润（亿元）</td><td class="num-cell">5.56</td><td class="num-cell">10.57</td><td class="num-cell">15.36</td><td class="num-cell">-0.617</td><td class="num-cell">-1.84</td><td class="num-cell">-2.46</td><td>由盈转亏</td></tr><tr><td>撮合量（亿元）</td><td class="num-cell">~950</td><td class="num-cell">~1,500</td><td class="num-cell">1,290</td><td class="num-cell">~125</td><td class="num-cell">~165</td><td class="num-cell">~290</td><td>-~60%（H1累计，Q2单季降74%）</td></tr></tbody></table></div><div class="table-caption">数据来源：嘉银金科2023-2025年报、2026Q1+Q2财报 <a href="https://m.bjnews.com.cn/detail/1775010494168238.html" target="_blank" rel="noopener noreferrer">E022</a> <a href="https://stock.stockstar.com/IG2026082800046121.shtml" target="_blank" rel="noopener noreferrer">E020</a></div><h3 class="section-subsubtitle">业务结构与风险</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>维度</th><th class="num-cell">2026Q1</th><th class="num-cell">2026Q2</th><th class="num-cell">2026H1汇总</th><th>说明</th></tr></thead><tbody><tr><td>撮合交易量</td><td class="num-cell">~125亿元</td><td class="num-cell">~165亿元</td><td class="num-cell">~290亿元</td><td>同比-~60%（H1累计，Q2单季降74%）</td></tr><tr><td>件均借款金额</td><td class="num-cell">—</td><td class="num-cell">6,663元</td><td class="num-cell">—</td><td class="num-cell">—</td></tr><tr><td>重复借款比例</td><td class="num-cell">—</td><td class="num-cell">73.1%</td><td class="num-cell">—</td><td class="num-cell">—</td></tr><tr><td>90天+逾期率</td><td class="num-cell">—</td><td class="num-cell">2.21%</td><td class="num-cell">2.21%（H1末）</td><td>环比持平</td></tr><tr><td>信用损失</td><td class="num-cell">未单独披露</td><td class="num-cell">0.513亿元</td><td class="num-cell">~1亿（估算）</td><td>Q2同比+57.8%</td></tr><tr><td>现金及等价物（期末）</td><td class="num-cell">~0.4亿元</td><td class="num-cell">5.04亿元</td><td class="num-cell">5.04亿元（H1末）</td><td>大幅提升，过冬模式</td></tr><tr><td>营业亏损</td><td class="num-cell">未单独披露</td><td class="num-cell">2.467亿元</td><td class="num-cell">—</td><td class="num-cell">上年同期营业利润6.39亿（Q2）</td></tr></tbody></table></div><div class="table-caption">数据来源：嘉银金科2026Q1+Q2财报 <a href="https://finance.sina.com.cn/stock/hkstock/hkstocknews/2026-08-28/doc-inipwnxr5720981.shtml" target="_blank" rel="noopener noreferrer">E021</a></div><h3 class="section-subsubtitle">拨备与计提（与利润联动分析）</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2025全年</th><th class="num-cell">2026Q1</th><th class="num-cell">2026Q2</th><th class="num-cell">2026H1合计</th><th>说明</th></tr></thead><tbody><tr><td>信用损失</td><td class="num-cell">~1亿+（推算）</td><td class="num-cell">未单独披露</td><td class="num-cell">0.513亿元</td><td class="num-cell">~1亿（估算）</td><td>无法收回的应收账款等减值</td></tr><tr><td>占营收比</td><td class="num-cell">~2-3%</td><td class="num-cell">—</td><td class="num-cell">~7.0%</td><td class="num-cell">~6.7%</td><td>比例上升主因分母收缩</td></tr><tr><td>拨备/净利润</td><td class="num-cell">0.4倍（2025）</td><td>不适用（亏损）</td><td>不适用（亏损）</td><td>不适用（亏损）</td><td>收入暴跌是亏损主因</td></tr></tbody></table></div><div class="table-caption">数据来源：嘉银金科2026Q1+Q2财报</div><div class="prose" style="margin-top: var(--space-4);"><p><strong>收入结构说明</strong>：嘉银金科采用担保模式，收入结构较为特殊，主要由两部分构成：<br>- <strong>担保负债释放收入</strong>：Q2约4.54亿元（占营收约61.6%），系担保负债随贷款到期而释放确认的收入，Q1数据未单独披露。<br>- <strong>贷款便利服务费收入</strong>：Q2约1.85亿元，同比下降88.5%，系新增撮合业务相关服务费。</p><p>该收入结构导致其营收与当期撮合量并非线性对应，担保负债释放收入具有滞后性和存量消化特征。</p></div><div class="key-points-section"><div class="key-points-title">要点总结</div><ol class="key-points-list"><li><strong>撮合量三年过山车，新规后直接由盈转亏</strong>。2023年~950亿→2024年~1,500亿（+58%）→2025年1,290亿（-14%）→2026H1 ~290亿（同比-~60%，Q2单季降74%）。2026H1亏2.46亿，Q2贡献约75%亏损。前两年高速增长靠扩张次级客群+高定价，新规落地后模式崩塌。</li><li><strong>收入暴跌是亏损主因（贡献70-80pct），拨备影响有限</strong>。亏损拆分：撮合量-~60%导致营收暴跌59%是核心，贡献约70-80pct；信用损失占营收比仅6.7%，拨备因素贡献约5-10pct；运营成本刚性贡献约10-20pct。收入结构中担保负债释放收入占比约60%，具有滞后性，后续将持续下降。</li><li><strong>资产质量指标尚可但存在幸存者偏差</strong>。90天+逾期率2.21%在同业中处于中等偏优水平，但撮合量H1已降约60%，剩余在贷多为优质借款人，高风险借款人已被主动清退，逾期率不能完全反映真实资产质量。</li><li><strong>现金储备大增，明确进入"过冬模式"</strong>。现金及等价物从Q1末4000多万增至Q2末5.04亿，增长超10倍。已从扩张模式切换为生存模式，优先保障流动性安全。</li><li><strong>财报透明度行业最低，海外叙事可信度低</strong>。连续多个季度不披露在贷余额、借款人数量等核心经营指标。反复强调海外业务增长但从未披露具体收入、利润等量化数据，海外业务实际贡献可能微乎其微。</li><li><strong>风险与展望：持续亏损+团队不稳，生存压力大</strong>。H1已亏2.46亿且亏损逐季扩大，全年亏损概率很大。负责海外业务的副总裁将于9月底离职，团队稳定性存疑。短期规模继续萎缩，中期若海外业务做起来尚有一线生机，否则面临更严峻的生存挑战。</li></ol></div></div>
+<div class="institution-section" id="inst-weixin"><div class="institution-header"><h2 class="institution-name">2.7 维信金科</h2><span class="institution-badge" style="background: var(--color-risk-high-bg); color: var(--color-risk-high);">高风险</span></div><h3 class="section-subsubtitle">核心财务三年对比</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2023全年</th><th class="num-cell">2024全年</th><th class="num-cell">2025全年</th><th class="num-cell">2026H1</th><th class="num-cell">H1同比</th></tr></thead><tbody><tr><td>总收入（亿元）</td><td class="num-cell">35.70</td><td class="num-cell">39.30</td><td class="num-cell">38.71</td><td class="num-cell">9.69</td><td class="num-cell">-61.2%</td></tr><tr><td>净利润（亿元）</td><td class="num-cell">4.54</td><td class="num-cell">4.78</td><td class="num-cell">-5.60</td><td class="num-cell">0.12</td><td class="num-cell">-94.5%</td></tr><tr><td>经营利润（亿元）</td><td class="num-cell">—</td><td class="num-cell">—</td><td class="num-cell">—</td><td class="num-cell">0.254</td><td class="num-cell">-90.9%</td></tr><tr><td>总贷款实现量（亿元）</td><td class="num-cell">~350</td><td class="num-cell">~380</td><td class="num-cell">~250</td><td class="num-cell">60.61</td><td class="num-cell">-84.1%</td></tr><tr><td>年末未偿贷款余额（亿元）</td><td class="num-cell">~262</td><td class="num-cell">262.2</td><td class="num-cell">217.8</td><td class="num-cell">未披露</td><td class="num-cell">—</td></tr></tbody></table></div><div class="table-caption">数据来源：维信金科2023-2025年报、2026中期报告 <a href="http://m.toutiao.com/group/7673529546968220211/" target="_blank" rel="noopener noreferrer">E030</a> <a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401722_c.pdf" target="_blank" rel="noopener noreferrer">E027</a></div><h3 class="section-subsubtitle">资产质量与拨备</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2024年末</th><th class="num-cell">2025年末</th><th class="num-cell">2026Q2末</th><th>较上年末</th></tr></thead><tbody><tr><td>1-3个月逾期率</td><td class="num-cell">—</td><td class="num-cell">6.89%</td><td class="num-cell">5.71%</td><td class="num-cell">-1.18pct</td></tr><tr><td>3个月以上逾期率</td><td class="num-cell">3.02%</td><td class="num-cell">5.99%</td><td class="num-cell">8.64%</td><td class="num-cell">+2.65pct</td></tr></tbody></table></div><div class="table-wrapper"><table class="data-table"><thead><tr><th>拨备指标</th><th class="num-cell">2024全年</th><th class="num-cell">2025全年</th><th class="num-cell">2026H1</th></tr></thead><tbody><tr><td>信用减值损失</td><td class="num-cell">3.11亿元</td><td class="num-cell">4.33亿元</td><td class="num-cell">未披露</td></tr><tr><td>客户贷款公允价值变动损失</td><td class="num-cell">9.79亿元</td><td class="num-cell">17.19亿元</td><td class="num-cell">未披露</td></tr><tr><td>合计信用相关损失</td><td class="num-cell">12.90亿元</td><td class="num-cell">21.52亿元</td><td class="num-cell">未披露</td></tr></tbody></table></div><div class="table-caption">数据来源：维信金科2026中期报告、贝多财经 <a href="http://m.toutiao.com/group/7678225093797691947/" target="_blank" rel="noopener noreferrer">E029</a> <a href="http://m.toutiao.com/group/7673529546968220211/" target="_blank" rel="noopener noreferrer">E067</a></div><h3 class="section-subsubtitle">拨备与计提（与利润联动分析）</h3><p style="padding: var(--space-4); color: var(--color-text-tertiary); font-size: 13.5px;">拨备对利润的详细拆分已在上方要点总结中说明，横向对比见第四章。</p><div class="key-points-section"><div class="key-points-title">要点总结</div><ol class="key-points-list"><li><strong>放款量降84%近乎停摆，净利润近乎归零</strong>。2026H1贷款实现量60.61亿（-84.1%），是所有上市助贷中跌幅最大的。营收9.69亿（-61.2%）、净利润0.12亿（-94.5%）。利润归零拆分：放款量暴跌贡献约50-60pct，公允价值变动+信用减值等拨备类损失贡献约30-40pct。</li><li><strong>资产质量行业最差，M3+逾期率飙升至8.64%</strong>。M3+逾期率从2024年末3.02%→2025年末5.99%→2026Q2末8.64%，两年翻了近3倍。2025Q4单季跳升3.15pct，指标加速恶化，是行业内资产质量压力最大的机构。</li><li><strong>信用增级模式是双刃剑，周期下行期风险集中爆发</strong>。2025年信用增级贷款占全年总量66.7%，维信为资金方提供"兜底"式担保。经济下行周期中担保业务从盈利转亏损——2024年收益217.5万，2025年亏损5.13亿，利润落差超5亿。</li><li><strong>被6家消金机构集中清退，合作渠道釜底抽薪</strong>。2026年4-7月，平安消金、小米消金、锦程消金、陕西长银消金、兴业消金、金美信消金先后清退维信相关主体。助贷新规后资金方收紧合作，对公司业务形成釜底抽薪式打击，也是放款量暴跌的直接原因。</li><li><strong>海外拓展屡屡受挫，出海路径基本失败</strong>。布局海外多年，2024年收购葡萄牙BPG银行，2026年8月宣布终止收购，损失80万欧元定金。香港业务体量可忽略（约6%），印尼规模很小，海外业务未能形成有效对冲。</li><li><strong>风险与展望：经营极度困难，转型窗口期已非常有限</strong>。截至2025年末担保负债15.26亿元（同比+70.4%），前期信用增级业务形成的担保责任持续侵蚀利润。黑猫投诉超4.7万条，上海静安维信小贷被批准退出试点。短期全年大概率再度亏损，中期若国内业务持续收缩，可能面临持续经营压力。</li></ol></div></div>
+<div class="institution-section" id="inst-yiren">
+<div class="institution-header">
+<h2 class="institution-name">2.8 宜人智科</h2>
+<span class="institution-badge" style="background: var(--color-risk-high-bg); color: var(--color-risk-high);">高风险</span>
+</div>
+<div class="blockquote"><p><strong>重要说明</strong>：宜人智科（已更名"宜人智科"）尚未披露2026年上半年正式中报。截至2026年9月2日，公司仅于2026年6月25日披露了2026年Q1业绩，以下分析以Q1数据为主要参考，H1整体情况需待正式中报披露后方可确认。</p></div>
+<h3 class="section-subsubtitle">核心财务三年对比（Q1数据为主）</h3>
+<div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2023全年</th><th class="num-cell">2024全年</th><th class="num-cell">2025全年</th><th class="num-cell">2026Q1</th><th class="num-cell">Q1同比</th></tr></thead><tbody><tr><td>营收（亿元）</td><td class="num-cell">57.08</td><td class="num-cell">53.84</td><td class="num-cell">47.97</td><td class="num-cell">9.15</td><td class="num-cell">-41%</td></tr><tr><td>净利润（亿元）</td><td class="num-cell">12.45</td><td class="num-cell">7.28</td><td class="num-cell">5.12</td><td class="num-cell">-4.95</td><td>由盈转亏</td></tr><tr><td>撮合贷款（亿元）</td><td class="num-cell">~800</td><td class="num-cell">~600</td><td class="num-cell">~450</td><td class="num-cell">89（Q1）</td><td class="num-cell">-42%</td></tr><tr><td>年末在贷余额（亿元）</td><td class="num-cell">465</td><td class="num-cell">322</td><td class="num-cell">284</td><td class="num-cell">216（Q1末）</td><td>较上年末-23.9%</td></tr></tbody></table></div>
+<div class="table-caption">数据来源：宜人智科2023-2025年报、2026Q1财报 <a href="https://www.stockwatch.com/News/Item/U-CN92046-U!YRD-20260625/U/YRD" target="_blank" rel="noopener noreferrer">E035</a> <a href="http://news.qq.com/rain/a/20260702A090J400" target="_blank" rel="noopener noreferrer">E036</a></div>
+<h3 class="section-subsubtitle">资产质量与拨备</h3>
+<div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2025年末</th><th class="num-cell">2026Q1末</th><th>较上年末</th></tr></thead><tbody><tr><td>1-30天逾期率</td><td class="num-cell">3.4%</td><td class="num-cell">2.5%</td><td class="num-cell">-0.9pct</td></tr><tr><td>31-60天逾期率</td><td class="num-cell">3.0%</td><td class="num-cell">2.7%</td><td class="num-cell">-0.3pct</td></tr><tr><td>61-90天逾期率</td><td class="num-cell">2.8%</td><td class="num-cell">3.2%</td><td class="num-cell">+0.4pct</td></tr><tr><td>或有负债拨备（单季）</td><td class="num-cell">—</td><td class="num-cell">6.32亿元</td><td>同比+54%</td></tr><tr><td>合同资产等减值（单季）</td><td class="num-cell">—</td><td class="num-cell">1.76亿元</td><td class="num-cell">—</td></tr><tr><td>风险计提合计（单季）</td><td class="num-cell">—</td><td class="num-cell">8.08亿元</td><td class="num-cell">—</td></tr></tbody></table></div>
+<div class="table-caption">数据来源：宜人智科Q1财报分析 <a href="http://news.qq.com/rain/a/20260702A090J400" target="_blank" rel="noopener noreferrer">E036</a></div>
+<h3 class="section-subsubtitle">拨备与计提（与利润联动分析）</h3>
+<div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2024全年</th><th class="num-cell">2025全年</th><th class="num-cell">2026Q1</th></tr></thead><tbody><tr><td>或有负债拨备全年（亿元）</td><td class="num-cell">~8.7</td><td class="num-cell">23.66</td><td class="num-cell">6.32（单季）</td></tr><tr><td>合同资产等减值（亿元）</td><td class="num-cell">—</td><td class="num-cell">—</td><td class="num-cell">1.76（单季）</td></tr><tr><td>风险计提合计（亿元）</td><td class="num-cell">~12+</td><td class="num-cell">~30+</td><td class="num-cell">8.08（单季）</td></tr><tr><td>占营收比</td><td class="num-cell">~22%</td><td class="num-cell">~62%+</td><td class="num-cell">~88.3%（Q1）</td></tr></tbody></table></div>
+<div class="table-caption">数据来源：宜人智科Q1财报、2025年报 <a href="http://m.moneyweekly.com.cn/MoneyNews/news_23334.html" target="_blank" rel="noopener noreferrer">财新/理财周刊</a></div>
+<div class="key-points-section"><div class="key-points-title">要点总结</div><ol class="key-points-list"><li><strong>营收加速下坠，连续两季亏损</strong>。2023-2025年营收从57.08亿降至47.97亿（-15.9%），2026Q1同比-41%至9.15亿。2025Q4首次单季巨亏8.68亿，2026Q1亏4.95亿，已连续两个季度亏损。Q1亏损环比收窄更多是因为Q4"一次性洗澡"后计提节奏放缓，而非经营面真正企稳。</li><li><strong>拨备占营收88.3%，是利润崩塌的核心推手（贡献约80%+）</strong>。2025年或有负债拨备23.66亿（同比+172%），全年拨备占营收约62%；2026Q1拨备占营收比进一步升至88.3%。Q1亏损拆分：拨备激增贡献约80pct+，营收下滑贡献约15-20pct。拨备是所有机构中占比最高的。</li><li><strong>资产质量"剪刀差"特征显著，中长期风险仍在恶化</strong>。短期逾期环比改善，但61-90天逾期环比上升0.4pct。Vintage数据显示2025Q2放款90天+逾期率（12个月时）高达8.3%，新放贷款质量改善但存量老账远未出清，"弃旧保新"撑报表特征明显。</li><li><strong>在贷余额三年腰斩，借款人流失速度快于余额</strong>。2023年末465亿→2024年末322亿→2025年末284亿→2026Q1末216亿，三年累计缩水53.5%。借款人数同比-61%至53.15万，流失速度快于余额下降速度，客群质量可能被动下沉。</li><li><strong>关联方应收款34.29亿，是悬在头顶最大的雷</strong>。Q1末关联方应收款34.29亿元（单季增4.55亿），应收自宜信体系且未计提坏账准备。规模已是当前美股市值的6倍以上，若宜信流动性恶化，回收风险将直接冲击上市公司。</li><li><strong>风险与展望：宜信系风险外溢+退市风险，AI转型远水解不了近渴</strong>。2026年5月宜信财富300亿类固收产品清退事件冲击巨大，股价年内跌约78%，已跌破纽交所1美元退市红线。"All in AI"战略但信贷收入仍占87%，AI新业务收入可忽略。短期生存压力极大，中期关联方风险是最大不确定性。</li></ol></div>
+</div>
+<div class="institution-section" id="inst-yixin"><div class="institution-header"><h2 class="institution-name">2.9 易鑫集团（汽车金融助贷代表）</h2><span class="institution-badge" style="background: var(--color-risk-unique-bg); color: var(--color-risk-unique);">独特赛道</span></div><h3 class="section-subsubtitle">核心财务三年对比</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2023全年</th><th class="num-cell">2024全年</th><th class="num-cell">2025全年</th><th class="num-cell">2026H1</th><th class="num-cell">H1同比</th></tr></thead><tbody><tr><td>营收（亿元）</td><td class="num-cell">66.86</td><td class="num-cell">98.88</td><td class="num-cell">115.60</td><td class="num-cell">61.77</td><td class="num-cell">+13.3%</td></tr><tr><td>归母净利润（亿元）</td><td class="num-cell">5.55</td><td class="num-cell">8.10</td><td class="num-cell">11.99</td><td class="num-cell">7.04</td><td class="num-cell">+28.2%</td></tr><tr><td>净利率</td><td class="num-cell">8.3%</td><td class="num-cell">8.2%</td><td class="num-cell">10.4%</td><td class="num-cell">11.4%</td><td class="num-cell">—</td></tr><tr><td>全年融资交易额（亿元）</td><td class="num-cell">~620</td><td class="num-cell">691</td><td class="num-cell">751</td><td class="num-cell">~370（H1）</td><td class="num-cell">~+8%</td></tr><tr><td>年末管理资产（亿元）</td><td class="num-cell">~850</td><td class="num-cell">~1,020</td><td class="num-cell">1,258</td><td class="num-cell">—</td><td class="num-cell">—</td></tr></tbody></table></div><div class="table-caption">数据来源：易鑫集团2023-2025年报、2026中期报告 <a href="https://www.futunn.com/hk/stock/02858-HK/financials-income-statement" target="_blank" rel="noopener noreferrer">E058</a> <a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0819/2026081900452.pdf" target="_blank" rel="noopener noreferrer">E057</a></div><h3 class="section-subsubtitle">业务结构与类型</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>维度</th><th class="num-cell">2025全年</th><th class="num-cell">2026H1</th><th>说明</th></tr></thead><tbody><tr><td>交易平台业务收入</td><td class="num-cell">92.91亿元（80.4%）</td><td class="num-cell">—</td><td>占比持续提升</td></tr><tr><td>SaaS服务收入</td><td class="num-cell">45.01亿元（+150%）</td><td class="num-cell">29.89亿元（+59.5%）</td><td>核心增长引擎</td></tr><tr><td>自营融资业务</td><td class="num-cell">—</td><td class="num-cell">—</td><td class="num-cell">持续收缩</td></tr><tr><td>金融科技平台融资额（2025）</td><td class="num-cell">403亿元（+91%）</td><td class="num-cell">—</td><td>SaaS促成</td></tr><tr><td>合作机构数量（2025）</td><td>近75家</td><td class="num-cell">—</td><td>银行+租赁+OEM</td></tr><tr><td>核心客户ARPU（2025）</td><td class="num-cell">1.86亿元</td><td class="num-cell">—</td><td>同比+79%</td></tr></tbody></table></div><div class="table-caption">数据来源：易鑫集团2025年报、2026中报 <a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0305/2026030500798.pdf" target="_blank" rel="noopener noreferrer">E059</a> <a href="https://caifuhao.eastmoney.com/news/20260826142000070693330" target="_blank" rel="noopener noreferrer">E060</a></div><h3 class="section-subsubtitle">资产质量与风险</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2023年末</th><th class="num-cell">2024年末</th><th class="num-cell">2025年末</th><th class="num-cell">2026H1末</th><th>较上年末</th></tr></thead><tbody><tr><td>90天+逾期率</td><td class="num-cell">~1.89%</td><td class="num-cell">1.86%</td><td class="num-cell">1.89%</td><td class="num-cell">1.92%</td><td class="num-cell">+0.03pct</td></tr><tr><td>180天+逾期率</td><td class="num-cell">1.49%</td><td class="num-cell">1.39%</td><td class="num-cell">1.31%</td><td class="num-cell">—</td><td class="num-cell">持续改善</td></tr><tr><td>二手车融资占比</td><td class="num-cell">~50%</td><td class="num-cell">~53%</td><td class="num-cell">~56%（2025）</td><td class="num-cell">—</td><td>高增长赛道</td></tr></tbody></table></div><div class="table-caption">数据来源：易鑫集团2026中期报告</div><h3 class="section-subsubtitle">拨备与计提（与利润联动分析）</h3><div class="table-wrapper"><table class="data-table"><thead><tr><th>指标</th><th class="num-cell">2025全年</th><th class="num-cell">2026H1</th><th>说明</th></tr></thead><tbody><tr><td>信用减值损失</td><td class="num-cell">~28+亿（推算）</td><td class="num-cell">16.78亿元</td><td>随规模扩张增长</td></tr><tr><td>占营收比</td><td class="num-cell">~24%</td><td class="num-cell">27.2%</td><td>略有提升</td></tr></tbody></table></div><div class="table-caption">数据来源：易鑫集团2026中期报告</div><div class="key-points-section"><div class="key-points-title">要点总结</div><ol class="key-points-list"><li><strong>三年营收利润双增，是行业唯一正增长的头部平台</strong>。2023-2025年营收从66.86亿增至115.60亿（+72.9%），2026H1同比+13.3%至61.77亿、净利润+28.2%至7.04亿。连续三年高速增长，与纯信贷助贷的全面下滑形成鲜明对比，验证了垂直赛道的优越性。</li><li><strong>SaaS是核心增长引擎，平台化转型成效显著</strong>。SaaS服务收入从2024年18亿→2025年45.01亿（+150%）→2026H1 29.89亿（+59.5%），增速虽回落仍保持高速。交易平台业务占比超80%，已从"自营融资平台"转型为"交易+科技服务平台"，轻资产属性持续增强。</li><li><strong>汽车抵押品是核心护城河，资产质量显著优于纯信贷</strong>。90天+逾期率1.92%，较上年末微升0.03pct，远低于奇富（2.83%）、乐信（3.6%）等同业。核心差异在于汽车抵押品的回收价值——即便违约，处置车辆仍可回收大部分本金，这是汽车金融赛道风险收益比更优的根本原因。</li><li><strong>净利率持续提升至11.4%，拨备随规模可控增长</strong>。净利率从2023年8.3%→2025年10.4%→2026H1 11.4%，三年提升3.1个百分点。利润增长拆分：SaaS等高毛利业务扩张+运营效率改善贡献约60-70pct，拨备随规模同步增长但占比稳定（27.2%），未对利润形成挤压。</li><li><strong>逆势增长验证垂直赛道独立行情，与行业周期弱相关</strong>。汽车金融以抵押品为核心风控手段，受助贷新规24%利率红线冲击远小于纯信贷助贷。SaaS化转型进一步降低周期敏感度，使易鑫走出独立于行业的增长曲线。</li><li><strong>风险与展望：增长确定性最强，关注汽车周期与竞争加剧风险</strong>。短期增长确定性行业最强，但需关注新车销量波动、二手车市场变化等汽车行业周期风险。中期需警惕银行系汽车金融和互联网巨头入局带来的竞争加剧。长期SaaS输出+交易平台化打开第二增长曲线。</li></ol></div></div>
+<h2 class="section-title" id="section-3">三、资产质量三年趋势</h2>
+<h2 class="section-subtitle" id="section-3-1">3.1 头部机构90天+逾期率趋势</h2>
+<div class="table-wrapper"><table class="data-table"><thead><tr><th>机构</th><th class="num-cell">2023年末</th><th class="num-cell">2024年末</th><th class="num-cell">2025年末</th><th class="num-cell">2026Q1末</th><th class="num-cell">2026Q2末</th><th class="num-cell">较2025年末</th><th>趋势判断</th></tr></thead><tbody><tr><td>奇富科技</td><td class="num-cell">2.35%</td><td class="num-cell">2.09%</td><td class="num-cell">2.71%</td><td class="num-cell">3.50%</td><td class="num-cell">2.83%</td><td class="num-cell">+0.12pct</td><td>Q2见顶回落</td></tr><tr><td>乐信</td><td class="num-cell">~2.53%</td><td class="num-cell">3.6%</td><td class="num-cell">3.1%</td><td class="num-cell">3.5%</td><td class="num-cell">3.6%</td><td class="num-cell">+0.5pct</td><td>仍在上升</td></tr><tr><td>信也科技</td><td class="num-cell">1.93%</td><td class="num-cell">2.13%</td><td class="num-cell">2.85%</td><td class="num-cell">3.11%</td><td class="num-cell">2.10%</td><td class="num-cell">下降</td><td>Q2大幅回落</td></tr><tr><td>嘉银金科</td><td class="num-cell">2.07%</td><td class="num-cell">1.16%</td><td class="num-cell">~2.21%</td><td class="num-cell">—</td><td class="num-cell">2.21%</td><td class="num-cell">持平</td><td>新规后跳升</td></tr><tr><td>易鑫集团</td><td class="num-cell">~1.89%</td><td class="num-cell">1.86%</td><td class="num-cell">1.89%</td><td class="num-cell">—</td><td class="num-cell">1.92%</td><td class="num-cell">+0.03pct</td><td>缓慢上行</td></tr><tr><td>小赢科技</td><td class="num-cell">~2.0%</td><td class="num-cell">2.48%</td><td class="num-cell">6.31%（91-180天）</td><td class="num-cell">9.95%（91-180天）</td><td class="num-cell">9.09%（91-180天）</td><td>大幅上升</td><td>高位，Q2微降</td></tr><tr><td>维信金科</td><td class="num-cell">2.49%</td><td class="num-cell">3.02%</td><td class="num-cell">5.99%（M3+）</td><td class="num-cell">—</td><td class="num-cell">8.64%（M3+）</td><td class="num-cell">+2.65pct</td><td class="num-cell">持续恶化</td></tr></tbody></table></div>
+<div class="table-caption">数据来源：各公司年报/中报。注：乐信2023年末为Q1数据近似、易鑫2023年末为近似值，其余为公司直接披露值；各机构口径差异详见1.4节注释</div>
+<h2 class="section-subtitle" id="section-3-2">3.2 资产质量核心结论</h2>
+<div class="key-points-section">
+<div class="key-points-title">核心结论</div>
+<ol class="key-points-list"><li><strong>利润池萎缩的三层传导机制</strong>。利率上限（24%红线）→Take Rate压缩（平台费率收入直接缩水）→营收规模收缩（放款量+费率双降）→拨备加码（风险上行+存量不良暴露）→利润崩塌（经营杠杆反向放大）。这是一个从价格到规模再到利润的逐层传导链条，越往下游放大效应越强——头部机构利润跌幅是营收的2-3倍，中腰部机构可达5-20倍。拨备是传导链上的"放大器"而非"源头"，但它决定了利润底部的深度。</li><li><strong>分化的底层驱动因素：三大变量的交叉组合</strong>。行业三梯队分化表面看是规模差异，实质是三个核心变量的交叉结果——①轻资本转型速度（决定风险敞口大小）：奇富/信也轻资本占比已超50%，中腰部机构仍以重资本/担保为主；②资金端能力（决定融资成本与合作稳定性）：头部平台ABS+银行多元渠道，中腰部依赖信托+少数银行；③出海进展（决定第二增长曲线）：信也海外贡献27%收入，多数机构尚处早期或空白。三个变量同时领先的机构（信也）抗周期能力最强，三个变量同时落后的机构（维信/宜人）承压最重。</li><li><strong>拨备蓄水池厚度决定周期底部的利润弹性</strong>。拨备占营收比从头部的20%-35%到亏损机构的60%-90%，分化悬殊。更重要的是拨备"蓄水池"厚度——奇富拨备覆盖率472%，风险下行时拨备转回可直接转化为利润；中腰部机构拨备计提本身已承压甚至亏损，几乎没有多余拨备可转回。这意味着行业复苏时，头部机构的利润反弹速度将远快于中腰部，分化将进一步加剧。</li><li><strong>资产质量修复将是"先短后长、先头后尾"的渐进过程</strong>。短期逾期（M1/M2）因内催到位而修复（Q2改善200-300bp），但存量中长期逾期（M3+）仍在暴露（维信M3+ 8.64%、乐信90天+ 3.6%仍在上升）。新老划断需要2-3个季度，2025年发放的高利率贷款仍是不良暴露的主力。头部机构修复速度快于中腰部，汽车金融赛道优于纯信贷。</li><li><strong>破局方向：模式跃迁优于规模修复</strong>。纯信贷助贷的黄金时代已经结束，单纯等待行业出清后规模回升的逻辑已不成立。真正的破局方向是模式跃迁——信也通过出海实现地域多元化（27%收入来自海外），易鑫通过SaaS+汽车金融实现赛道跃迁（+59.5% SaaS增速），奇富通过轻资本转型实现风险出表。未来增长机会不在"做多贷款"，而在"模式创新+赛道差异化"。</li></ol></div>
+<h2 class="section-title" id="section-4">四、拨备横向对比</h2>
+<div class="blockquote"><p>本章聚焦横向对比——各家拨备力度、口径差异、PPOP剪刀差和蓄水池厚度的比较，以及资金端自营化趋势下的潜在变化。单家公司的拨备对利润的具体影响，已在第二章各机构要点总结中拆分说明。</p></div>
+<h2 class="section-subtitle" id="section-4-1">4.1 拨备力度横向对比</h2>
+<div class="chart-section">
+  <div class="chart-title">拨备占营收比横向对比</div>
+  <div class="chart-subtitle">2026H1拨备/信用减值占营收比例 · 从高到低排序 · 单位：%</div>
+  <div class="chart-container">
+    <svg role="img" aria-label="2026年上半年8家助贷机构拨备占营收比例横向对比条形图" <svg viewBox="0 0 760 332" preserveAspectRatio="xMidYMid meet" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="provBar" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#3B82F6" stop-opacity="0.85"/><stop offset="100%" stop-color="#2563EB" stop-opacity="0.95"/></linearGradient>
+<linearGradient id="provBarHigh" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#EF4444" stop-opacity="0.85"/><stop offset="100%" stop-color="#DC2626" stop-opacity="0.9"/></linearGradient>
+</defs>
+<line x1="140.0" y1="20" x2="140.0" y2="292" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="140.0" y="310" text-anchor="middle" font-size="11" fill="#94A3B8">0%</text>
+<line x1="260.0" y1="20" x2="260.0" y2="292" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="260.0" y="310" text-anchor="middle" font-size="11" fill="#94A3B8">20%</text>
+<line x1="380.0" y1="20" x2="380.0" y2="292" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="380.0" y="310" text-anchor="middle" font-size="11" fill="#94A3B8">40%</text>
+<line x1="500.0" y1="20" x2="500.0" y2="292" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="500.0" y="310" text-anchor="middle" font-size="11" fill="#94A3B8">60%</text>
+<line x1="620.0" y1="20" x2="620.0" y2="292" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="620.0" y="310" text-anchor="middle" font-size="11" fill="#94A3B8">80%</text>
+<text x="130" y="41.0" text-anchor="end" font-size="12" fill="#475569" font-weight="500">宜人智科（Q1）</text>
+<rect x="140" y="28.0" width="529.8" height="18" rx="4" fill="url(#provBarHigh)"/>
+<text x="677.8" y="41.0" font-size="12" fill="#1E293B" font-weight="600">~88.3%</text>
+<text x="130" y="75.0" text-anchor="end" font-size="12" fill="#475569" font-weight="500">陆金所控股</text>
+<rect x="140" y="62.0" width="415.8" height="18" rx="4" fill="url(#provBarHigh)"/>
+<text x="563.8" y="75.0" font-size="12" fill="#1E293B" font-weight="600">69.3%</text>
+<text x="130" y="109.0" text-anchor="end" font-size="12" fill="#475569" font-weight="500">奇富科技</text>
+<rect x="140" y="96.0" width="207.0" height="18" rx="4" fill="url(#provBar)"/>
+<text x="355.0" y="109.0" font-size="12" fill="#1E293B" font-weight="600">34.5%</text>
+<text x="130" y="143.0" text-anchor="end" font-size="12" fill="#475569" font-weight="500">易鑫集团</text>
+<rect x="140" y="130.0" width="163.2" height="18" rx="4" fill="url(#provBar)"/>
+<text x="311.2" y="143.0" font-size="12" fill="#1E293B" font-weight="600">27.2%</text>
+<text x="130" y="177.0" text-anchor="end" font-size="12" fill="#475569" font-weight="500">乐信</text>
+<rect x="140" y="164.0" width="155.99999999999997" height="18" rx="4" fill="url(#provBar)"/>
+<text x="304.0" y="177.0" font-size="12" fill="#1E293B" font-weight="600">~26%</text>
+<text x="130" y="211.0" text-anchor="end" font-size="12" fill="#475569" font-weight="500">信也科技</text>
+<rect x="140" y="198.0" width="127.8" height="18" rx="4" fill="url(#provBar)"/>
+<text x="275.8" y="211.0" font-size="12" fill="#1E293B" font-weight="600">~21.3%</text>
+<text x="130" y="245.0" text-anchor="end" font-size="12" fill="#475569" font-weight="500">小赢科技</text>
+<rect x="140" y="232.0" width="129.0" height="18" rx="4" fill="url(#provBar)"/>
+<text x="277.0" y="245.0" font-size="12" fill="#1E293B" font-weight="600">21.5%</text>
+<text x="130" y="279.0" text-anchor="end" font-size="12" fill="#475569" font-weight="500">嘉银金科</text>
+<rect x="140" y="266.0" width="40.2" height="18" rx="4" fill="url(#provBar)"/>
+<text x="188.2" y="279.0" font-size="12" fill="#1E293B" font-weight="600">~6.7%</text>
+</svg>
+  </div>
+  <div class="chart-note">
+    注：维信金科2026H1未单独披露拨备/信用减值明细，未纳入对比；宜人智科为Q1单季数据；信也科技为损益化信用损失窄口径（含应收账款拨备+应收贷款拨备），若含质量保证承诺信用损失全口径约36%-38%
+  </div>
+</div>
+
+<div class="table-wrapper"><table class="data-table"><thead><tr><th>机构</th><th class="num-cell">2026H1拨备/减值（亿元）</th><th>占营收比</th><th>对利润变化贡献</th></tr></thead><tbody><tr><td>陆金所控股</td><td class="num-cell">86.54</td><td class="num-cell">69.3%</td><td>亏损扩大主因，贡献约60-70%</td></tr><tr><td>奇富科技</td><td class="num-cell">25.77</td><td class="num-cell">34.5%</td><td>利润降幅贡献约40-50pct</td></tr><tr><td>乐信</td><td class="num-cell">~17+（推算）</td><td class="num-cell">~26%</td><td>利润降幅贡献约50-60pct（盈利机构最高）</td></tr><tr><td>信也科技</td><td class="num-cell">~14.09（损益化口径①）</td><td class="num-cell">~21.3%</td><td>利润降幅贡献约40-50pct</td></tr><tr><td>小赢科技</td><td class="num-cell">4.66</td><td class="num-cell">21.5%</td><td>利润降幅贡献约20-30pct（规模收缩是主因）</td></tr><tr><td>维信金科</td><td class="num-cell">未披露（2025全年约21.52亿）</td><td class="num-cell">—</td><td class="num-cell">2025年由盈转亏核心因素</td></tr><tr><td>嘉银金科</td><td class="num-cell">~1.0（H1估算）</td><td class="num-cell">~6.7%</td><td>亏损贡献约5-10pct（收入暴跌是主因）</td></tr><tr><td>宜人智科（Q1）</td><td class="num-cell">8.08</td><td class="num-cell">~88.3%（Q1）</td><td>亏损贡献约80%+</td></tr><tr><td>易鑫集团</td><td class="num-cell">16.78</td><td class="num-cell">27.2%</td><td>正向——随规模增长可控，不拖累利润</td></tr></tbody></table></div>
+<div class="prose" style="margin-top: var(--space-3); font-size: 13px;">
+<p>① 信也科技拨备/减值数为损益化信用损失窄口径（含应收账款及合同资产拨备+应收贷款拨备），约14.09亿；若含质量保证承诺信用损失的全口径约24-25亿。前者计入"信用减值损失"报表科目，后者计入"质量保证承诺损失"科目。</p>
+</div>
+<h2 class="section-subtitle" id="section-4-2">4.2 拨备口径对照表</h2>
+<div class="table-wrapper"><table class="data-table"><thead><tr><th>机构</th><th>拨备科目</th><th>计入报表科目</th><th>模式特征</th><th>备注</th></tr></thead><tbody><tr><td>奇富科技</td><td>表内贷款减值+表外或有负债</td><td>信用减值损失</td><td>轻重资本混合</td><td>唯一披露拨备覆盖率（472%）</td></tr><tr><td>信也科技</td><td>质量保证承诺为主 + 表内减值</td><td>质量保证承诺损失 + 信用减值损失</td><td>轻资本+海外增信</td><td>双口径：质量保证承诺约19.5亿（H1）+ 损益化信用减值约4.7亿（H1），全口径合计约24-25亿</td></tr><tr><td>乐信</td><td>或有担保负债拨备</td><td>信用减值损失</td><td>重资本为主</td><td>财报口径：表外担保组合计提</td></tr><tr><td>陆金所控股</td><td>贷款减值损失</td><td>信用减值损失</td><td>重资本自营</td><td>小微存量风险释放，消金减值压力小</td></tr><tr><td>小赢科技</td><td>担保拨备</td><td>信用减值损失</td><td>重资本担保</td><td>客群偏次级，存量不良压力大</td></tr><tr><td>嘉银金科</td><td>信用减值损失</td><td>信用减值损失</td><td>重资本担保</td><td>担保负债释放收入模式</td></tr><tr><td>维信金科</td><td>公允价值变动+信用减值</td><td>双科目</td><td>公允价值计量模式</td><td>信用损失分散两科目</td></tr><tr><td>宜人智科</td><td>或有负债拨备</td><td>信用减值损失</td><td>担保模式</td><td>Q1拨备占营收88%，行业最高</td></tr><tr><td>易鑫集团</td><td>应收融资租赁款减值</td><td>信用减值损失</td><td>汽车金融重资本</td><td>车辆抵押品降低拨备压力</td></tr></tbody></table></div>
+<div class="table-caption">基于公开披露整理，具体以财报附注为准。</div>
+<h2 class="section-subtitle" id="section-4-3">4.3 PPOP（拨备前利润）与剪刀差</h2>
+<div class="prose" style="margin-bottom: var(--space-4);">
+<p>PPOP = 净利润 + 拨备/信用减值（简化估算，不考虑税务影响），反映剔除拨备因素后的真实经营盈利能力。<strong>剪刀差 = 净利润同比 - PPOP同比</strong>，剪刀差越大，说明拨备对利润的放大效应越强。</p>
+</div>
+<div class="table-wrapper"><table class="data-table"><thead><tr><th>机构</th><th class="num-cell">2026H1 PPOP（亿元）</th><th>拨备占PPOP比</th><th>PPOP同比（估算）</th><th>净利润同比</th><th>剪刀差</th></tr></thead><tbody><tr><td>奇富科技</td><td class="num-cell">38.66</td><td class="num-cell">66.6%</td><td class="num-cell">约-20%</td><td class="num-cell">-63.5%</td><td class="num-cell">~43.5pct</td></tr><tr><td>乐信</td><td class="num-cell">20.03（推算）</td><td class="num-cell">~85%</td><td class="num-cell">约-25%</td><td class="num-cell">-67.9%</td><td class="num-cell">~42.9pct</td></tr><tr><td>小赢科技</td><td class="num-cell">5.51</td><td class="num-cell">84.6%</td><td class="num-cell">约-50%</td><td class="num-cell">-~91%</td><td class="num-cell">~41pct</td></tr><tr><td>信也科技</td><td class="num-cell">22.57</td><td class="num-cell">62.4%</td><td class="num-cell">约-20%</td><td class="num-cell">-43%</td><td class="num-cell">~23pct</td></tr><tr><td>易鑫集团</td><td class="num-cell">23.82</td><td class="num-cell">70.4%</td><td class="num-cell">约+15%</td><td class="num-cell">+28.2%</td><td class="num-cell">+13.2pct（正向）</td></tr><tr><td>陆金所控股</td><td class="num-cell">79.60（估算）</td><td class="num-cell">—（亏损）</td><td class="num-cell">约-5%</td><td>亏损扩大33.7%</td><td>亏损扩大，拨备持续承压</td></tr><tr><td>嘉银金科</td><td class="num-cell">-1.46（估算）</td><td>亏损不适用</td><td>由盈转亏</td><td>由盈转亏</td><td>不适用</td></tr><tr><td>维信金科</td><td class="num-cell">未披露</td><td class="num-cell">未披露</td><td class="num-cell">未披露</td><td class="num-cell">-94.5%</td><td class="num-cell">未披露</td></tr><tr><td>宜人智科（Q1）</td><td class="num-cell">3.13（Q1，估算）</td><td class="num-cell">~78%（Q1）</td><td>由盈转亏</td><td>由盈转亏（Q1）</td><td>不适用</td></tr></tbody></table></div>
+<div class="table-caption">注：PPOP及同比为简化估算值，2025H1拨备用2025全年的一半估算，仅供趋势参考。</div>
+<div class="prose" style="margin-top: var(--space-4);">
+<p><strong>核心结论</strong>：拨备是利润分化的核心放大器。奇富、乐信、小赢的拨备放大效应最显著，剪刀差均超40pct——意思是利润跌幅中约一半是拨备加码导致的，另一半才是经营层面的下滑。易鑫是唯一正向剪刀差，利润增速快于PPOP增速，反映规模效应和运营效率提升。</p>
+</div>
+<h2 class="section-subtitle" id="section-4-4">4.4 拨备蓄水池与利润弹性</h2>
+<div class="prose">
+<p><strong>定义</strong>：拨备覆盖率/拨备余额相对不良资产的比例越高，意味着"蓄水池"越厚——未来风险下行时，拨备转回释放利润的空间越大。</p>
+<p><strong>分层情况</strong>：</p>
+<ul>
+<li><strong>厚蓄水池（拨备覆盖率400%+）</strong>：奇富科技（472%）。三年持续提升（2023年300%+→2025年末481%→2026Q2末472%），"以丰补歉"策略明确，周期底部利润反弹弹性最大。</li>
+<li><strong>中蓄水池</strong>：信也科技、易鑫集团。拨备随规模同步增长，无明显超额计提，但也未过度消耗，风险下行时有一定转回空间。</li>
+<li><strong>薄/无蓄水池</strong>：小赢、嘉银、维信、宜人。拨备计提本身已承压甚至亏损，几乎没有多余拨备可转回，风险下行时利润修复弹性远弱于头部。</li>
+</ul>
+<p><strong>拨备转回的三个条件</strong>：<br>
+1. 不良率持续下行且确认趋势性改善（通常需连续2-3个季度验证）<br>
+2. 符合会计准则和监管要求<br>
+3. 管理层审慎判断未来风险敞口可控</p>
+<p><strong>全行业拨备节奏判断</strong>：2024→2025年持续加码（Q4加速），2025→2026H1维持高位，部分机构Q2边际改善。风险上行周期中拨备增长先于不良暴露，当不良见顶回落后，拨备压力才会真正缓解。</p>
+</div>
+<h2 class="section-title" id="section-5">五、业务结构变化：轻/重资本、资金来源、出海</h2>
+<h2 class="section-subtitle" id="section-5-1">5.1 轻资本模式占比对比</h2>
+<div class="table-wrapper"><table class="data-table"><thead><tr><th>机构</th><th class="num-cell">轻资本模式余额（亿元）</th><th>占在贷余额比例</th><th>时间点</th><th>趋势</th></tr></thead><tbody><tr><td>信也科技</td><td class="num-cell">334</td><td class="num-cell">51.1%</td><td class="num-cell">2026Q2末</td><td class="num-cell">持续提升</td></tr><tr><td>奇富科技</td><td class="num-cell">539.83</td><td class="num-cell">50.2%</td><td class="num-cell">2026Q2末</td><td class="num-cell">持续提升</td></tr><tr><td>乐信</td><td class="num-cell">—</td><td>提升中（科技赋能+分期电商）</td><td class="num-cell">2026Q2</td><td>非助贷交易量超50%</td></tr><tr><td>陆金所控股</td><td class="num-cell">约114（7%）</td><td class="num-cell">6.8%</td><td class="num-cell">2026Q2末</td><td class="num-cell">下降（自担风险93.2%）</td></tr><tr><td>易鑫集团</td><td>SaaS输出</td><td>交易平台占80%+</td><td class="num-cell">2025年末</td><td class="num-cell">平台化转型加速</td></tr></tbody></table></div>
+<div class="table-caption">数据来源：各公司财报</div>
+<div class="prose" style="margin-top: var(--space-4);">
+<p><strong>趋势判断</strong>：<br>
+- <strong>独立助贷平台</strong>（奇富、信也、乐信）加速向轻资本/技术服务转型，头部两家轻资本占比均已过半。<br>
+- <strong>陆金所</strong>反其道而行之——自担风险比例从2024年约74%升至2026Q2的93.2%，从赋能转向自营。<br>
+- <strong>易鑫集团</strong>通过SaaS输出实现平台化，从自营融资转向交易平台+科技服务。<br>
+- <strong>中小机构</strong>（小赢、嘉银、维信）转型困难，仍以重资本/担保模式为主，收缩中被动减风险。</p>
+</div>
+<h2 class="section-subtitle" id="section-5-2">5.2 资金来源结构</h2>
+<div class="table-wrapper"><table class="data-table"><thead><tr><th>机构</th><th>主要资金来源</th><th class="num-cell">2026H1特征</th></tr></thead><tbody><tr><td>奇富科技</td><td>银行+信托+ABS</td><td>ABS发行提速，H1约84亿元，占融资比重上升；6月末事件后融资成本升约25bp</td></tr><tr><td>信也科技</td><td>银行+信托+机构资金</td><td>轻资本模式下银行自营占比提升；Q2资金成本环比升30bp至3.7%</td></tr><tr><td>乐信</td><td>银行+信托+机构资金</td><td>6月下旬同业风险事件导致资金供给收紧，Q3放款预计大幅下滑</td></tr><tr><td>陆金所控股</td><td class="num-cell">平安体系+银行+消金子公司</td><td>平安集团背景，资金端支撑最强，消金表内贷款增长</td></tr><tr><td>易鑫集团</td><td>银行+OEM金融+ABS</td><td>腾讯背景，汽车金融资产受资金方青睐，融资成本下行</td></tr><tr><td>小赢科技</td><td>银行+信托</td><td>资金端压力最大，单一机构资金方未按计划返还担保资金</td></tr><tr><td>维信金科</td><td>银行+信托</td><td class="num-cell">6家消金机构集体清退，合作渠道持续收窄</td></tr><tr><td>嘉银金科</td><td>信托+机构资金</td><td>资金端情况不明，业内传保证金问题</td></tr></tbody></table></div>
+<h3 class="section-subsubtitle">ABS融资能力分层（2026H1）</h3>
+<div class="table-wrapper"><table class="data-table"><thead><tr><th>分层</th><th>机构</th><th class="num-cell">H1发行规模</th><th>说明</th></tr></thead><tbody><tr><td>活跃发行</td><td>奇富科技</td><td>约84亿元（Q1 29亿+Q2 55亿）</td><td>助贷平台中ABS渠道最活跃，发行提速，占融资比重持续上升</td></tr><tr><td>活跃发行（汽车金融）</td><td>易鑫集团</td><td class="num-cell">未单独披露，预计百亿级</td><td>汽车金融ABS是常规融资渠道，资产质量优，发行成本持续下行</td></tr><tr><td>有发行能力但规模有限</td><td>信也科技、陆金所控股</td><td class="num-cell">未单独披露</td><td>信也有"双池ABS项目"推进；陆金所平安体系内融资渠道丰富，ABS非主要依赖</td></tr><tr><td>基本无ABS能力</td><td>乐信、小赢科技、维信金科、嘉银金科、宜人智科</td><td>无或可忽略</td><td>主要依赖银行+信托融资，缺乏直接融资渠道，资金端韧性弱</td></tr></tbody></table></div>
+<div class="prose" style="margin-top: var(--space-4);">
+<p>ABS能力是头部与中腰部的重要分化点——头部平台可通过ABS拓宽融资渠道、降低对单一资金方的依赖，中腰部平台基本只有银行+信托两条路，资金端收紧时受冲击更大。</p>
+</div>
+<h2 class="section-subtitle" id="section-5-3">5.3 海外业务对比</h2>
+<div class="table-wrapper"><table class="data-table"><thead><tr><th>机构</th><th>覆盖市场</th><th class="num-cell">2026Q2收入</th><th>占比</th><th>同比增速</th><th>盈利状况</th></tr></thead><tbody><tr><td>信也科技</td><td>印尼、菲律宾、澳大利亚</td><td class="num-cell">9.3亿元</td><td class="num-cell">27%</td><td class="num-cell">+18%</td><td>Q2经营利润0.536亿，同比+109%</td></tr><tr><td>奇富科技</td><td>英国、墨西哥、东南亚</td><td>早期阶段</td><td>极小</td><td>尚无规模化收入</td><td>投入期</td></tr><tr><td>乐信</td><td>墨西哥等</td><td>稳步发展</td><td>极小</td><td>尚无规模化收入</td><td>投入期</td></tr><tr><td>嘉银金科</td><td>印尼、墨西哥、非洲</td><td class="num-cell">未披露具体数据</td><td class="num-cell">—</td><td class="num-cell">未披露</td><td class="num-cell">未披露</td></tr><tr><td>维信金科</td><td>印尼（控股）、香港、葡萄牙（终止）</td><td>极小</td><td class="num-cell">~6%</td><td class="num-cell">—</td><td>香港业务小体量</td></tr><tr><td>其他</td><td class="num-cell">—</td><td class="num-cell">—</td><td class="num-cell">—</td><td class="num-cell">未出海或规模可忽略</td><td class="num-cell">—</td></tr></tbody></table></div>
+<div class="table-caption">数据来源：各公司财报 <a href="https://finance.sina.com.cn/jjxw/2026-08-28/doc-inipvrtx9027713.shtml" target="_blank" rel="noopener noreferrer">信也</a> <a href="https://caifuhao.eastmoney.com/news/20260827193506868080910" target="_blank" rel="noopener noreferrer">奇富</a></div>
+<div class="prose" style="margin-top: var(--space-4);">
+<p><strong>结论</strong>：<br>
+- 信也科技是出海最成熟、贡献最大的头部助贷平台，海外收入占比27%且保持双位数增长，是唯一形成有效对冲的机构。<br>
+- 奇富、乐信海外尚处早期，短期贡献有限；嘉银、维信出海进展缓慢，数据透明度低。<br>
+- 出海已经成为助贷平台分化的重要维度——出海成功的平台具备第二增长曲线，纯国内业务的平台面临更大收缩压力。</p>
+</div>
+<h2 class="section-title" id="section-6">六、风险分层与核心结论</h2>
+<h2 class="section-subtitle" id="section-6-1">6.1 机构经营风险分层</h2>
+<div class="risk-tags">
+<div class="risk-tag-group">
+<div class="risk-tag-header risk-high"><span class="risk-tag-dot"></span>高风险（经营可持续性存疑）</div>
+<div class="risk-tag-content"><ul>
+<li><strong>维信金科</strong>：净利润降94.5%，M3+逾期率8.64%，放款量降84%，被6家消金机构清退</li>
+<li><strong>嘉银金科</strong>：H1亏2.46亿（由盈转亏），撮合量H1降约60%（Q2单季降74%），进入过冬模式，财报透明度低</li>
+<li><strong>小赢科技</strong>：规模腰斩，91-180天逾期率9.09%，存量不良压力大，客群偏次级难转型</li>
+<li><strong>宜人智科</strong>：连续两季亏损，拨备占营收88%，关联方应收款34亿（超市值6倍）</li>
+</ul></div></div>
+<div class="risk-tag-group">
+<div class="risk-tag-header risk-mid-high"><span class="risk-tag-dot"></span>中高风险（承压较重）</div>
+<div class="risk-tag-content"><ul>
+<li><strong>乐信</strong>：营收降幅最小但"分期电商"实质为现金贷无实物分期，多元对冲成色不足；Q3明确预亏，90天+逾期率3.6%仍在上升，存量担保敞口大</li>
+</ul></div></div>
+<div class="risk-tag-group">
+<div class="risk-tag-header risk-stable"><span class="risk-tag-dot"></span>相对稳健（可穿越周期）</div>
+<div class="risk-tag-content"><ul>
+<li><strong>信也科技</strong>：Q2环比转正，海外对冲（27%收入），轻资本过半，收缩幅度最小</li>
+<li><strong>奇富科技</strong>：龙头地位稳固，净利润仍超10亿，拨备覆盖率472%，现金储备百亿</li>
+</ul></div></div>
+<div class="risk-tag-group">
+<div class="risk-tag-header risk-unique"><span class="risk-tag-dot"></span>独特赛道（汽车金融）</div>
+<div class="risk-tag-content"><ul>
+<li><strong>易鑫集团</strong>：逆势增长，SaaS新引擎，资产质量最优，腾讯背景加持</li>
+</ul></div></div>
+<div class="risk-tag-group">
+<div class="risk-tag-header risk-giant"><span class="risk-tag-dot"></span>巨无霸转型中</div>
+<div class="risk-tag-content"><ul>
+<li><strong>陆金所控股</strong>：Q2接近盈亏平衡，消金占比近四成，平安背景托底，但存量小微风险仍在释放</li>
+</ul></div></div>
+</div>
+<h2 class="section-subtitle" id="section-6-2">6.2 行业核心结论</h2>
+<div class="key-points-section">
+<div class="key-points-title">核心结论</div>
+<ol class="key-points-list">
+<li><strong>助贷新规彻底重塑行业</strong>。24%综合融资成本红线+催收全链条监管+担保业务规范，导致行业从"流量套利"转向"资产经营"，利润池大幅萎缩。2025Q4是行业分水岭，2026H1全行业进入深度调整期。</li>
+<li><strong>三梯队分化固化</strong>。第一梯队（奇富、信也、乐信、陆金所）在贷余额较2025年末收缩3%-15%；第二梯队（维信、小赢、嘉银、宜人）收缩25%-80%；易鑫（汽车金融）逆势增长。头部与中腰部的差距正在拉大。</li>
+<li><strong>拨备是最大利润杀手，分化分三档</strong>。头部机构拨备占营收20%-35%，亏损/微利机构拨备占比高达60%-90%。利润同比大幅变化中，拨备因素贡献分三档：头部机构（奇富/信也/乐信）30%-60%，以拨备为主因；中腰部机构（宜人/维信/小赢）50%-80%+，分化剧烈；亏损机构（陆金所/嘉银）主因是收入暴跌+风险释放，拨备是叠加项。周期底部压制表观盈利，风险下行时拨备转回可成为反弹催化剂。</li>
+<li><strong>资产质量Q2边际改善但中长期压力仍存</strong>。短期逾期（M1/M2）因内催到位而修复，但存量中长期逾期仍在暴露（维信M3+ 8.64%、乐信90天+ 3.6%仍在上升）。新老划断需要2-3个季度，2025年发放的高利率贷款仍是不良暴露的主力。</li>
+<li><strong>三大出路：出海、科技输出、垂直赛道</strong>。信也出海最成熟（27%收入占比），易鑫SaaS最成功（+59.5%增速），汽车金融等有抵押赛道风险收益比显著更优。纯信贷助贷的黄金时代已经结束，未来增长机会在模式创新和赛道差异化。</li>
+</ol></div>
+<div class="pending-section" id="pending-list">
+<div class="pending-title">📋 待更新清单</div>
+<p style="font-size: 14px; color: #78350F; margin-bottom: var(--space-3);">以下数据/信息待后续补充更新：</p>
+<ul class="pending-list">
+<li><strong>宜人智科2026H1正式中报</strong>：当前仅披露Q1数据，H1完整中报尚未发布</li>
+<li><strong>维信金科2026H1拨备/信用减值明细</strong>：中期报告未单独披露H1信用减值损失和公允价值变动损失具体金额</li>
+<li><strong>嘉银金科2026H1在贷余额</strong>：公司已连续多季度未披露在贷余额数据</li>
+</ul></div>
+<h2 class="section-title" id="section-7">七、数据来源汇总</h2>
+<div class="sources-section">
+<div class="table-wrapper"><table class="data-table sources-table"><thead><tr><th>机构</th><th>主要数据源</th><th>链接</th></tr></thead><tbody><tr><td>奇富科技</td><td>2026Q2/中期业绩公告（港交所）</td><td><a href="https://pdf.dfcfw.com/pdf/H2_AN202608261828446177_1.pdf" target="_blank" rel="noopener noreferrer">https://pdf.dfcfw.com/pdf/H2_AN202608261828446177_1.pdf</a></td></tr><tr><td>奇富科技</td><td>Q1财报IR公告</td><td><a href="https://ir.qfin.com/news-releases/news-release-details/qfin-holdings-announces-first-quarter-2026-unaudited-financial" target="_blank" rel="noopener noreferrer">https://ir.qfin.com/news-releases/news-release-details/qfin-holdings-announces-first-quarter-2026-unaudited-financial</a></td></tr><tr><td>奇富科技</td><td>2025年报（中国经济网）</td><td><a href="http://finance.ce.cn/stock/gsgdbd/202603/t20260319_2840577.shtml" target="_blank" rel="noopener noreferrer">http://finance.ce.cn/stock/gsgdbd/202603/t20260319_2840577.shtml</a></td></tr><tr><td>奇富科技</td><td>Q2业绩深度解析（和讯）</td><td><a href="http://m.toutiao.com/group/7678910543411659279/" target="_blank" rel="noopener noreferrer">http://m.toutiao.com/group/7678910543411659279/</a></td></tr><tr><td>奇富科技</td><td>华泰证券研报</td><td><a href="http://m.hibor.com.cn/wap_detail.aspx?id=78cf99dd82d6f05c8a6b85cf9f7f6461" target="_blank" rel="noopener noreferrer">http://m.hibor.com.cn/wap_detail.aspx?id=78cf99dd82d6f05c8a6b85cf9f7f6461</a></td></tr><tr><td>信也科技</td><td>2026Q2财报（新浪财经）</td><td><a href="https://finance.sina.com.cn/jjxw/2026-08-28/doc-inipvrtx9027713.shtml" target="_blank" rel="noopener noreferrer">https://finance.sina.com.cn/jjxw/2026-08-28/doc-inipvrtx9027713.shtml</a></td></tr><tr><td>信也科技</td><td>2026Q2财报PDF</td><td><a href="https://pdf.dfcfw.com/pdf/H2_AN202608281828597723_1.pdf" target="_blank" rel="noopener noreferrer">https://pdf.dfcfw.com/pdf/H2_AN202608281828597723_1.pdf</a></td></tr><tr><td>信也科技</td><td>2025年报（证券日报）</td><td><a href="http://m.zqrb.cn/gscy/gongsi/2026-03-17/A1773711310420.html" target="_blank" rel="noopener noreferrer">http://m.zqrb.cn/gscy/gongsi/2026-03-17/A1773711310420.html</a></td></tr><tr><td>信也科技</td><td>Q2资产质量解析（搜狐）</td><td><a href="https://m.sohu.com/a/1069867011_121888001/" target="_blank" rel="noopener noreferrer">https://m.sohu.com/a/1069867011_121888001/</a></td></tr><tr><td>乐信</td><td>2026Q2财报（金融界/雷递）</td><td><a href="http://m.toutiao.com/group/7680354661844533798/" target="_blank" rel="noopener noreferrer">http://m.toutiao.com/group/7680354661844533798/</a></td></tr><tr><td>乐信</td><td>2026Q1财报（东方财富网）</td><td><a href="https://caifuhao.eastmoney.com/news/1714945345" target="_blank" rel="noopener noreferrer">https://caifuhao.eastmoney.com/news/1714945345</a></td></tr><tr><td>乐信</td><td>2025年报数据（新浪金融）</td><td><a href="https://finance.sina.com.cn/jinrong/yh/2026-04-09/doc-inhtxcut8719776.shtml" target="_blank" rel="noopener noreferrer">https://finance.sina.com.cn/jinrong/yh/2026-04-09/doc-inhtxcut8719776.shtml</a></td></tr><tr><td>陆金所控股</td><td>2026中期报告（港交所）</td><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0819/2026081900016_c.pdf" target="_blank" rel="noopener noreferrer">https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0819/2026081900016_c.pdf</a></td></tr><tr><td>陆金所控股</td><td>Q2IR公告</td><td><a href="https://ir-tc.lufaxholding.com/2026-08-18-Lufax-Reports-Second-Quarter-2026-Financial-Results?asPDF=1" target="_blank" rel="noopener noreferrer">https://ir-tc.lufaxholding.com/2026-08-18-Lufax-Reports-Second-Quarter-2026-Financial-Results?asPDF=1</a></td></tr><tr><td>陆金所控股</td><td>Q2业绩解读（东方财富网）</td><td><a href="https://caifuhao.eastmoney.com/news/20260822170855198124810" target="_blank" rel="noopener noreferrer">https://caifuhao.eastmoney.com/news/20260822170855198124810</a></td></tr><tr><td>易鑫集团</td><td>2026中期报告（港交所）</td><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0819/2026081900452.pdf" target="_blank" rel="noopener noreferrer">https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0819/2026081900452.pdf</a></td></tr><tr><td>易鑫集团</td><td>2025年报（港交所）</td><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0305/2026030500798.pdf" target="_blank" rel="noopener noreferrer">https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0305/2026030500798.pdf</a></td></tr><tr><td>易鑫集团</td><td>财报数据（富途牛牛）</td><td><a href="https://www.futunn.com/hk/stock/02858-HK/financials-income-statement" target="_blank" rel="noopener noreferrer">https://www.futunn.com/hk/stock/02858-HK/financials-income-statement</a></td></tr><tr><td>小赢科技</td><td>2026Q2财报（网经社）</td><td><a href="http://www.100ec.cn/detail--6663300.html" target="_blank" rel="noopener noreferrer">http://www.100ec.cn/detail--6663300.html</a></td></tr><tr><td>小赢科技</td><td>2026Q2财报分析（东方财富网）</td><td><a href="https://caifuhao.eastmoney.com/news/20260827193506868080910" target="_blank" rel="noopener noreferrer">https://caifuhao.eastmoney.com/news/20260827193506868080910</a></td></tr><tr><td>小赢科技</td><td>2025年报（今日头条）</td><td><a href="http://m.toutiao.com/group/7621859814498517510/" target="_blank" rel="noopener noreferrer">http://m.toutiao.com/group/7621859814498517510/</a></td></tr><tr><td>小赢科技</td><td>Q2拨备细节（搜狐）</td><td><a href="https://m.sohu.com/a/1068265112_121888001/" target="_blank" rel="noopener noreferrer">https://m.sohu.com/a/1068265112_121888001/</a></td></tr><tr><td>嘉银金科</td><td>2026Q2财报（证券之星）</td><td><a href="https://stock.stockstar.com/IG2026082800046121.shtml" target="_blank" rel="noopener noreferrer">https://stock.stockstar.com/IG2026082800046121.shtml</a></td></tr><tr><td>嘉银金科</td><td>2026Q2财报（智通财经）</td><td><a href="https://finance.sina.com.cn/stock/hkstock/hkstocknews/2026-08-28/doc-inipwnxr5720981.shtml" target="_blank" rel="noopener noreferrer">https://finance.sina.com.cn/stock/hkstock/hkstocknews/2026-08-28/doc-inipwnxr5720981.shtml</a></td></tr><tr><td>嘉银金科</td><td>2025年报（新京报）</td><td><a href="https://m.bjnews.com.cn/detail/1775010494168238.html" target="_blank" rel="noopener noreferrer">https://m.bjnews.com.cn/detail/1775010494168238.html</a></td></tr><tr><td>维信金科</td><td>2026中期报告（港交所）</td><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401722_c.pdf" target="_blank" rel="noopener noreferrer">https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401722_c.pdf</a></td></tr><tr><td>维信金科</td><td>财报分析（贝多财经）</td><td><a href="http://m.toutiao.com/group/7673529546968220211/" target="_blank" rel="noopener noreferrer">http://m.toutiao.com/group/7673529546968220211/</a></td></tr><tr><td>维信金科</td><td>被6家消金清退（新浪）</td><td><a href="http://finance.sina.cn/2026-07-26/detail-inikerit0050845.d.html" target="_blank" rel="noopener noreferrer">http://finance.sina.cn/2026-07-26/detail-inikerit0050845.d.html</a></td></tr><tr><td>宜人智科</td><td>2026Q1业绩（StockWatch）</td><td><a href="https://www.stockwatch.com/News/Item/U-CN92046-U!YRD-20260625/U/YRD" target="_blank" rel="noopener noreferrer">https://www.stockwatch.com/News/Item/U-CN92046-U!YRD-20260625/U/YRD</a></td></tr><tr><td>宜人智科</td><td>Q1深度分析（理财周刊）</td><td><a href="http://m.moneyweekly.com.cn/MoneyNews/news_23334.html" target="_blank" rel="noopener noreferrer">http://m.moneyweekly.com.cn/MoneyNews/news_23334.html</a></td></tr><tr><td>宜人智科</td><td>宜信清退事件（东方财富）</td><td><a href="https://caifuhao.eastmoney.com/news/20260604153727927887020" target="_blank" rel="noopener noreferrer">https://caifuhao.eastmoney.com/news/20260604153727927887020</a></td></tr><tr><td>宜人智科</td><td>宜信清退事件（中国经济网）</td><td><a href="http://finance.ce.cn/stock/gsgdbd/202605/t20260527_2992940.shtml" target="_blank" rel="noopener noreferrer">http://finance.ce.cn/stock/gsgdbd/202605/t20260527_2992940.shtml</a></td></tr><tr><td>宜人智科</td><td>兑付方案进展（虎嗅）</td><td><a href="http://m.toutiao.com/group/7662439207050150427/" target="_blank" rel="noopener noreferrer">http://m.toutiao.com/group/7662439207050150427/</a></td></tr><tr><td>宜人智科</td><td>官方Q1新闻稿</td><td><a href="https://yiren.com/news/news-detail?id=1727195707008725081" target="_blank" rel="noopener noreferrer">https://yiren.com/news/news-detail?id=1727195707008725081</a></td></tr><tr><td>行业数据</td><td>助贷新规（国家金融监管总局）</td><td><a href="http://m.toutiao.com/group/7679070131577700874/" target="_blank" rel="noopener noreferrer">http://m.toutiao.com/group/7679070131577700874/</a></td></tr><tr><td>行业数据</td><td>消费贷收缩（证券时报）</td><td><a href="https://www.stcn.com/article/detail/4028521.html" target="_blank" rel="noopener noreferrer">https://www.stcn.com/article/detail/4028521.html</a></td></tr><tr><td>行业数据</td><td>银行助贷白名单清理（新浪财经）</td><td><a href="https://finance.sina.com.cn/jjxw/2026-07-24/doc-iniivpqu4462492.shtml" target="_blank" rel="noopener noreferrer">https://finance.sina.com.cn/jjxw/2026-07-24/doc-iniivpqu4462492.shtml</a></td></tr></tbody></table></div>
+</div>
+<div class="disclaimer">
+<strong>免责声明：</strong>本报告数据均来自公开披露信息，各机构披露口径存在差异，横向对比仅供参考。报告中的分析和判断基于截至2026年9月2日的公开信息，不构成任何投资建议。部分2023-2024年历史数据为根据公开资料的推算值，以公司最终审计报告为准。宜人智科H1正式中报尚未披露，相关数据以Q1为准，已在相关章节明确标注。嘉银金科H1合计数据为Q1+Q2财报加总，部分Q1细分项目（如拨备具体构成）未单独披露，已在相关章节标注。
+</div>
+</div></main></div>
+<script>
+(function() {
+  'use strict';
+
+  // ===== 平滑滚动导航 =====
+  document.querySelectorAll('.toc-link, a[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var href = this.getAttribute('href');
+      if (!href || href === '#' || !href.startsWith('#')) return;
+      
+      var targetId = href.substring(1);
+      var target = document.getElementById(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+        // 移动端关闭菜单
+        closeMobileMenu();
+        
+        // 更新URL hash
+        history.replaceState(null, '', href);
+      }
+    });
+  });
+
+  // ===== 滚动高亮当前章节 =====
+  var sections = [];
+  var tocLinks = document.querySelectorAll('.toc-link');
+  
+  // 收集所有带id的章节
+  document.querySelectorAll('h1[id], h2[id], h3[id], section[id], div[id].exec-summary-section, div[id].pending-section, div[id].sources-section').forEach(function(el) {
+    sections.push({ id: el.id, element: el });
+  });
+
+  function updateActiveSection() {
+    var scrollY = window.scrollY || window.pageYOffset;
+    var offset = 100;
+    var currentId = null;
+    
+    for (var i = sections.length - 1; i >= 0; i--) {
+      var rect = sections[i].element.getBoundingClientRect();
+      if (rect.top - offset <= 0) {
+        currentId = sections[i].id;
+        break;
+      }
+    }
+    
+    if (!currentId && sections.length > 0) {
+      currentId = sections[0].id;
+    }
+    
+    if (currentId) {
+      tocLinks.forEach(function(link) {
+        var href = link.getAttribute('href');
+        if (href === '#' + currentId) {
+          link.classList.add('active');
+          // 确保可见
+          if (link.offsetParent) {
+            var sidebar = document.querySelector('.sidebar');
+            if (sidebar) {
+              var linkRect = link.getBoundingClientRect();
+              var sidebarRect = sidebar.getBoundingClientRect();
+              if (linkRect.bottom > sidebarRect.bottom || linkRect.top < sidebarRect.top) {
+                link.scrollIntoView({ block: 'nearest' });
+              }
+            }
+          }
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        updateActiveSection();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // ===== 移动端菜单 =====
+  var mobileBtn = document.querySelector('.mobile-menu-btn');
+  var sidebar = document.querySelector('.sidebar');
+  var overlay = document.querySelector('.sidebar-overlay');
+
+  function openMobileMenu() {
+    if (sidebar) sidebar.classList.add('mobile-open');
+    if (overlay) overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileMenu() {
+    if (sidebar) sidebar.classList.remove('mobile-open');
+    if (overlay) overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (mobileBtn) {
+    mobileBtn.addEventListener('click', function() {
+      if (sidebar && sidebar.classList.contains('mobile-open')) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', closeMobileMenu);
+  }
+
+  // 初始化高亮
+  updateActiveSection();
+})();
+
+  // 表格横向滚动提示
+  document.querySelectorAll('.table-wrapper').forEach(function(wrapper) {
+    var table = wrapper.querySelector('table');
+    if (!table) return;
+    
+    // 检查是否真的有横向溢出
+    setTimeout(function() {
+      if (wrapper.scrollWidth > wrapper.clientWidth + 5) {
+        // 添加提示文字
+        var hint = document.createElement('div');
+        hint.className = 'table-hint';
+        hint.textContent = '→ 滑动查看更多';
+        wrapper.appendChild(hint);
+        
+        // 滚动时渐隐右侧遮罩
+        wrapper.addEventListener('scroll', function() {
+          if (wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth - 5) {
+            wrapper.classList.add('scrolled-to-end');
+            hint.style.opacity = '0';
+          } else {
+            wrapper.classList.remove('scrolled-to-end');
+            hint.style.opacity = '0.8';
+          }
+        });
+      }
+    }, 100);
+  });
+</script>
+</body></html>
