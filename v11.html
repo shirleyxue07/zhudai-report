@@ -917,7 +917,7 @@ a:hover { text-decoration: underline; }
 
         <!-- 1. 宜人智科 88.3% Q1 -->
         <g>
-          <text x="130" y="52" text-anchor="end" font-size="12" fill="#475467">宜人智科（Q1）</text>
+          <text x="130" y="88.8" text-anchor="end" font-size="12" fill="#475467">宜人智科（Q1）</text>
           <rect x="140" y="40" width="476.9" height="20" fill="#DC2626" rx="4"/>
           <text x="624" y="54" font-size="11" fill="#DC2626" font-weight="700">~88.3%</text>
         </g>
@@ -1081,19 +1081,19 @@ a:hover { text-decoration: underline; }
         <!-- 网格线 -->
         <g stroke="#F1F5F9" stroke-width="1">
           <line x1="80" y1="60" x2="720" y2="60"/>
-          <line x1="80" y1="140" x2="720" y2="140"/>
-          <line x1="80" y1="220" x2="720" y2="220"/>
-          <line x1="80" y1="300" x2="720" y2="300"/>
-          <line x1="80" y1="380" x2="720" y2="380"/>
+          <line x1="80" y1="132" x2="720" y2="132"/>
+          <line x1="80" y1="204" x2="720" y2="204"/>
+          <line x1="80" y1="276" x2="720" y2="276"/>
+          <line x1="80" y1="348" x2="720" y2="348"/>
           <line x1="80" y1="420" x2="720" y2="420"/>
         </g>
 
         <!-- Y轴刻度 -->
         <text x="72" y="64" text-anchor="end" font-size="11" fill="#94A3B8">10%</text>
-        <text x="72" y="144" text-anchor="end" font-size="11" fill="#94A3B8">8%</text>
-        <text x="72" y="224" text-anchor="end" font-size="11" fill="#94A3B8">6%</text>
-        <text x="72" y="304" text-anchor="end" font-size="11" fill="#94A3B8">4%</text>
-        <text x="72" y="384" text-anchor="end" font-size="11" fill="#94A3B8">2%</text>
+        <text x="72" y="136" text-anchor="end" font-size="11" fill="#94A3B8">8%</text>
+        <text x="72" y="208" text-anchor="end" font-size="11" fill="#94A3B8">6%</text>
+        <text x="72" y="280" text-anchor="end" font-size="11" fill="#94A3B8">4%</text>
+        <text x="72" y="352" text-anchor="end" font-size="11" fill="#94A3B8">2%</text>
         <text x="72" y="424" text-anchor="end" font-size="11" fill="#94A3B8">0%</text>
 
         <!-- X轴刻度 -->
@@ -1101,81 +1101,81 @@ a:hover { text-decoration: underline; }
         <text x="240" y="440" text-anchor="middle" font-size="11" fill="#94A3B8">2024年末</text>
         <text x="380" y="440" text-anchor="middle" font-size="11" fill="#94A3B8">2025年末</text>
         <text x="520" y="440" text-anchor="middle" font-size="11" fill="#94A3B8">2026Q1</text>
-        <text x="660" y="440" text-anchor="middle" font-size="11" fill="#94A3B8">2026H1末</text>
+        <text x="660" y="440" text-anchor="middle" font-size="11" fill="#94A3B8">2026Q2</text>
 
         <!-- 轴线 -->
         <line x1="80" y1="420" x2="720" y2="420" stroke="#CBD5E1" stroke-width="1"/>
         <line x1="80" y1="60" x2="80" y2="420" stroke="#CBD5E1" stroke-width="1"/>
 
-        <!-- 计算方式：百分比 * 40 = Y轴偏移，0%在y=420，向上递减 -->
+        <!-- 计算方式：百分比 * 36 = Y轴偏移，0%在y=420，向上递减；0-10%均匀分布 -->
 
         <!-- 1. 维信金科(M3+)：2.49%, 3.02%, 5.99%, —, 8.64% -->
-        <!-- y = 420 - val*40 -->
-        <path d="M 100,320.4 L 240,299.2 L 380,180.4 L 660,74.4" 
+        <!-- y = 420 - val*36 -->
+        <path d="M 100,330.4 L 240,311.3 L 380,204.4 L 660,109.0" 
               fill="none" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="8,4" stroke-linecap="round"/>
-        <circle cx="100" cy="320.4" r="4" fill="#DC2626"/>
-        <circle cx="240" cy="299.2" r="4" fill="#DC2626"/>
-        <circle cx="380" cy="180.4" r="4" fill="#DC2626"/>
-        <circle cx="660" cy="74.4" r="5" fill="#DC2626" stroke="#fff" stroke-width="2"/>
-        <text x="670" y="70" font-size="11" fill="#DC2626" font-weight="700">8.64%</text>
+        <circle cx="100" cy="330.4" r="4" fill="#DC2626"/>
+        <circle cx="240" cy="311.3" r="4" fill="#DC2626"/>
+        <circle cx="380" cy="204.4" r="4" fill="#DC2626"/>
+        <circle cx="660" cy="109.0" r="5" fill="#DC2626" stroke="#fff" stroke-width="2"/>
+        <text x="670" y="105.0" font-size="11" fill="#DC2626" font-weight="700">8.64%</text>
 
         <!-- 2. 小赢科技(91-180天)：~2.0%, 2.48%, 6.31%, 9.95%, 9.09% -->
-        <path d="M 100,340 L 240,320.8 L 380,167.6 L 520,22 L 660,56.4" 
+        <path d="M 100,348.0 L 240,330.7 L 380,192.8 L 520,61.8 L 660,92.8" 
               fill="none" stroke="#F97316" stroke-width="2.5" stroke-dasharray="4,4" stroke-linecap="round"/>
-        <circle cx="100" cy="340" r="4" fill="#F97316"/>
-        <circle cx="240" cy="320.8" r="4" fill="#F97316"/>
-        <circle cx="380" cy="167.6" r="4" fill="#F97316"/>
-        <circle cx="520" cy="22" r="4" fill="#F97316"/>
-        <circle cx="660" cy="56.4" r="5" fill="#F97316" stroke="#fff" stroke-width="2"/>
-        <text x="670" y="52" font-size="11" fill="#F97316" font-weight="700">9.09%</text>
+        <circle cx="100" cy="348.0" r="4" fill="#F97316"/>
+        <circle cx="240" cy="330.7" r="4" fill="#F97316"/>
+        <circle cx="380" cy="192.8" r="4" fill="#F97316"/>
+        <circle cx="520" cy="61.8" r="4" fill="#F97316"/>
+        <circle cx="660" cy="92.8" r="5" fill="#F97316" stroke="#fff" stroke-width="2"/>
+        <text x="670" y="88.8" font-size="11" fill="#F97316" font-weight="700">9.09%</text>
 
         <!-- 3. 乐信(90天+)：~2.53%, 3.6%, 3.1%, 3.5%, 3.6% -->
-        <path d="M 100,318.8 L 240,276 L 380,296 L 520,280 L 660,276" 
+        <path d="M 100,328.9 L 240,290.4 L 380,308.4 L 520,294.0 L 660,290.4" 
               fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="100" cy="318.8" r="4" fill="#8B5CF6"/>
-        <circle cx="240" cy="276" r="4" fill="#8B5CF6"/>
-        <circle cx="380" cy="296" r="4" fill="#8B5CF6"/>
-        <circle cx="520" cy="280" r="4" fill="#8B5CF6"/>
-        <circle cx="660" cy="276" r="5" fill="#8B5CF6" stroke="#fff" stroke-width="2"/>
-        <text x="670" y="272" font-size="11" fill="#8B5CF6" font-weight="700">3.6%</text>
+        <circle cx="100" cy="328.9" r="4" fill="#8B5CF6"/>
+        <circle cx="240" cy="290.4" r="4" fill="#8B5CF6"/>
+        <circle cx="380" cy="308.4" r="4" fill="#8B5CF6"/>
+        <circle cx="520" cy="294.0" r="4" fill="#8B5CF6"/>
+        <circle cx="660" cy="290.4" r="5" fill="#8B5CF6" stroke="#fff" stroke-width="2"/>
+        <text x="670" y="286.4" font-size="11" fill="#8B5CF6" font-weight="700">3.6%</text>
 
         <!-- 4. 奇富科技(90天+)：2.35%, 2.09%, 2.71%, 3.50%, 2.83% -->
-        <path d="M 100,326 L 240,336.4 L 380,311.6 L 520,280 L 660,306.8" 
+        <path d="M 100,335.4 L 240,344.8 L 380,322.4 L 520,294.0 L 660,318.1" 
               fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="100" cy="326" r="4" fill="#2563EB"/>
-        <circle cx="240" cy="336.4" r="4" fill="#2563EB"/>
-        <circle cx="380" cy="311.6" r="4" fill="#2563EB"/>
-        <circle cx="520" cy="280" r="4" fill="#2563EB"/>
-        <circle cx="660" cy="306.8" r="5" fill="#2563EB" stroke="#fff" stroke-width="2"/>
-        <text x="670" y="302" font-size="11" fill="#2563EB" font-weight="700">2.83%</text>
+        <circle cx="100" cy="335.4" r="4" fill="#2563EB"/>
+        <circle cx="240" cy="344.8" r="4" fill="#2563EB"/>
+        <circle cx="380" cy="322.4" r="4" fill="#2563EB"/>
+        <circle cx="520" cy="294.0" r="4" fill="#2563EB"/>
+        <circle cx="660" cy="318.1" r="5" fill="#2563EB" stroke="#fff" stroke-width="2"/>
+        <text x="670" y="314.1" font-size="11" fill="#2563EB" font-weight="700">2.83%</text>
 
         <!-- 5. 信也科技(90天+)：1.93%, 2.13%, 2.85%, 3.11%, 2.10% -->
-        <path d="M 100,342.8 L 240,334.8 L 380,306 L 520,295.6 L 660,336" 
+        <path d="M 100,350.5 L 240,343.3 L 380,317.4 L 520,308.0 L 660,344.4" 
               fill="none" stroke="#06B6D4" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="100" cy="342.8" r="4" fill="#06B6D4"/>
-        <circle cx="240" cy="334.8" r="4" fill="#06B6D4"/>
-        <circle cx="380" cy="306" r="4" fill="#06B6D4"/>
-        <circle cx="520" cy="295.6" r="4" fill="#06B6D4"/>
-        <circle cx="660" cy="336" r="5" fill="#06B6D4" stroke="#fff" stroke-width="2"/>
-        <text x="670" y="332" font-size="11" fill="#06B6D4" font-weight="700">2.10%</text>
+        <circle cx="100" cy="350.5" r="4" fill="#06B6D4"/>
+        <circle cx="240" cy="343.3" r="4" fill="#06B6D4"/>
+        <circle cx="380" cy="317.4" r="4" fill="#06B6D4"/>
+        <circle cx="520" cy="308.0" r="4" fill="#06B6D4"/>
+        <circle cx="660" cy="352.0" r="5" fill="#06B6D4" stroke="#fff" stroke-width="2"/>
+        <text x="670" y="340.4" font-size="11" fill="#06B6D4" font-weight="700">2.10%</text>
 
         <!-- 6. 嘉银金科(90天+)：2.07%, 1.16%, ~2.21%, —, 2.21% -->
-        <path d="M 100,337.2 L 240,373.6 L 380,331.6 L 660,331.6" 
+        <path d="M 100,345.5 L 240,378.2 L 380,340.4 L 660,340.4" 
               fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="100" cy="337.2" r="4" fill="#10B981"/>
-        <circle cx="240" cy="373.6" r="4" fill="#10B981"/>
-        <circle cx="380" cy="331.6" r="4" fill="#10B981"/>
-        <circle cx="660" cy="331.6" r="5" fill="#10B981" stroke="#fff" stroke-width="2"/>
-        <text x="670" y="358" font-size="11" fill="#10B981" font-weight="700">2.21%</text>
+        <circle cx="100" cy="345.5" r="4" fill="#10B981"/>
+        <circle cx="240" cy="378.2" r="4" fill="#10B981"/>
+        <circle cx="380" cy="340.4" r="4" fill="#10B981"/>
+        <circle cx="660" cy="340.4" r="5" fill="#10B981" stroke="#fff" stroke-width="2"/>
+        <text x="670" y="336.4" font-size="11" fill="#10B981" font-weight="700">2.21%</text>
 
         <!-- 7. 易鑫集团(90天+)：~1.89%, 1.86%, 1.89%, —, 1.92% -->
-        <path d="M 100,344.4 L 240,345.6 L 380,344.4 L 660,343.2" 
+        <path d="M 100,352.0 L 240,353.0 L 380,352.0 L 660,350.9" 
               fill="none" stroke="#0E7490" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="100" cy="344.4" r="4" fill="#0E7490"/>
-        <circle cx="240" cy="345.6" r="4" fill="#0E7490"/>
-        <circle cx="380" cy="344.4" r="4" fill="#0E7490"/>
-        <circle cx="660" cy="343.2" r="5" fill="#0E7490" stroke="#fff" stroke-width="2"/>
-        <text x="670" y="378" font-size="11" fill="#0E7490" font-weight="700">1.92%</text>
+        <circle cx="100" cy="352.0" r="4" fill="#0E7490"/>
+        <circle cx="240" cy="353.0" r="4" fill="#0E7490"/>
+        <circle cx="380" cy="352.0" r="4" fill="#0E7490"/>
+        <circle cx="660" cy="350.9" r="5" fill="#0E7490" stroke="#fff" stroke-width="2"/>
+        <text x="670" y="346.9" font-size="11" fill="#0E7490" font-weight="700">1.92%</text>
 
         <!-- 图例 -->
         <g transform="translate(90, 10)">
@@ -1211,7 +1211,7 @@ a:hover { text-decoration: underline; }
             <th>2024年末</th>
             <th>2025年末</th>
             <th>2026Q1末</th>
-            <th>2026H1末</th>
+            <th>2026Q2末</th>
             <th>较2025年末</th>
             <th>趋势判断</th>
           </tr>
