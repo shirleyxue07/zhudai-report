@@ -434,6 +434,40 @@ tbody tr:last-child td { border-bottom: none; }
 .tier-low { background: #DBEAFE; color: #1D4ED8; }
 .tier-unique { background: #D1FAE5; color: #065F46; }
 .tier-giant { background: #EDE9FE; color: #5B21B6; }
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0;
+}
+.impact-card {
+  background: #fff;
+  border: 1px solid #E5E9F2;
+  border-radius: 8px;
+  padding: 18px 20px;
+  border-left: 3px solid #2563EB;
+}
+.impact-card.impact-full {
+  grid-column: 1 / -1;
+  border-left-color: #DC2626;
+}
+.impact-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1D2939;
+  margin-bottom: 8px;
+}
+.impact-card p {
+  font-size: 13.5px;
+  color: #475467;
+  line-height: 1.7;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .impact-grid { grid-template-columns: 1fr; }
+}
+
 .tier-content {
   background: #fff;
   border: 1px solid #E5E9F2;
@@ -606,6 +640,7 @@ a:hover { text-decoration: underline; }
       <a href="#sec2-9" class="nav-l2">2.9 易鑫集团</a>
       <a href="#chapter3" class="nav-l1">第三章：风险分层</a>
       <a href="#sec3-1" class="nav-l2">3.1 经营风险分层与演化</a>
+      <a href="#sec3-2" class="nav-l2">3.2 扫黑除恶与催收冲击</a>
       <a href="#todo" class="nav-l1">待更新清单</a>
       <a href="#sources" class="nav-l1">数据来源汇总</a>
     </nav>
@@ -1063,6 +1098,15 @@ a:hover { text-decoration: underline; }
       <li><strong>中蓄水池：</strong>信也科技、易鑫集团。拨备随规模同步增长，无明显超额计提，风险下行时有一定转回空间。</li>
       <li><strong>薄/无蓄水池：</strong>小赢、嘉银、维信、宜人。拨备计提本身已承压甚至亏损，几乎没有多余拨备可转回。</li>
     </ul>
+
+    <h4>盈利视角：拨备厚度直接决定利润弹性</h4>
+    <p>拨备不是孤立的风险指标，它直接决定利润表的"伸缩空间"。当前行业利润分化的背后，拨备蓄水池的厚薄是核心变量之一：</p>
+    <ul>
+      <li><strong>厚蓄水池机构（奇富）：</strong>当前拨备占营收34.5%，但覆盖率472%意味着后续若资产质量企稳，拨备转回可直接释放利润——周期底部的利润修复弹性最大。</li>
+      <li><strong>中蓄水池机构（信也、易鑫）：</strong>拨备占营收20%-27%，计提节奏与规模匹配，利润相对可控，下行期有一定缓冲但弹性有限。</li>
+      <li><strong>薄蓄水池机构（小赢、乐信、维信等）：</strong>拨备占营收20%-88%，计提本身已在侵蚀利润，不仅没有转回空间，若风险继续暴露还需进一步加码——利润弹性为负，亏损风险持续累积。</li>
+    </ul>
+    <p><strong>一句话总结：</strong>拨备蓄水池越厚，下行周期利润越扛跌、拐点向上时弹性越大；反之则利润刚性受压，甚至可能击穿底线。</p>
     </section>
 
     <!-- 1.4 资产质量 -->
@@ -2427,19 +2471,6 @@ a:hover { text-decoration: underline; }
       </div>
     </div>
 
-    <blockquote>以上风险分层基于2026年半年报财务数据。叠加当下扫黑除恶常态化持续推进、催收行业双重挤压的政策环境，中腰部机构的风险可能进一步演化：</blockquote>
-
-    <h4>扫黑除恶对行业的深层影响（当下环境演化判断）</h4>
-    <p>全国扫黑除恶常态化持续推进，叠加M1/M2禁委外窗口指导，催收行业正面临"合规监管+扫黑打击"双重挤压。对助贷行业的影响远不止催收成本上升，而是从风险成本、防线体系、资金供给、商业模式到监管预期的全方位冲击：</p>
-
-    <ol>
-      <li><strong>风险成本中枢抬升：</strong>催收受限→回收率下降→不良率攀升→拨备加码→利润承压。不是催收成本那点钱的问题，是整个风险成本曲线往上移——原来100块贷款的风险成本可能是3块，催收受限后可能变成5-6块，利润率直接被吃掉一半甚至更多。</li>
-      <li><strong>第二道防线被削弱：</strong>助贷行业靠"风控+催收"两道防线。催收受限后，第二道防线作用大幅削弱，所有压力都压到第一道。但24%以下客群的风控有物理极限——你不可能把所有人都拦在门外，否则业务就不用做了。</li>
-      <li><strong>资金端传导：</strong>银行、消金公司等资金方会重新评估助贷资产的风险收益比。风险收益比变差了，资金就会向头部机构集中，中腰部机构的资金合作难度会加大。</li>
-      <li><strong>模式倒逼：</strong>从重资本赚风险钱→被迫转轻资本赚服务钱。但轻资本的Take Rate本身就低，规模又在收缩，也不好赚。</li>
-      <li><strong>信号意义：</strong>监管容忍度持续下降，行业需要把"催收受限"作为长期假设来做业务规划和盈利模型。</li>
-    </ol>
-
     <h4>暴雷风险指标（与现金流/担保杠杆联动）</h4>
     <ul>
       <li><strong>担保/增信余额 vs 净资产（杠杆率）：</strong>中腰部机构的担保余额往往是净资产的5-10倍，杠杆极高。不良率每上升1个百分点，净资产就可能少10%以上。</li>
@@ -2453,6 +2484,37 @@ a:hover { text-decoration: underline; }
     <p>中腰部平台成本结构：资金成本8-12% + 获客5-8% + 运营2-3% + 风险3-5% = 18-28%，24%天花板下利润极薄甚至为负。催收受限后风险成本可能升至6%+，直接击穿盈利底线。</p>
 
     <p><strong>恶化路径：</strong>催收受限 → 回收率下降 → 风险成本升至6%+ → 突破24%红线 → 主动缩表 → 固定成本摊薄效应消失 → 亏损扩大 → 现金流承压 → 资金方抽贷 → 加速出清</p>
+
+    </section>
+
+    <!-- 3.2 扫黑除恶对行业的深层影响 -->
+    <section id="sec3-2">
+    <h3>3.2 扫黑除恶与催收监管冲击</h3>
+
+    <p>全国扫黑除恶常态化持续推进，叠加M1/M2禁委外窗口指导，催收行业正面临<strong>"合规监管+扫黑打击"双重挤压</strong>。对助贷行业的影响远不止催收成本上升，而是从风险成本、防线体系、资金供给、商业模式到监管预期的全方位冲击：</p>
+
+    <div class="impact-grid">
+      <div class="impact-card">
+        <div class="impact-title">风险成本中枢抬升</div>
+        <p>催收受限 → 回收率下降 → 不良率攀升 → 拨备加码 → 利润承压。不是催收成本那点钱的问题，是整个风险成本曲线往上移——原来100块贷款的风险成本可能是3块，催收受限后可能变成5-6块，利润率直接被吃掉一半甚至更多。</p>
+      </div>
+      <div class="impact-card">
+        <div class="impact-title">第二道防线被削弱</div>
+        <p>助贷行业靠"风控+催收"两道防线。催收受限后，第二道防线作用大幅削弱，所有压力都压到第一道。但24%以下客群的风控有物理极限——你不可能把所有人都拦在门外，否则业务就不用做了。</p>
+      </div>
+      <div class="impact-card">
+        <div class="impact-title">资金端传导</div>
+        <p>银行、消金公司等资金方会重新评估助贷资产的风险收益比。风险收益比变差了，资金就会向头部机构集中，中腰部机构的资金合作难度会加大。</p>
+      </div>
+      <div class="impact-card">
+        <div class="impact-title">模式倒逼</div>
+        <p>从重资本赚风险钱 → 被迫转轻资本赚服务钱。但轻资本的Take Rate本身就低，规模又在收缩，也不好赚。</p>
+      </div>
+      <div class="impact-card impact-full">
+        <div class="impact-title">信号意义</div>
+        <p>监管容忍度持续下降，行业需要把"催收受限"作为长期假设来做业务规划和盈利模型。这不是短期扰动，而是经营底层假设的永久性变化。</p>
+      </div>
+    </div>
 
     </section>
     </section>
