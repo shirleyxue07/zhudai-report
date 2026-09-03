@@ -716,7 +716,7 @@ a:hover { text-decoration: underline; }
     <div class="chart-container">
       <p class="chart-title">2026H1 营收 &amp; 净利润同比对比</p>
       <p class="chart-subtitle">9家机构 · 正值在上，负值在下 · 按营收降幅从小到大排列</p>
-      <svg class="chart-svg" viewBox="0 0 820 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="营收和净利润同比对比图">
+      <svg class="chart-svg" viewBox="0 0 820 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="营收和净利润同比对比图">
   <defs>
     <linearGradient id="revGrad" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#3B82F6"/>
@@ -726,9 +726,17 @@ a:hover { text-decoration: underline; }
       <stop offset="0%" stop-color="#F97316"/>
       <stop offset="100%" stop-color="#EA580C"/>
     </linearGradient>
+    <pattern id="lossPattern" patternUnits="userSpaceOnUse" width="8" height="8">
+      <rect width="8" height="8" fill="#FEE2E2"/>
+      <line x1="0" y1="8" x2="8" y2="0" stroke="#DC2626" stroke-width="1.5"/>
+    </pattern>
   </defs>
   <line x1="100" y1="400.0" x2="800" y2="400.0" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4,4"/>
   <text x="90" y="404.0" text-anchor="end" font-size="11" fill="#6B7280">-100%</text>
+  <line x1="100" y1="440.0" x2="800" y2="440.0" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="90" y="444.0" text-anchor="end" font-size="11" fill="#6B7280">-120%</text>
+  <line x1="100" y1="480.0" x2="800" y2="480.0" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="90" y="484.0" text-anchor="end" font-size="11" fill="#6B7280">-140%</text>
   <line x1="100" y1="360.0" x2="800" y2="360.0" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4,4"/>
   <text x="90" y="364.0" text-anchor="end" font-size="11" fill="#6B7280">-80%</text>
   <line x1="100" y1="320.0" x2="800" y2="320.0" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4,4"/>
@@ -748,54 +756,56 @@ a:hover { text-decoration: underline; }
   <text x="111.0" y="167.4" text-anchor="middle" font-size="10" fill="#2563EB" font-weight="600">+13.3%</text>
   <rect x="130.0" y="143.6" width="22" height="56.4" fill="url(#profitGrad)" rx="3"/>
   <text x="141.0" y="137.6" text-anchor="middle" font-size="10" fill="#EA580C" font-weight="600">+28.2%</text>
-  <text x="126.0" y="455" text-anchor="middle" font-size="11" fill="#475467" font-weight="500">易鑫集团</text>
+  <text x="126.0" y="500" text-anchor="middle" font-size="11" fill="#475467" font-weight="500">易鑫集团</text>
   <rect x="181.0" y="200.0" width="22" height="5.8" fill="url(#revGrad)" rx="3"/>
   <text x="192.0" y="219.8" text-anchor="middle" font-size="10" fill="#2563EB" font-weight="600">-2.9%</text>
   <rect x="211.0" y="200.0" width="22" height="135.8" fill="url(#profitGrad)" rx="3"/>
   <text x="222.0" y="349.8" text-anchor="middle" font-size="10" fill="#EA580C" font-weight="600">-67.9%</text>
-  <text x="207.0" y="455" text-anchor="middle" font-size="11" fill="#475467" font-weight="500">乐信</text>
+  <text x="207.0" y="500" text-anchor="middle" font-size="11" fill="#475467" font-weight="500">乐信</text>
   <rect x="262.0" y="200.0" width="22" height="16.0" fill="url(#revGrad)" rx="3"/>
   <text x="273.0" y="230.0" text-anchor="middle" font-size="10" fill="#2563EB" font-weight="600">-8%</text>
   <rect x="292.0" y="200.0" width="22" height="86.0" fill="url(#profitGrad)" rx="3"/>
   <text x="303.0" y="300.0" text-anchor="middle" font-size="10" fill="#EA580C" font-weight="600">-43%</text>
-  <text x="288.0" y="455" text-anchor="middle" font-size="11" fill="#475467" font-weight="500">信也科技</text>
+  <text x="288.0" y="500" text-anchor="middle" font-size="11" fill="#475467" font-weight="500">信也科技</text>
   <rect x="343.0" y="200.0" width="22" height="22.6" fill="url(#revGrad)" rx="3"/>
   <text x="354.0" y="236.6" text-anchor="middle" font-size="10" fill="#2563EB" font-weight="600">-11.3%</text>
-  <rect x="373.0" y="200" width="22" height="100" fill="url(#profitGrad)" rx="3"/>
-  <text x="384.0" y="254.0" text-anchor="middle" font-size="9" fill="#DC2626" font-weight="700">亏损扩大</text>
-  <text x="369.0" y="455" text-anchor="middle" font-size="11" fill="#475467" font-weight="500">陆金所控股</text>
+  <rect x="373.0" y="200.0" width="22" height="160.0" fill="url(#lossPattern)" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="3,2" rx="3"/>
+  <text x="384.0" y="374.0" text-anchor="middle" font-size="9" fill="#DC2626" font-weight="700">亏损扩大</text>
+  <text x="369.0" y="500" text-anchor="middle" font-size="11" fill="#475467" font-weight="500">陆金所控股</text>
   <rect x="424.0" y="200.0" width="22" height="49.0" fill="url(#revGrad)" rx="3"/>
   <text x="435.0" y="263.0" text-anchor="middle" font-size="10" fill="#2563EB" font-weight="600">-24.5%</text>
   <rect x="454.0" y="200.0" width="22" height="127.0" fill="url(#profitGrad)" rx="3"/>
   <text x="465.0" y="341.0" text-anchor="middle" font-size="10" fill="#EA580C" font-weight="600">-63.5%</text>
-  <text x="450.0" y="455" text-anchor="middle" font-size="11" fill="#475467" font-weight="500">奇富科技</text>
+  <text x="450.0" y="500" text-anchor="middle" font-size="11" fill="#475467" font-weight="500">奇富科技</text>
   <rect x="505.0" y="200.0" width="22" height="82.0" fill="url(#revGrad)" rx="3"/>
   <text x="516.0" y="296.0" text-anchor="middle" font-size="10" fill="#2563EB" font-weight="600">-41%</text>
-  <rect x="535.0" y="200" width="22" height="100" fill="url(#profitGrad)" rx="3"/>
-  <text x="546.0" y="254.0" text-anchor="middle" font-size="9" fill="#DC2626" font-weight="700">由盈转亏</text>
-  <text x="531.0" y="455" text-anchor="middle" font-size="11" fill="#475467" font-weight="500">宜人智科（Q1）</text>
+  <rect x="535.0" y="200.0" width="22" height="240.0" fill="url(#lossPattern)" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="3,2" rx="3"/>
+  <text x="546.0" y="455.0" text-anchor="middle" font-size="9" fill="#DC2626" font-weight="700">由盈转亏（Q1）</text>
+  <text x="531.0" y="500" text-anchor="middle" font-size="11" fill="#475467" font-weight="500">宜人智科（Q1）</text>
   <rect x="586.0" y="200.0" width="22" height="97.0" fill="url(#revGrad)" rx="3"/>
   <text x="597.0" y="311.0" text-anchor="middle" font-size="10" fill="#2563EB" font-weight="600">-48.5%</text>
   <rect x="616.0" y="200.0" width="22" height="182.0" fill="url(#profitGrad)" rx="3"/>
   <text x="627.0" y="396.0" text-anchor="middle" font-size="10" fill="#EA580C" font-weight="600">-91%</text>
-  <text x="612.0" y="455" text-anchor="middle" font-size="11" fill="#475467" font-weight="500">小赢科技</text>
+  <text x="612.0" y="500" text-anchor="middle" font-size="11" fill="#475467" font-weight="500">小赢科技</text>
   <rect x="667.0" y="200.0" width="22" height="118.4" fill="url(#revGrad)" rx="3"/>
   <text x="678.0" y="332.4" text-anchor="middle" font-size="10" fill="#2563EB" font-weight="600">-59.2%</text>
-  <rect x="697.0" y="200" width="22" height="100" fill="url(#profitGrad)" rx="3"/>
-  <text x="708.0" y="254.0" text-anchor="middle" font-size="9" fill="#DC2626" font-weight="700">由盈转亏</text>
-  <text x="693.0" y="455" text-anchor="middle" font-size="11" fill="#475467" font-weight="500">嘉银金科</text>
+  <rect x="697.0" y="200.0" width="22" height="260.0" fill="url(#lossPattern)" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="3,2" rx="3"/>
+  <text x="708.0" y="475.0" text-anchor="middle" font-size="9" fill="#DC2626" font-weight="700">由盈转亏 ~-130%</text>
+  <text x="693.0" y="500" text-anchor="middle" font-size="11" fill="#475467" font-weight="500">嘉银金科</text>
   <rect x="748.0" y="200.0" width="22" height="122.4" fill="url(#revGrad)" rx="3"/>
   <text x="759.0" y="336.4" text-anchor="middle" font-size="10" fill="#2563EB" font-weight="600">-61.2%</text>
   <rect x="778.0" y="200.0" width="22" height="189.0" fill="url(#profitGrad)" rx="3"/>
   <text x="789.0" y="403.0" text-anchor="middle" font-size="10" fill="#EA580C" font-weight="600">-94.5%</text>
-  <text x="774.0" y="455" text-anchor="middle" font-size="11" fill="#475467" font-weight="500">维信金科</text>
+  <text x="774.0" y="500" text-anchor="middle" font-size="11" fill="#475467" font-weight="500">维信金科</text>
 
   <!-- 图例 -->
   <rect x="100" y="15" width="14" height="10" fill="url(#revGrad)" rx="2"/>
   <text x="120" y="24" font-size="11" fill="#475467">营收同比</text>
   <rect x="190" y="15" width="14" height="10" fill="url(#profitGrad)" rx="2"/>
   <text x="210" y="24" font-size="11" fill="#475467">净利润同比</text>
-  <text x="330" y="24" font-size="10" fill="#98A2B3">注：宜人智科为Q1数据；亏损/由盈转亏柱高为示意</text>
+  <rect x="295" y="15" width="14" height="10" fill="url(#lossPattern)" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2" rx="2"/>
+      <text x="315" y="24" font-size="11" fill="#475467">亏损/由盈转亏</text>
+      <text x="435" y="24" font-size="10" fill="#98A2B3">注：宜人智科为Q1数据；嘉银同比为估算</text>
 </svg>
     </div>
 
