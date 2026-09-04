@@ -661,7 +661,15 @@ a:hover { text-decoration: underline; }
     </div>
 
     <!-- 执行摘要 -->
-    <section id="exec-summary">
+    
+<div class="data-source-note" style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:13px;color:#1E40AF;line-height:1.6;">
+  <strong>&#128203; 数据来源说明：</strong>本报告数据以各上市公司2026年中期报告/季度报告/官方业绩公告为主要来源。
+  部分数据因披露口径差异需经合理推算获得，数值前标注"~"表示为估算/推算值。
+  各机构财务口径（拨备计量、收入确认、逾期率定义等）差异较大，横向对比仅供趋势参考。
+  详细推算依据见报告末尾<a href="#appendix-notes" style="color:#2563EB;text-decoration:underline;">「附录：数据来源与推算说明」</a>。
+</div>
+
+<section id="exec-summary">
     <h2>执行摘要</h2>
     <p>本文浓缩9家助贷/汽车金融机构2026年半年报核心发现，提炼7条关键结论如下：</p>
 
@@ -798,7 +806,7 @@ a:hover { text-decoration: underline; }
   <text x="120" y="24" font-size="11" fill="#475467">营收同比</text>
   <rect x="190" y="15" width="14" height="10" fill="url(#profitGrad)" rx="2"/>
   <text x="210" y="24" font-size="11" fill="#475467">净利润同比</text>
-  <text x="330" y="24" font-size="10" fill="#98A2B3">注：¹为宜人智科Q1数据；虚线柱表示净利润由盈转亏/继续亏损，柱高为示意比例，不代表精确降幅</text>
+  <text x="330" y="24" font-size="10" fill="#98A2B3">注：① 宜人智科为Q1单季数据；② 嘉银金科、宜人智科净利润柱为虚线示意（缺2025同期净利润基数，无法精确计算同比），柱高统一按-80%示意，仅为视觉占位，不代表精确降幅；③ 维信金科净利润同比-94.5%为官方披露。详见附录第⑩条。</text>
 </svg>
     </div>
 
@@ -838,7 +846,7 @@ a:hover { text-decoration: underline; }
       </table>
       </div>
     </div>
-    <p class="table-note">单位：亿元。注：嘉银H1为Q1+Q2加总；宜人智科未披露H1中报，采用Q1数据；小赢H1为Q1+Q2加总，在贷余额为推算值；易鑫为汽车金融资产口径。</p>
+    <p class="table-note">单位：亿元。注：① 嘉银金科、小赢科技H1为Q1+Q2单季加总，非完整中报口径；② 宜人智科未披露H1中报，采用Q1单季数据；③ 小赢科技H1末在贷余额为推算值（基于贷款应收净额+或有担保负债对应贷款余额估算）；④ 维信金科在贷余额为客户贷款余额口径（摊余成本计量）；⑤ 易鑫集团为汽车金融资产口径（应收融资租赁款），与助贷机构不可直接比。详见附录。</p>
     </section>
 
     <!-- 1.2 业务结构 -->
@@ -1014,7 +1022,7 @@ a:hover { text-decoration: underline; }
         </g>
 
         <!-- 注 -->
-        <text x="140" y="360" font-size="10.5" fill="#98A2B3">注：宜人智科为Q1数据（红色）；信也为损益化信用损失窄口径；①维信为信用减值损失+客户贷款公允价值变动合计（公允价值计量模式，含市场因素，与其他机构不完全可比，用虚线柱表示）</text>
+        <text x="140" y="360" font-size="10.5" fill="#98A2B3">注：① 宜人智科为Q1单季数据；② 信也科技为损益化信用损失窄口径（约14.09亿），含质量保证承诺的全口径约24-25亿，本表采用窄口径；③ 维信金科为信用减值损失+客户贷款公允价值变动合计（公允价值计量模式，含市场因素，与其他机构不完全可比，用虚线柱表示）；④ 乐信拨备为Q1估算值+Q2披露值加总（约17亿+）；⑤ 嘉银金科H1拨备为Q1+Q2信用减值损失加总（约1.0亿）。各机构拨备口径差异详见附录第③条</text>
       </svg>
     </div>
 
@@ -1070,7 +1078,7 @@ a:hover { text-decoration: underline; }
       </table>
       </div>
     </div>
-    <p class="table-note">注：PPOP及同比为简化估算值，2025H1拨备用2025全年的一半估算，仅供趋势参考。</p>
+    <p class="table-note">注：PPOP（拨备前利润）= 净利润 + 拨备/信用减值损失，为简化估算值。2026H1 PPOP基于当期净利润+当期拨备计算；2025H1 PPOP及同比采用2025全年拨备的1/2估算，误差较大，仅供趋势参考。剪刀差=拨备占PPOP比 - 拨备占营收比。详见附录第④条。</p>
 
     <h4>拨备蓄水池分层</h4>
     <ul>
@@ -1233,7 +1241,7 @@ a:hover { text-decoration: underline; }
         </g>
       </svg>
     </div>
-    <p class="table-note">注：各机构口径不完全一致——维信金科为M3+、小赢为91-180天（仅中段逾期）、其余为90天+。陆金所和宜人智科因口径差异较大未纳入折线图。虚线为缺失Q1数据的连线。</p>
+    <p class="table-note">注：各机构逾期率口径不一致，横向对比需注意口径边界：① 奇富/信也/乐信/嘉银/易鑫为90天+逾期率；② 小赢科技为91-180天逾期率（仅中段逾期，不含180天+不良）；③ 维信金科为M3+逾期率（港资企业口径）；④ 陆金所控股为30天+逾期率（极宽口径）；⑤ 宜人智科为61-90天逾期率（仅片段披露）。陆金所和宜人智科因口径差异较大未纳入折线图。虚线为缺失Q1数据的连线。详见附录第⑧条。</p>
 
     <!-- 资产质量数据表 -->
     <div class="table-wrap wide">
@@ -2640,5 +2648,157 @@ document.querySelectorAll('.sidebar nav a').forEach(link => {
   });
 });
 </script>
+
+<!-- ============================================ -->
+<!-- 数据来源与推算说明 -->
+<!-- ============================================ -->
+<section class="section" style="margin-top:60px;">
+  <h2 class="section-title" style="font-size:22px;font-weight:700;color:#1E3A8A;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #E0E7FF;">
+    附录：数据来源与推算说明<a id="appendix-notes"></a>
+  </h2>
+
+  <p style="color:#475569;font-size:14px;line-height:1.7;margin-bottom:20px;">
+    本报告数据以各上市公司2026年中期报告（H1 / 中报）、季度报告（Q1 / Q2）及官方业绩公告为主要来源，优先采信原始披露。部分数据因披露口径差异或信息不全，需经合理推算或估算获得，统一标注说明如下。
+  </p>
+
+  <div class="note-cards" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
+
+    <!-- 注1：直接披露类 -->
+    <div class="note-card" style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:10px;padding:16px;">
+      <div style="font-weight:600;color:#166534;font-size:15px;margin-bottom:8px;">① 直接披露数据</div>
+      <div style="font-size:13px;color:#374151;line-height:1.7;">
+        <p style="margin:4px 0;"><strong>来源：</strong>各机构2026H1中期报告、Q1/Q2季度报告、港交所/纽交所/纳斯达克官方业绩公告。</p>
+        <p style="margin:4px 0;"><strong>范围：</strong>营收、净利润、在贷余额（部分机构）、放款量（部分机构）、拨备/信用减值（利润表直接科目）、轻资本余额占比（奇富、信也）、自担风险比例（陆金所）等主表核心指标。</p>
+        <p style="margin:4px 0;"><strong>标识：</strong>数值前无特殊符号。</p>
+      </div>
+    </div>
+
+    <!-- 注2：Q1+Q2加总类 -->
+    <div class="note-card" style="background:#FEF3C7;border:1px solid #FDE68A;border-radius:10px;padding:16px;">
+      <div style="font-weight:600;color:#92400E;font-size:15px;margin-bottom:8px;">② Q1+Q2加总数据（非完整中报）</div>
+      <div style="font-size:13px;color:#374151;line-height:1.7;">
+        <p style="margin:4px 0;"><strong>适用机构：</strong>小赢科技、嘉银金科（无完整H1中报，仅发布单季财报）。</p>
+        <p style="margin:4px 0;"><strong>推算方法：</strong>将2026Q1单季数据与2026Q2单季数据直接加总，得到H1近似值。</p>
+        <p style="margin:4px 0;"><strong>局限性：</strong>部分科目（如拨备计提节奏、所得税调节、一次性项目）单季加总与中报可能存在差异，仅供趋势参考。</p>
+        <p style="margin:4px 0;"><strong>标识：</strong>表格备注中注明"H1为Q1+Q2加总"。</p>
+      </div>
+    </div>
+
+    <!-- 注3：拨备/减值估算类 -->
+    <div class="note-card" style="background:#FEF3C7;border:1px solid #FDE68A;border-radius:10px;padding:16px;">
+      <div style="font-weight:600;color:#92400E;font-size:15px;margin-bottom:8px;">③ 拨备/信用减值估算</div>
+      <div style="font-size:13px;color:#374151;line-height:1.7;">
+        <p style="margin:4px 0;"><strong>乐信：</strong>财报披露"或有担保负债拨备"科目，Q2单季约10.52亿，H1总数由Q1估算值（~7亿+）+ Q2披露值加总，绝对额为近似值。</p>
+        <p style="margin:4px 0;"><strong>信也科技：</strong>拨备分窄口径（损益化信用减值，约14.09亿）与宽口径（含质量保证承诺信用损失，约24-25亿）。本报告主表采用窄口径。</p>
+        <p style="margin:4px 0;"><strong>嘉银金科：</strong>H1拨备由Q1+Q2信用减值损失加总，约1.0亿，占营收比约6.7%，为估算值。</p>
+        <p style="margin:4px 0;"><strong>维信金科：</strong>拨备为特殊口径，含"信用减值损失+客户贷款公允价值变动"合计约3.02亿，占营收~31.2%。因采用公允价值计量模式，与其他机构不可直接比。</p>
+        <p style="margin:4px 0;"><strong>宜人智科：</strong>仅披露Q1数据，拨备占营收比88.3%为Q1单季值。</p>
+        <p style="margin:4px 0;"><strong>标识：</strong>数值前标注"~"，表格备注注明口径。</p>
+      </div>
+    </div>
+
+    <!-- 注4：PPOP估算类 -->
+    <div class="note-card" style="background:#FEF3C7;border:1px solid #FDE68A;border-radius:10px;padding:16px;">
+      <div style="font-weight:600;color:#92400E;font-size:15px;margin-bottom:8px;">④ PPOP（拨备前利润）估算</div>
+      <div style="font-size:13px;color:#374151;line-height:1.7;">
+        <p style="margin:4px 0;"><strong>计算公式：</strong>PPOP ≈ 净利润 + 拨备/信用减值损失</p>
+        <p style="margin:4px 0;"><strong>2026H1 PPOP：</strong>基于2026H1净利润+当期拨备/减值计算，相对准确。</p>
+        <p style="margin:4px 0;"><strong>2025H1 PPOP及同比：</strong>2025H1拨备采用2025全年拨备的1/2估算（假设上下半年均衡），因此PPOP同比为近似值，仅供趋势参考。</p>
+        <p style="margin:4px 0;"><strong>剪刀差：</strong>拨备占PPOP比 - 拨备占营收比，反映拨备对利润的侵蚀程度。</p>
+        <p style="margin:4px 0;"><strong>标识：</strong>数值前标注"~"，表格下方注明"简化估算值，仅供趋势参考"。</p>
+      </div>
+    </div>
+
+    <!-- 注5：在贷余额推算类 -->
+    <div class="note-card" style="background:#FEF3C7;border:1px solid #FDE68A;border-radius:10px;padding:16px;">
+      <div style="font-weight:600;color:#92400E;font-size:15px;margin-bottom:8px;">⑤ 在贷余额推算</div>
+      <div style="font-size:13px;color:#374151;line-height:1.7;">
+        <p style="margin:4px 0;"><strong>小赢科技：</strong>H1末在贷余额249.69亿为推算值（基于Q2末贷款应收净额+或有担保负债对应贷款余额估算），官方未直接披露H1末在贷余额。</p>
+        <p style="margin:4px 0;"><strong>嘉银金科：</strong>H1末在贷余额未披露，表格中标注"未披露"。</p>
+        <p style="margin:4px 0;"><strong>维信金科：</strong>H1末客户贷款余额13.16亿（摊余成本口径），担保应收款项3.46亿，合计表内+担保口径约16.6亿；报告采用客户贷款余额口径标注。</p>
+        <p style="margin:4px 0;"><strong>标识：</strong>推算值前标注"~"，未披露标注"未披露"或"—"。</p>
+      </div>
+    </div>
+
+    <!-- 注6：历史数据估算类 -->
+    <div class="note-card" style="background:#FEF3C7;border:1px solid #FDE68A;border-radius:10px;padding:16px;">
+      <div style="font-weight:600;color:#92400E;font-size:15px;margin-bottom:8px;">⑥ 历史对比数据（2023-2024年）估算</div>
+      <div style="font-size:13px;color:#374151;line-height:1.7;">
+        <p style="margin:4px 0;"><strong>来源：</strong>2023/2024年报、历史财报、公开资料整理。</p>
+        <p style="margin:4px 0;"><strong>说明：</strong>单家机构历史财务表（奇富、信也、乐信、陆金所、小赢等）中2023-2024年部分数据为根据年报和公开资料的估算值，用于展示趋势变化。部分细分科目（如分业务收入、拨备结构）因历史口径调整，精确可比性有限。</p>
+        <p style="margin:4px 0;"><strong>标识：</strong>数值前标注"~"，各表下方已有备注。</p>
+      </div>
+    </div>
+
+    <!-- 注7：轻重资本模式推断类 -->
+    <div class="note-card" style="background:#FEF3C7;border:1px solid #FDE68A;border-radius:10px;padding:16px;">
+      <div style="font-weight:600;color:#92400E;font-size:15px;margin-bottom:8px;">⑦ 轻重资本模式分类与占比</div>
+      <div style="font-size:13px;color:#374151;line-height:1.7;">
+        <p style="margin:4px 0;"><strong>直接披露（3家）：</strong></p>
+        <p style="margin:2px 0 2px 16px;">• <strong>奇富科技</strong>：财报直接披露"轻资本模式余额"539.83亿，占在贷余额50.2%</p>
+        <p style="margin:2px 0 2px 16px;">• <strong>信也科技</strong>：财报直接披露"轻资本模式余额"334亿，占在贷余额51.1%</p>
+        <p style="margin:2px 0 2px 16px;">• <strong>陆金所控股</strong>：财报直接披露"自担风险比例"93.2%，反推轻资本约6.8%</p>
+        <p style="margin:4px 0;"><strong>推断分类（6家）：</strong></p>
+        <p style="margin:2px 0 2px 16px;">• <strong>乐信</strong>：基于"或有担保负债拨备"大额计提（H1约17亿+），推断为担保兜底的重资本模式</p>
+        <p style="margin:2px 0 2px 16px;">• <strong>小赢科技</strong>：基于融资担保公司牌照与"或有担保负债"科目，推断为担保模式重资本</p>
+        <p style="margin:2px 0 2px 16px;">• <strong>嘉银金科</strong>：基于担保负债释放收入占比高（约60%），判断为担保模式为主；Q2导流收入增加，标注"轻资本倾向"</p>
+        <p style="margin:2px 0 2px 16px;">• <strong>维信金科</strong>：基于"信用增级贷款占比66.7%"与担保负债15.26亿，推断为信用增级兜底的重资本模式</p>
+        <p style="margin:2px 0 2px 16px;">• <strong>宜人智科</strong>：基于"或有负债拨备"科目与高拨备占比（88%），推断为担保模式重资本</p>
+        <p style="margin:2px 0 2px 16px;">• <strong>易鑫集团</strong>：基于融资租赁模式与表内持有应收租赁款，判断为汽车金融重资本（资产自持）</p>
+        <p style="margin:4px 0;"><strong>分类标准：</strong>以机构是否承担最终信用风险为核心判断依据——承担兜底/担保风险的归为重资本，仅收服务费不兜底的归为轻资本。</p>
+      </div>
+    </div>
+
+    <!-- 注8：逾期率口径差异类 -->
+    <div class="note-card" style="background:#FEF3C7;border:1px solid #FDE68A;border-radius:10px;padding:16px;">
+      <div style="font-weight:600;color:#92400E;font-size:15px;margin-bottom:8px;">⑧ 逾期率口径差异</div>
+      <div style="font-size:13px;color:#374151;line-height:1.7;">
+        <p style="margin:4px 0;">各机构披露的逾期率口径不一致，横向对比需注意：</p>
+        <p style="margin:2px 0 2px 16px;">• <strong>奇富/信也/乐信/嘉银/易鑫</strong>：90天+逾期率（较可比）</p>
+        <p style="margin:2px 0 2px 16px;">• <strong>小赢科技</strong>：91-180天逾期率（仅中段逾期，不含180天+）</p>
+        <p style="margin:2px 0 2px 16px;">• <strong>维信金科</strong>：M3+逾期率（港资企业口径）</p>
+        <p style="margin:2px 0 2px 16px;">• <strong>陆金所控股</strong>：30天+逾期率（极宽口径，不可与90天+直接比）</p>
+        <p style="margin:2px 0 2px 16px;">• <strong>宜人智科</strong>：61-90天逾期率（仅单季披露片段）</p>
+        <p style="margin:4px 0;"><strong>折线图说明：</strong>仅纳入口径相对接近的机构（90天+ / M3+ / 91-180天），陆金所和宜人智科因口径差异较大未纳入。部分机构Q1数据缺失用虚线连接。</p>
+      </div>
+    </div>
+
+    <!-- 注9：利润拆分贡献类 -->
+    <div class="note-card" style="background:#FEF3C7;border:1px solid #FDE68A;border-radius:10px;padding:16px;">
+      <div style="font-weight:600;color:#92400E;font-size:15px;margin-bottom:8px;">⑨ 利润下滑拆分与贡献估算</div>
+      <div style="font-size:13px;color:#374151;line-height:1.7;">
+        <p style="margin:4px 0;"><strong>方法：</strong>基于利润表科目同比变化的近似拆分，按"营收下滑贡献 + 拨备加码贡献 + 成本/其他因素贡献 ≈ 净利润同比降幅"的逻辑估算。</p>
+        <p style="margin:4px 0;"><strong>性质：</strong>为方向性判断，非精确财务归因。各因素贡献百分比为估算区间（如"约40-50pct"），用于说明利润下滑的主要驱动因素。</p>
+        <p style="margin:4px 0;"><strong>标识：</strong>文中表述为"贡献约xx-xx pct"，均为估算。</p>
+      </div>
+    </div>
+
+    <!-- 注10：同比基数估算类 -->
+    <div class="note-card" style="background:#FEF3C7;border:1px solid #FDE68A;border-radius:10px;padding:16px;">
+      <div style="font-weight:600;color:#92400E;font-size:15px;margin-bottom:8px;">⑩ 同比基数与净利润同比估算</div>
+      <div style="font-size:13px;color:#374151;line-height:1.7;">
+        <p style="margin:4px 0;"><strong>直接披露（有精确同比）：</strong>奇富、信也、乐信、陆金所、小赢、维信、易鑫——2026H1净利润同比均有官方披露。</p>
+        <p style="margin:4px 0;"><strong>估算/示意（缺2025同期基数）：</strong></p>
+        <p style="margin:2px 0 2px 16px;">• <strong>嘉银金科</strong>：2025H1净利润基数未明确披露，无法精确计算同比，标注"由盈转亏"</p>
+        <p style="margin:2px 0 2px 16px;">• <strong>宜人智科（Q1）</strong>：2025Q1净利润基数未明确披露，标注"继续转亏"</p>
+        <p style="margin:2px 0 2px 16px;">• 上述两家在营收利润双柱图中的净利润柱采用虚线+统一-80%示意高度，仅为视觉占位，不代表精确同比。</p>
+        <p style="margin:4px 0;"><strong>标识：</strong>虚线柱 + 脚注说明。</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="background:#F1F5F9;border-radius:10px;padding:16px;margin-top:16px;">
+    <div style="font-weight:600;color:#334155;font-size:14px;margin-bottom:8px;">数据严谨性声明</div>
+    <div style="font-size:13px;color:#475569;line-height:1.7;">
+      <p style="margin:4px 0;">1. 本报告优先采信上市公司官方披露（年报 / 中报 / 季报 / 业绩公告），第三方媒体及研报仅作交叉验证。</p>
+      <p style="margin:4px 0;">2. 所有估算/推算数据均以"~"标识，并在本附录及各表备注中说明推算依据与局限性。</p>
+      <p style="margin:4px 0;">3. 各机构财务口径差异较大（拨备计量模式、收入确认方式、在贷余额口径等），横向对比仅反映趋势性差异，不构成精确可比。</p>
+      <p style="margin:4px 0;">4. 定性分析（模式分类、风险分层、策略判断等）基于财务数据与公开信息综合推断，仅供参考。</p>
+    </div>
+  </div>
+
+</section>
+
 </body>
 </html>
